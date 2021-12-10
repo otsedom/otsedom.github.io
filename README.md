@@ -4,7 +4,8 @@
 ### Contenidos
 {:.no_toc}
 
-1.TOC
+
+1. TOC
 {:toc}
 
 
@@ -23,7 +24,7 @@
 - [ENCARA2](https://github.com/otsedom/ENCARA2)
 
 
-
+[Inicio](#top)
 [Portada github](https://github.com/otsedom)
 
 
