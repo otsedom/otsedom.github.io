@@ -2,7 +2,7 @@
 
 <!--- OJO s://github.com/processing/p5.js-editor/blob/master/README.md p5js editos deprecated use Atom>
 
-- Práctica 1
+- [Práctica 1](P1/README.md)
 - ...
 
 
