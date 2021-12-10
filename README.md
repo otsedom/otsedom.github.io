@@ -12,6 +12,6 @@ Acceso a materiales docentes de varias asignaturas:
 - Práctica 1
 - ...
 
-[Material de la asignatura 20/21][https://github.com/otsedom/CIU]
+[Material de la asignatura 20/21](https://github.com/otsedom/CIU)
 
 
