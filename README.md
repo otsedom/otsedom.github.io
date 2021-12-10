@@ -7,7 +7,7 @@
 {:toc}
 
 .....
-- [Materiales docentes](#materiales-docentes)
+- Materiales docentes
 - Divulgación
 - Investigación 
 
