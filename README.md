@@ -1,8 +1,8 @@
 ## Página personal de proyectos
-{:no_toc}
+{:.no_toc}
 
 ### Contenidos
-{:no_toc}
+{:.no_toc}
 
 1.TOC
 {:toc}
