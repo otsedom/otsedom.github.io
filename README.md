@@ -1,6 +1,10 @@
 ## Página personal de proyectos
 
-* Placeholder for Table of Content (Must not be removed) <newline> {:toc}
+#3 Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 - Materiales docentes
 - Divulgación
