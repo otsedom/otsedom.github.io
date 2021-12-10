@@ -7,7 +7,7 @@
 
 ### Materiales docentes
 
-- [Creando Interfaces de Usuario (CIU)]((CIU))
+- [Creando Interfaces de Usuario (CIU)](CIU/README.md)
 - Informática y Programación (IyP)
 
 
