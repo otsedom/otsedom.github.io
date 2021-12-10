@@ -1,7 +1,12 @@
 ## Página personal de proyectos
+{:no_toc}
 
 ### Contenidos
+{:no_toc}
 
+{:toc}
+
+.....
 - [Materiales docentes](#materiales-docentes)
 - Divulgación
 - Investigación 
