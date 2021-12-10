@@ -4,12 +4,8 @@
 ### Contenidos
 {:no_toc}
 
+1.TOC
 {:toc}
-
-.....
-- Materiales docentes
-- Divulgación
-- Investigación 
 
 
 ### Materiales docentes
