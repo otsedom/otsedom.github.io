@@ -1,11 +1,8 @@
 ## Página personal de proyectos
 
-### Contents
-{:.no_toc}
+### Contenidos
 
-{:toc}
-
-- Materiales docentes
+- [Materiales docentes](#materiales-docentes)
 - Divulgación
 - Investigación 
 
@@ -18,7 +15,6 @@
 ### Divulgación
 
 - [Demo Macaronight 2020](https://macaronight-test.glitch.me), [código en Glitch](https://glitch.com/edit/#!/macaronight-test)
-
 
 ### Investigación
 
