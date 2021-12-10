@@ -1,9 +1,8 @@
 ## Página personal de proyectos
 
-#3 Contents
+### Contents
 {:.no_toc}
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 - Materiales docentes
