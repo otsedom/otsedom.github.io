@@ -1,9 +1,9 @@
 ## Página personal de proyectos
 
 ### Contenidos
-[Materiales docentes](#materiales-docentes)
-[Divulgación](#divulgación)
-[Investigación](#investigación)
+[Materiales docentes](#materiales-docentes)  
+[Divulgación](#divulgacin)  
+[Investigación](#investigacin)  
 
 
 ### Materiales docentes
