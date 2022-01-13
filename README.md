@@ -2,8 +2,8 @@
 
 ### Contenidos
 [Materiales docentes](#materiales-docentes)  
-[Divulgación](#divulgacin)  
-[Investigación](#investigacin)  
+[Divulgación](#divulgación)  
+[Investigación](#investigación)  
 
 
 ### Materiales docentes
