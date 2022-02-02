@@ -12,4 +12,4 @@ Curso 2021/2022
 
 
 
-[Material de la asignatura 20/21](https://github.com/otsedom/CIU)
+[Códigos fuente de ejemplo de la asignatura utilizados en el curso 20/21](https://github.com/otsedom/CIU)
