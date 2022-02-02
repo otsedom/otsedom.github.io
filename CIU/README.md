@@ -10,6 +10,7 @@ Curso 2021/2022
 - [Práctica 1](P1/README.md)
 <!--- - ...  --->
 
+Esta obra está bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
 
 ***
 [Códigos fuente de ejemplo de la asignatura utilizados en el curso 20/21](https://github.com/otsedom/CIU)
