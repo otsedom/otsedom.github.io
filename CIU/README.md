@@ -6,11 +6,9 @@ Escuela de Ingeniería en Informática
 Grado de Ingeniería Informática  
 Curso 2021/2022
 
-<!--- OJO s://github.com/processing/p5.js-editor/blob/master/README.md p5js editor deprecated use Atom --->
-
 
 - [Práctica 1](P1/README.md)
-- ...
+<!--- - ...  --->
 
 
 
