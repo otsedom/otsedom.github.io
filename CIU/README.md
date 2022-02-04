@@ -1,15 +1,16 @@
 ## Guion de prácticas de Creando Interfaces de usuario (CIU)
 
-Modesto Castrillón Santana, Daniel Hernández Sosa
-Universidad de Las Palmas de Gran Canaria
-Escuela de Ingeniería en Informática
+Modesto Castrillón Santana, Daniel Hernández Sosa  
+Universidad de Las Palmas de Gran Canaria  
+Escuela de Ingeniería en Informática  
+Grado de Ingeniería Informática  
+Curso 2021/2022
 
-
-<!--- OJO s://github.com/processing/p5.js-editor/blob/master/README.md p5js editos deprecated use Atom>
 
 - [Práctica 1](P1/README.md)
-- ...
+<!--- - ...  --->
 
+Esta obra está bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
 
-
-[Material de la asignatura 20/21](https://github.com/otsedom/CIU)
+***
+[Códigos fuente de ejemplo de la asignatura utilizados en el curso 20/21](https://github.com/otsedom/CIU)
