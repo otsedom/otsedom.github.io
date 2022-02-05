@@ -207,8 +207,8 @@ Este mismo código en el editor p5.js parecerá no tener efecto, se debe a que e
 ```
 function setup() {
   background(128);
- stroke(255,255,255);
- rect(0,0,10,10);
+  stroke(255,255,255);
+  rect(0,0,10,10);
 }
 ```
 
@@ -513,13 +513,9 @@ line(600,1,600,height);
 line(700,1,700,height);
 ```
 
+![Verticales](./Verticales.png)  
+*Resultado del código que dibuja líneas verticales*
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.6\linewidth]{images/Verticales.png}
-  \caption{Ventana de visualización del listado~\ref{code:processing-lineasverticales}.}
-  \label{fig:verticales}
-\end{figure}
 
 Claramente las llamadas a la función *line* son todas muy similares, sólo varían las coordenadas *x* de los
 dos puntos. Los lenguajes de programación facilitan la especificación de llamadas repetidas por medio del uso de
@@ -550,12 +546,9 @@ El listado~\ref{code:processing-chess1}
 fija el fondo a blanco, dibujando los cuatro recuadros negros de la primera fila del tablero.
 
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.35\linewidth]{images/chessboard.jpeg}
-  \caption{Rejilla estilo tablero de ajedrez.}
-  \label{fig:tablero}
-\end{figure}
+![Tablero](./chessboard.jpeg)  
+*Rejilla estilo tablero de ajedrez*
+
 
 **Processing**
 ```
@@ -687,12 +680,10 @@ El modo continuo permite integrar interactividad en al ejecución de nuestro có
 - *draw()*  se ejecuta por defecto de forma continua, permitiendo la escritura de
 funciones personalizadas, y hacer uso de la interacción.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.45\linewidth]{images/lineascolores.png}
-  \caption{Ventana de visualización del listado~\ref{code:processing-lineasrandom}.}
-  \label{fig:lineascolores}
-\end{figure}
+
+![Random](./lineascolores.png)  
+*Línmeas con extremos y color aleatorio*
+
 
 Un primer ejemplño con ambos métodos tanto para Processing como p5.js
 
@@ -1148,12 +1139,9 @@ Una nueva modificación integra
  un *jugador*, que se desplaza en vertical acompañando al ratón, y
 también puede alterar el movimiento del círculo cuando haya choque.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.45\linewidth]{images/pelotayjugador.png}
-  \caption{Ventana de visualización del listado~\ref{code:processing-fronton}.}
-  \label{fig:pelotayjugador}
-\end{figure}
+  ![Campo](./pelotayjugador.png)  
+  *Pelota y jugador*
+
 
 **Processing**
 ```
@@ -1794,29 +1782,21 @@ void draw() {
 }
 ```
 
-POR REVISAR
 **p5.js**
 ```
+var pg;
 function setup() {
-  createCanvas(400, 400,WEBGL);
-  //Creamos lienzo
-  graphics= createGraphics(100 ,100) ;
-  graphics.background(255) ;
+  createCanvas(400, 400);
+  lienzo = createGraphics(100, 100);
+  lienzo.background(100);
 }
 
 function draw() {
-  background(220);
+  background(200);
 
-  //Dibuja círculos de color aleatorio en el segundo lienzo en base a la posición del ratón
-  graphics.fill( random (0,255) , random (0,255) , random (0,255) ) ;
-  graphics.ellipse (100*mouseX/width , 100*mouseY/height , 20 ) ;
-  //Rotación del cubo
-  rotateX(frameCount*0.03 ) ;
-  rotateY(frameCount*0.03 ) ;
-  rotateZ(frameCount*0.03 ) ;
-  //Asignamos textura al cubo
-  texture(graphics) ;
-  box (100) ;
+  lienzo.fill(random(0,255),random(0,255),random(0,255)) ;
+  lienzo.ellipse(100*mouseX/width,100*mouseY/height,20,20);
+  image(lienzo, 200, 200);
 }
 ```
 
@@ -1847,12 +1827,12 @@ void draw(){
 
   if (pos>=400 || pos<=0){
     mov=-mov;
-    sonido.play ( ) ;
+    sonido.play();
   }
 }
 ```
 
-Al trabajar en modo continuo, pueden presentarse efectos extraños durante la reproducción de sonido dependiendo de su duración, a menos que se lance el sonido a través de un hilo con el método *thread*, tal y como se muestra en el listado~\ref{code:processing-sonidolatencia}.
+Al trabajar en modo continuo, pueden presentarse efectos extraños durante la reproducción de sonido dependiendo de su duración, a menos que se lance el sonido a través de un hilo con el método *thread*, tal y como se muestra en el listado:
 
 **Processing**
 ```
@@ -1882,12 +1862,12 @@ void draw(){
 }
 
 void Suena( ) {  
-  sonido.play ( ) ;
+  sonido.play();
 }
 ```
 
 
-En p5.js, la reproducción de sonido requiere la precarga del contenido. El listado~\ref{code:p5js-sonido}, adapta el código del listado~\ref{code:processing-sonido} a p5.js.
+En p5.js, la reproducción de sonido requiere la precarga del contenido. El listado a continuación, muestra la adaptación del anterior a p5.js.
 
 **p5.js**
 ```
@@ -1937,7 +1917,7 @@ void draw()
 }
 ```
 
-Si interesara exportar a un archivo con formato gif animado, en versiones previas de Processing era necesario instalar *GifAnimation} a través del menú *Herramientas->Añadir herramientas* y buscando *gif* en la pestaña *Libraries*. Se incluye un pequeño ejemplo que salva lo que ocurra en pantalla hasta que pulsemos un botón del ratón. Para versiones más recientes suele ser necesario realizar la instalación manualmente, más información en este [enlace](https://github.com/extrapixel/gif-animation}{enlace\footnote{https://github.com/extrapixel/gif-animation).
+Si interesara exportar a un archivo con formato gif animado, en versiones previas de Processing era necesario instalar *GifAnimation* a través del menú *Herramientas->Añadir herramientas* y buscando *gif* en la pestaña *Libraries*. Se incluye un pequeño ejemplo que salva lo que ocurra en pantalla hasta que pulsemos un botón del ratón. Para versiones más recientes suele ser necesario realizar la instalación manualmente, más información en este [enlace](https://github.com/akiljohnson1/GifAnimation).
 
 **Processing**
 ```
