@@ -102,7 +102,6 @@ void setup() {
   star.vertex(-47, -15);
   star.vertex(-14, -20);
   star.endShape(CLOSE);
-
 }
 
 void draw() {
@@ -113,6 +112,8 @@ void draw() {
   shape(star);
 }
 ```
+
+Observar que al usar *beginShape* y *endShape*, los métodos para especificar las propiedades de color son  *fill*,  *stroke*,  *strokeWeight*. Según l.a documentación de Processing, tras la creación, únicamente puede utilizarse *setFill*.  
 
 p5js no dispone del comando *createShape* pero sí *beginShape* y *endShape*, una adaptación para dibujar la estrella la vemos en el siguiente listado, si bien recomendar el tutorial del [enlace](https://programmingdesignsystems.com/shape/custom-shapes/index.html) así como el [videotutorial](https://programmingdesignsystems.com/shape/custom-shapes/index.html) por The Coding Train:  
 
@@ -297,15 +298,15 @@ void draw() {
 
 
 Cuando la pareja *beginShape*-*endShape* no tiene argumentos, se asume una serie de vértices consecutivos que conforman una línea poligonal. La especificación de un parámetro a la hora de crear la forma permite indicar el tipo de elementos que definen los vértices a continuación:
-*POINTS*, *LINES*, *TRIANGLES*, *TRIANGLE_FAN$*, *TRIANGLE_STRIP$*,*QUADS*, o *QUAD_STRIP$* (más detalles en este [enlace](https://processing.org/reference/beginShape\_.html)):
+*POINTS*, *LINES*, *TRIANGLES*, *TRIANGLE_FAN*, *TRIANGLE_STRIP*,*QUADS*, o *QUAD_STRIP* (más detalles en este [enlace](https://processing.org/reference/beginShape\_.html)):
 
 - *beginShape*-*endShape(CLOSE)*: Cierra la línea poligonal, uniendo el último vértice con el primero, aplicando el color de relleno, como en el listado~\ref{code:processing-pira}.
 - *beginShape(POINTS)*-*endShape*: Cada vértice es un punto, no se conectan con líneas.
 - *beginShape(LINES)*-*endShape*:
 Cada dos puntos definen un segmento independiente.
 - *beginShape(TRIANGLES)*-*endShape*: Cada grupo de tres puntos define un triángulo, aplicando relleno.
-- *beginShape(TRIANGLE_STRIP*)*-*endShape*: Los triángulos no son independientes entre sí, cada nuevo vértice compone un triángulo con los últimos dos vértices del triángulo anterior. Aplica relleno.
-- *beginShape(TRIANGLE_FAN*)*-*endShape*: El primer vértice está compartido por todos los triángulos. Aplica relleno.
+- *beginShape(TRIANGLE_STRIP)*-*endShape*: Los triángulos no son independientes entre sí, cada nuevo vértice compone un triángulo con los últimos dos vértices del triángulo anterior. Aplica relleno.
+- *beginShape(TRIANGLE_FAN)*-*endShape*: El primer vértice está compartido por todos los triángulos. Aplica relleno.
 - *beginShape(QUADS)*-*endShape*: Cada cuatro puntos definen un polígono. Aplica relleno.
 - *beginShape(QUAD_STRIP*-*endShape*: Similar al antereios, si bien se reutilizan los dos últimos vértices del polígono anterior. Aplica relleno.
 
