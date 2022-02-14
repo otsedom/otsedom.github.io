@@ -304,8 +304,8 @@ Cuando la pareja *beginShape*-*endShape* no tiene argumentos, se asume una serie
 - *beginShape(LINES)*-*endShape*:
 Cada dos puntos definen un segmento independiente.
 - *beginShape(TRIANGLES)*-*endShape*: Cada grupo de tres puntos define un triángulo, aplicando relleno.
-- *beginShape(TRIANGLE_STRIP$)*-*endShape*: Los triángulos no son independientes entre sí, cada nuevo vértice compone un triángulo con los últimos dos vértices del triángulo anterior. Aplica relleno.
-- *beginShape(TRIANGLE_FAN$)*-*endShape*: El primer vértice está compartido por todos los triángulos. Aplica relleno.
+- *beginShape(TRIANGLE_STRIP*)*-*endShape*: Los triángulos no son independientes entre sí, cada nuevo vértice compone un triángulo con los últimos dos vértices del triángulo anterior. Aplica relleno.
+- *beginShape(TRIANGLE_FAN*)*-*endShape*: El primer vértice está compartido por todos los triángulos. Aplica relleno.
 - *beginShape(QUADS)*-*endShape*: Cada cuatro puntos definen un polígono. Aplica relleno.
 - *beginShape(QUAD_STRIP*-*endShape*: Similar al antereios, si bien se reutilizan los dos últimos vértices del polígono anterior. Aplica relleno.
 
