@@ -526,3 +526,6 @@ La entrega se debe realizar a través del campus virtual, remitiendo un enlace a
 - argumente decisiones adoptadas para la solución propuesta,
 - incluya referencias y herramientas utilizadas,
 - muestre el resultado con un gif animado.
+
+***
+Bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional

@@ -12,6 +12,9 @@
 [Referencias](#referencias)
 
 
+<!--- OJO s://github.com/processing/p5.js-editor/blob/master/README.md p5js editor deprecated use Atom --->
+
+
 ### 1.1. Introducción  
 
 [Processing](http://processing.org) es un proyecto de código abierto basado en el lenguaje Java, que tiene como objetivo facilitar cualquier desarrollo con fines creativos. Se concibe como un cuaderno de dibujo para estudiantes, artistas digitales o informáticos, programadores y diseñadores.
@@ -2000,3 +2003,8 @@ org/
 [Reas07] Casey Reas and Ben Fry. [Processing: a programming handbook for visual designers
 and artists](https://processing.org/img/learning/Processing-Sample-070607.pdf). MIT Press, 2007.  
 [Runberg15] Derek Runberg. The sparkfun guide to processing. Sparkfun, 201  
+
+
+
+***
+Bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
