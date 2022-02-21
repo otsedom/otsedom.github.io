@@ -619,7 +619,7 @@ void setup()
   fill(250,250,0);
   textAlign(CENTER,CENTER);
   textSize(MAX_TEXT_SIZE+MIN_TEXT_SIZE);
-*
+}
 
 void draw()
 {
@@ -629,7 +629,7 @@ void draw()
   text(STORY_TEXT,0,textYOffset);
   // Make the text slowly crawl up the screen
   textYOffset -= TEXT_SPEED;
-*
+}
 ```
 
 Para hacer algo similar con imágenes necesitamos hacer uso de variables de tipo *PImage*. El listado de ejemplo
@@ -644,7 +644,7 @@ void setup() {
   imageMode(CENTER);
   //Carga de la imagen
   img=loadImage("sample.png");
-*
+}
 
 void draw() {
   background(255);
@@ -655,7 +655,7 @@ void draw() {
   scale(3);
   //Muestra la imagen
   image(img,0,0);
-*
+}
 ```
 
 Como cierre del capítulo, que puede ser de utilidad para dar vistosidad a la tarea, se incluye el ejemplo básico, a partir de un listado previo,  de asignación de una textura a un objeto esfera:
@@ -680,7 +680,7 @@ void setup()
 
   //Inicializa
   ang=0;
-*
+}
 
 
 void draw()
@@ -697,7 +697,7 @@ void draw()
   ang=ang+0.25;
   if (ang>=360)
     ang=0;
-*
+}
 ```
 
 ![Platex](Platex.gif)  
