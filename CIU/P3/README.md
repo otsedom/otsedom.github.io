@@ -313,7 +313,7 @@ Mencionar que en Processing, el sistema de coordenadas se restaura a su estado o
 
 Las diferencias entre las transformaciones 2D y 3D no son excesivas, realmente para trabajar en tres dimensiones basta con pasar tres argumentos a las funciones de transformación, con la salvedad de que para las rotaciones haremos uso de las funciones *rotateX()*, *rotateY()*, o *rotateZ()*.
 
-A modo de ejemplo, el listado~\ref{code:processing-planeta* hace uso de una primitiva 3D, la esfera, para mostrarla levemente rotada permitiendo observar su  *polo norte*.
+A modo de ejemplo, el listado a continuación hace uso de una primitiva 3D, la esfera, para mostrarla levemente rotada permitiendo observar su  *polo norte*.
 
 **Processing** [p3_rectrotatepivote](https://github.com/otsedom/CIU/tree/master/P3/P3_rectrotatepivote)
 ```
