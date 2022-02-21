@@ -4,9 +4,9 @@
 
 [Transformación básicas 2D](#31-transformaciones-básica-2d)  
 [Concatenación de transformaciones](#32-concatenación-de-transformaciones)  
-[Transformaciones básicas 3D](#33-transformaciones-básicas-3d-de-revolución)  
+[Transformaciones básicas 3D](#33-transformaciones-básicas-3d)  
 [Objetos de archivo](#34-objetos-de-archivo)  
-[Texto e imágenes](35-texto-e-imágenes)  
+[Texto e imágenes](#35-texto-e-imágenes)  
 [Tarea](#36-tarea)  
 [Referencias](#referencias)
 
