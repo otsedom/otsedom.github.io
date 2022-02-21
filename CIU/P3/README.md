@@ -2,7 +2,7 @@
 
 ### Contenidos
 
-[Transformación básicas 2D](#31-transformaciones-básica-2d)  
+[Transformaciones básicas 2D](#31-transformaciones-básicas-2d)  
 [Concatenación de transformaciones](#32-concatenación-de-transformaciones)  
 [Transformaciones básicas 3D](#33-transformaciones-básicas-3d)  
 [Objetos de archivo](#34-objetos-de-archivo)  
@@ -13,7 +13,7 @@
 Desde esta práctica, la mayor parte de los listados de código Processing mostrados en el guion se proporcionan a través del
 [enlace github](https://github.com/otsedom/CIU) para facilitar su reproducibilidad, en cuyo caso se indica en la cabecera del listado indicando el nombre del proyecto Processing.
 
-### 3.1 Transformación básicas 2D
+### 3.1 Transformaciones básicas 2D
 
 En la práctica precedente se ha descrito la utilización de las variables tipo *PShape* para la definición de objetos arbitrarios. A la hora de dibujar, tanto si hacemos uso de primitivas disponibles (2D o 3D) o modelos creados con variables *PShape*, es posible modificar su posición, tamaño y pose haciendo uso de las funciones proporcionadas por Processing para su transformación.
 Son tres las transformaciones básicas disponibles:
