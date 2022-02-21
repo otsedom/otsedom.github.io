@@ -309,7 +309,7 @@ El ejemplo anterior utiliza *pushMatrix()* y *popMatrix()* para asegurarse de qu
 
 Mencionar que en Processing, el sistema de coordenadas se restaura a su estado original (de origen en la parte superior izquierda de la ventana, sin rotación ni escalado) cada vez que la función *draw()* se ejecuta. Si fuera necesario también es posible resetearla desde programa con la llamada a *resetMatrix*, e incluso mostrar la matriz actual con *printMatrix*.
 
-### 3.3  Transformaciones básicas 3D
+### 3.3 Transformaciones básicas 3D
 
 Las diferencias entre las transformaciones 2D y 3D no son excesivas, realmente para trabajar en tres dimensiones basta con pasar tres argumentos a las funciones de transformación, con la salvedad de que para las rotaciones haremos uso de las funciones *rotateX()*, *rotateY()*, o *rotateZ()*.
 
