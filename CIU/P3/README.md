@@ -315,9 +315,8 @@ Las diferencias entre las transformaciones 2D y 3D no son excesivas, realmente p
 
 A modo de ejemplo, el listado a continuación hace uso de una primitiva 3D, la esfera, para mostrarla levemente rotada permitiendo observar su  *polo norte*.
 
-**Processing** [p3_rectrotatepivote](https://github.com/otsedom/CIU/tree/master/P3/P3_rectrotatepivote)
+**Processing** [p3_planeta](https://github.com/otsedom/CIU/tree/master/P3/P3_planeta)
 ```
-\begin{lstlisting*[frame=single,caption={Dibujando una esfera levemente rotada (p3\_planeta)*,label=code:processing-planeta]
 void setup()
 {
   size(500,500,P3D);
