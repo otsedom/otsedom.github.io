@@ -8,7 +8,7 @@
 [Objetos de archivo](#34-objetos-de-archivo)  
 [Texto e imágenes](#35-texto-e-imágenes)  
 [Tarea](#36-tarea)  
-[Referencias](#referencias)
+<!--- [Referencias](#referencias) --->
 
 Desde esta práctica, la mayor parte de los listados de código Processing mostrados en el guion se proporcionan a través del
 [enlace github](https://github.com/otsedom/CIU) para facilitar su reproducibilidad, en cuyo caso se indica en la cabecera del listado indicando el nombre del proyecto Processing.
