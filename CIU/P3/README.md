@@ -52,7 +52,7 @@ rotate(radians(225));
 rect(0,0,100,100);
 ```
 
-![Recuadros](./recuadros.jpg)  
+![Recuadros](images/recuadros.jpg)  
 *Resultado del código previo*
 
 Si bien el método *translate* se ha utilizado en ejemplos previos, en este caso concreto se aplica en repetidas ocasiones, admitiendo dos o tres parámetros según si trabajamos con dos (P2D), como en este listado, o tres dimensiones (P3D).
@@ -91,7 +91,7 @@ rotate(radians(225));
 rect(0,0,100,100);
 ```
 
-![RecuadrosII](./recuadrospp.jpg)  
+![RecuadrosII](images/recuadrospp.jpg)  
 *Resultado del código previo*
 
 Con el objetivo de reforzar la comprensión de las matrices de transformación, las siguientes subsecciones dan más detalles sobre las transformaciones básicas.
@@ -369,7 +369,7 @@ void draw()
 }
 ```
 
-![Plane](Plane.gif)  
+![Planet](images/Plane.gif)  
 *Planeta copn autorrotación*
 
 Como añadido, el nuevo listado incluye además un *satélite* en órbita geoestacionaria:
@@ -408,7 +408,7 @@ void draw()
 }
 ```
 
-![Sat0](Sat0.gif)  
+![Sat0](images/Sat0.gif)  
 *Planeta y satélite en órbita geoestacionaria*
 
 Finalmente, un nuevo ejemplo muestra el código con el *satélite* sin una órbita geoestacionaria.
@@ -461,7 +461,7 @@ void draw()
 }
 ```
 
-![Sat1](Sat1.gif)  
+![Sat1](images/Sat1.gif)  
 *Planeta y satélite en órbita no geoestacionaria*
 
 En p5.js las transformaciones dse aplican de forma similar, si bien las funciones para manejo de matrices de transformación pasan a denominarse *push* y *pop*. El ejemplo anterior en código p5js:
@@ -552,7 +552,7 @@ void draw() {
 }
 ```
 
-![Obj](p3_obj.png)  
+![Obj](images/p3_obj.png)  
 *Visualizaciópn de un archivo obj*
 
 ### 3.5 Texto e imágenes
@@ -699,7 +699,7 @@ void draw()
 }
 ```
 
-![Platex](Platex.gif)  
+![Platex](images/Platex.gif)  
 *Planeta con textura*
 
 Para p5js la carga de imágenes, neecsaria por ejemplo para el uso de etxturas, requiere usar la función *preload*, que se llama antes de *setup*.
@@ -708,6 +708,8 @@ En el caso de utilizar el editor web, previamente debe subirse la imagen al proy
 ### 3.6 Tarea
 
 Crear un prototipo que muestre un sistema planetario en movimiento que incluya una estrella, al menos cinco planetas y alguna luna, integrando primitivas 3D, texto e imágenes (p.e. imagen de fondo). Se valorará que exista algún tipo de interacción. La propia distribucioón de Processing contiene un ejemplo que puede servirte de inspiración *Ejemplos-> Demos ->Graphics->Planets*.
+
+<!--- %https://www.openprocessing.org/sketch/138298 --->
 <!---%Además debe incluir una * nave espacial* cuya localización y orientación pueda modificarse de forma interactiva por medio del teclado/ratón. --->
 
 La entrega se debe realizar a través del campus virtual, remitiendo un enlace a un proyecto github, cuyo README sirva de memoria, por lo que se espera que el README:

@@ -38,7 +38,7 @@ Antes de comenzar a codificar, destacar que es posible acceder a diversos ejempl
 a través de la barra de menú *Archivo -> Ejemplos*. Cuando
 se ejecuta un programa, se abre en una nueva ventana denominada ventana de visualización (*display window*).
 
-![p5IDE](./processing-entorno.png)  
+![p5IDE](images/processing-entorno.png)  
 *Imagen del entorno de programación, PDE, de Processing 4.0 beta 2*
 
 Cada pieza de software escrito con Processing se denomina boceto o *sketch*. Se escribe a través del editor de texto, disponiendo de las funciones típicas
@@ -70,7 +70,7 @@ Trabajar con p5.js *offline* además de descargar la biblioteca, requiere un edi
 Abrir el editor de la web de p5.js, nos presenta un esqueleto de programación como en el que vemos en la siguiente figura, con las funciones *setup* y *draw*. En breve lo probaremos.
 
 
-![p5IDE](./p5js-editor.png)  
+![p5IDE](images/p5js-editor.png)  
 *Imagen del editor de p5.js*
 
 
@@ -103,7 +103,7 @@ function setup() {
 Para dibujar en pantalla, se debe tener en cuenta que se emplea el sistema de coordenadas cartesiano, como es habitual, teniendo su origen en la esquina superior izquierda. Esto quiere decir que para cualquier tamaño de ventana, la coordenada *(0,0)* se corresponde con la esquina superior izquierda como se ilustra en la
 figura:
 
-![Ejes](./Ejes.png)  
+![Ejes](images/Ejes.png)  
 *Coordenadas de pantalla*
 
 Processing también permite dibujar en tres dimensiones. En el plano imagen,
@@ -132,7 +132,7 @@ puede practicarse con el espacio de color RGB
 (rojo, verde y azul) modificando los valores de cada canal.
 RGB es el modelo de color por defecto, si bien puede adoptarse otro con la función *colormode*. El resultado de la ejecución de dicho código se muestra en la figura.
 
-![EjlLineas](./EjLineas.png)  
+![EjlLineas](images/EjLineas.png)  
 *Entorno con el código del ejemplo y su salida correspondiente*
 
 Recordar que el mismo código es correcto en p5.js, si bien debe estar contenido en la función *setup*.
@@ -297,7 +297,7 @@ function setup() {
 }
 ```
 
-![Ejes](./2Dprimitivas.png)  
+![Ejes](images/2Dprimitivas.png)  
 *Salida del ejemplo anterior*
 
 
@@ -320,7 +320,7 @@ line(width/2,height/2-10,width/2,height/2+10);
 line(width/2+10,height/2,width/2-10,height/2);
 ```
 
-![Ejes](./estrella.png)  
+![Ejes](images/estrella.png)  
 *Salida del ejemplo de uso de las variables width y height*
 
 Cada variable es básicamente un alias o símbolo que nos permite hacer uso de una zona de almacenamiento en memoria.
@@ -375,7 +375,7 @@ ellipse(210,100,Radio,Radio);
 #### 1.4.3 Tipos de datos
 
 Processing está basado en Java, por lo que debe asumirse cualquier característica de dicho lenguaje.
-Varios tipos de variables se muestran en el listado~\ref{code:processing-tiposdedatos}. Tener presente que las variables se deben declarar explícitamente y asignarles valor antes de llamar o de realizar una operación
+Varios tipos de variables se muestran en el listado más abajo. Tener presente que las variables se deben declarar explícitamente y asignarles valor antes de llamar o de realizar una operación
 con ellas.
 
 **Processing**
@@ -458,8 +458,7 @@ println( a );
 
 
 Processing incluye la clase *ArrayList* de Java, que no requiere conocer su tamaño desde el inicio. De esta forma se facilita añadir objetos
-a la lista, ya que el tamaño de la lista aumenta o decrece de forma automática, ver listado~\ref{code:processing-arraylist}.
-
+a la lista, ya que el tamaño de la lista aumenta o decrece de forma automática:
 **Processing**
 ```
 ArrayList lista = new ArrayList();
@@ -516,7 +515,7 @@ line(600,1,600,height);
 line(700,1,700,height);
 ```
 
-![Verticales](./Verticales.png)  
+![Verticales](images/Verticales.png)  
 *Resultado del código que dibuja líneas verticales*
 
 
@@ -545,12 +544,8 @@ Como saben, las sentencias repetitivas son particularmente útiles cuando las re
 
 Esta sección aborda el dibujo de un tablero de ajedrez, que contiene $64$ casillas, como
 muestra la figura~\ref{fig:tablero}.
-El listado~\ref{code:processing-chess1}
-fija el fondo a blanco, dibujando los cuatro recuadros negros de la primera fila del tablero.
-
-
-![Tablero](./chessboard.jpeg)  
-*Rejilla estilo tablero de ajedrez*
+El listado a continuación
+fija el fondo a blanco, dibujando los cuatro recuadros negros de la primera fila del tablero, dando el resultado de la figura.
 
 
 **Processing**
@@ -564,6 +559,9 @@ rect(200,0,100,100);
 rect(400,0,100,100);
 rect(600,0,100,100);
 ```
+
+![Tablero](images/chessboard.jpeg)  
+*Rejilla estilo tablero de ajedrez*
 
 Dado el patrón presente en las cuatro llamadas a la función *rect*, en este código se aplica un bucle *for* para pintar esas cuatro casillas negras de una forma más compacta
 
@@ -684,7 +682,7 @@ El modo continuo permite integrar interactividad en al ejecución de nuestro có
 funciones personalizadas, y hacer uso de la interacción.
 
 
-![Random](./lineascolores.png)  
+![Random](images/lineascolores.png)  
 *Línmeas con extremos y color aleatorio*
 
 
@@ -1142,8 +1140,8 @@ Una nueva modificación integra
  un *jugador*, que se desplaza en vertical acompañando al ratón, y
 también puede alterar el movimiento del círculo cuando haya choque.
 
-  ![Campo](./pelotayjugador.png)  
-  *Pelota y jugador*
+![Campo](images/pelotayjugador.png)  
+*Pelota y jugador*
 
 
 **Processing**
@@ -1571,7 +1569,7 @@ void mousePressed()
 
 Como puede verse, *mousePressed()* es una función enlazada a la acción de
 pulsar un botón del ratón. Siendo posible controlar también cuando
-se suelta, se mueve, o si se arrastra el ratón con un botón pulsado, ver listado~\ref{code:processing-arrastre}.
+se suelta, se mueve, o si se arrastra el ratón con un botón pulsado:
 
 **Processing**
 ```
@@ -1805,7 +1803,7 @@ function draw() {
 
 #### 1.5.5 Sonido
 
-De cara a la tarea planteada para esta práctica, describir el modo en que se realiza la reproducción de sonidos presentes en disco como se muestre en el listado~\ref{code:processing-sonido}.Sugerir como fuente de archivos en formato *wav* el [enlace](http://freewavesamples.com/). Tener en cuenta que será necesario instalar previamente la biblioteca de sonido de la *Processing Foundation* a través del menú *Herramientas->Añadir herramienta* y buscando *Sound* en la pestaña *Libraries*.
+De cara a la tarea planteada para esta práctica, describir el modo en que se realiza la reproducción de sonidos presentes en disco como se muestre en el listado siguiente.Sugerir como fuente de archivos en formato *wav* el [enlace](http://freewavesamples.com/). Tener en cuenta que será necesario instalar previamente la biblioteca de sonido de la *Processing Foundation* a través del menú *Herramientas->Añadir herramienta* y buscando *Sound* en la pestaña *Libraries*.
 
 **Processing**
 ```

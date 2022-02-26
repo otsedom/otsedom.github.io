@@ -6,7 +6,6 @@
 [P3D](#22-p3d)  
 [Sólido de revolución](#23-sólido-de-revolución)  
 [Tarea](#24-tarea)  
-[Referencias](#referencias)
 
 A partir de esta práctica, la mayor parte de los listados de código Processing mostrados en el guion se proporcionan también a través del
 [enlace github](https://github.com/otsedom/CIU) para facilitar su descarga y reproducibilidad. En caso de estar disponible, en la cabecera del listado se indica el nombre del proyecto Processing.
@@ -471,20 +470,17 @@ void draw() {
 ```
 
 
-
-
-
 ### 2.3 Sólido de revolución
 
 La creación de objetos 3D resulta engorrosa al ser necesario disponer de mecanismos para definir los vértices que delimitan el objeto en un escenario tridimensional, y esto debe hacerse sobre una pantalla bidimensional. Una posible simplificación del proceso viene dada a través de la creación de un objeto por medio de superficies de barrido o revolución. En ambos casos, se definen en primer lugar una serie de puntos, que conforman una línea poligonal que generalmente aproxima una curva plana, que bien por sucesivas traslaciones (barrido), o rotaciones (revolución), permiten definir la malla de un objeto tridimensional. De modo ilustrativo, la siguiente figura crea dos objetos utilizando el esquema de revolución, al definir sendos perfiles que se rotan un número determinado de veces, en este caso sobre el eje *y*, para crear el objeto a partir de la unión de  los sucesivos *meridianos* que conforman la malla del objeto.
 
-![Revol](./revols.png)  
+![Revol](images/revols.png)  
 *Creación de objetos con superficies de revolución*
 
 Si presentamos la malla resultante *planchada* sobre un plano, tendría el aspecto de una rejilla rectangular, ver figura izquierda, donde cada polígono o cara está delimitado por cuatro vértices. Habitualmente resulta más interesante trabajar con triángulos, que para la mencionada malla pueden crearse de forma sistemática subdividiendo cada polígono, ver figura derecha.
 
 
-![Malla](./malla.png)  
+![Malla](images/malla.png)  
 *Ilustración de malla antes y tras triangularizar*
 
 
@@ -492,20 +488,20 @@ Si presentamos la malla resultante *planchada* sobre un plano, tendría el aspec
 
 En dos dimensiones la rotación de un punto sobre el plano cartesiano se ilustra:
 
-![Rot2D](./Rot2D.png)  
+![Rot2D](images/Rot2D.png)  
 *Rotación 2D de un ángulo θ*
 
 Siguiendo la regla de la mano derecha, al rotar  el punto *p* con coordenadas *(x<sub>1</sub>,y<sub>1</sub>)* un ángulo *θ*, las coordenadas resultantes *(x<sub>2</sub>,y<sub>2</sub>)* tras la rotación serían:  
 
-![formula](./rot_1.png)
+![formula](images/rot_1.png)
 
 O su equivalente en forma matricial con premultiplicación:
 
-![formula](./rot_2.png)
+![formula](images/rot_2.png)
 
 Extensible de forma análoga a tres dimensiones, donde por simplicidad asumiremos una rotación de un punto alrededor del eje vertical *y*, de forma similar al ejemplo mostrado en la figura anterior. De esta forma, las coordenadas rotadas de un punto 3D rotado un ángulo *θ* sobre el eje *y* siguen las siguientes expresiones:
 
-![formula](rot_3.png)
+![formula](images/rot_3.png)
 
 Una vez que se ha definido el perfil de un sólido de revolución, la obtención de los vértices de dicho sólido requiere repetir, un determinado número de veces,
 la rotación de los puntos de dicho  perfil, para obtener los vértices 3D de la malla del objeto. Una correcta conexión de dichos vértices, permite visualizar el volumen del objeto sobre la pantalla.
@@ -514,8 +510,8 @@ la rotación de los puntos de dicho  perfil, para obtener los vértices 3D de la
 
 Crear un prototipo que recoja puntos de un perfil del sólido de revolución al hacer clic con el ratón sobre la pantalla. Dicho perfil será utilizado por el prototipo  para  crear un objeto tridimensional por medio de una superficie de revolución, almacenando la geometría resultante en una variable de tipo *PShape*, ver a modo de ilustración la figura. El prototipo permitirá crear sólidos de revolución de forma sucesiva, si bien únicamente se asumirá necesario almacenar el último definido.
 
-![Perfil](./revo_perfil.png)  
-![Final](./revo_final.png)  
+![Perfil](images/revo_perfil.png)  
+![Final](images/revo_final.png)  
 *Perfil y sólido de revolución resultante*
 
 La entrega se debe realizar a través del campus virtual, remitiendo un enlace a un proyecto github, cuyo README sirva de memoria, por lo que se espera que el README:

@@ -4,9 +4,8 @@
 
 [Proyecciones](#41-proyecciones)  
 [La cámara](#42-la-cámara)  
-[Oclusiones](#43-oclusión)  
+[Ocultación](#43-ocultación)  
 [Tarea](#44-tarea)  
-[Referencias](#referencias)
 
 
 La práctica anterior aborda los elementos necesarios para aplicar transformaciones 2D y 3D a objetos, texto e imágenes. El primer paso en la representación gráfica de una escena es justamente la aplicación de transformaciones a los modelos de los objetos presentes en ella. Una vez que los modelos han sido posicionados en el espacio tridimensional, procede localizar la o las cámaras, para finalmente proyectar los puntos al correspondiente plano de proyección en  dos dimensiones.
@@ -63,7 +62,7 @@ void mouseClicked() {
 En el *setup* se aplica la llamada a *ortho* para activar la proyección ortográfica de inicio. A través del control del evento de ratón, con el método *mouseClicked* se alternan las llamadas a *perspective* y la mencionada *ortho*.
 El resultado del código es que dibuja un cubo en el centro de la ventana de visualización, hasta donde se ha trasladado el origen de coordenadas, permitiendo cambiar el modo de proyección entre ortográfica y perspectiva al hacer clic con el ratón, como se aprecia en la animación:
 
-![OrtoPersp](orto_pers.gif)  
+![OrtoPersp](images/orto_pers.gif)  
 *Proyección ortográfica y perspectiva de un cubo centrado en el origen*
 
 
@@ -87,7 +86,7 @@ box(100);
 Los parámetros definidos
 tienen en cuenta las dimensiones de la ventana. En este ejemplo concreto, los valores coinciden justamente con los definidos por defecto, es decir asignados en la llamada a *ortho* sin parámetros.
 
-![Orto0](ortografica0.png)  
+![Orto0](images/ortografica0.png)  
 *Proyección ortográfica por defecto*
 
 
@@ -102,7 +101,7 @@ translate(width/2, height/2, 0);
 box(100);
 ```
 
-![Orto1](ortografica1.png)  
+![Orto1](images/ortografica1.png)  
 *Proyección ortográfica con connfiguración de los límites x e y no por defecto*
 
 En los ejemplos previos, sólo se aprecian dos dimensiones del objeto tridimensional, un cubo, dado que vemos únicamente una de las tapas.
@@ -133,7 +132,7 @@ void draw ()
 }
 ```
 
-![OrtoR](ortorotated.gif)  
+![OrtoR](images/ortorotated.gif)  
 *Proyección ortográfica con rotación dependiente del tiempo*
 
  Finalmente en el listado a continuación son dos las rotaciones aplicadas, con lo que se llegan a *ver* tres de las caras, si bien al ser un modelo de alambres persiste la ambigüedad.
@@ -163,7 +162,7 @@ void draw ()
 }
 ```
 
-![OrtoR2](ortorotated2.gif)  
+![OrtoR2](images/ortorotated2.gif)  
 *Proyección ortográfica con dos rotaciones, una dependiente del tiempo*
 
 #### 4.1.2 Perspectiva
@@ -229,7 +228,7 @@ void mouseClicked() {
 }
 ```
 
-![Pers1](perspective1.gif)  
+![Pers1](images/perspective1.gif)  
 *Proyección perspectiva variando ángulo de vista y relación de aspectos*
 
 Para la especificación de los planos de recorte en *z*, se asume al observador en *z=0* mirando hacia al lado positivo de *z*, por lo que ambos deben ser positivos. El listado siguiente mueve el cubo tras definir los planos de recorte en *z*, pudiendo observar el efecto de recorte en el objeto en el momento en que desaparece.
@@ -338,7 +337,7 @@ void keyPressed() {
 ```
  Con el evento de teclado, se procesan las teclas de cursores para modificar la posición de la cámara, si bien mantenemos hacia donde mira y la vertical, ver la figura.
 
-![Eye](cameraeye.gif)  
+![Eye](images/cameraeye.gif)  
 *Variación de las coordenadas de localización de la cámara*
 
 
@@ -396,7 +395,7 @@ void keyPressed() {
 
 y se ilustra en la siguiente figura.
 
-![Foco](camerafoco.gif)  
+![Foco](images/camerafoco.gif)  
 *Variación de las coordenadas de localización del foco de la cámara*
 
 
@@ -433,14 +432,14 @@ void draw ()
 }
 ```
 
-![Vert](cameravertical.gif)  
+![Vert](images/cameravertical.gif)  
 *Variación de la vertical de la cámara*
 
 El resultado será equivalente a rotar el cubo, dado que al no existir otros objetos en la escena, ni iluminación, no se aprecia la diferencia.
 
 Indicar finalmente que toda cámara puede configurar el modo de proyección que se le aplica a través de los modos de proyección mencionados en la sección [Proyecciones](#41-proyecciones).
 
-### 4.3 Oclusión
+### 4.3 Ocultación
 
 Processing aplica por defecto el algoritmo de ocultación *z-buffer* a la hora de representar objetos poligonales con relleno. Es una característica que reduce ambigüedad en la reproducción, aportando realismo. Sin embargo, es posible activar o desactivar su acción con la función *hint* pasando como argumento respectivamente *ENABLE_DEPTH_TEST* o *DISABLE_DEPTH_TEST* en cada caso. Por defecto la opción está activada para el modo de reproducción *P3D*.
 
@@ -480,7 +479,7 @@ box(100);
 
 Al desactivar el z-buffer,  se obtiene una imagen en la que se ven todas las aristas del cubo, una figura ambigua, como puede verse en la figura:
 
-![nozbuffer](p4_nooculta.png)  
+![nozbuffer](images/p4_nooculta.png)  
 *Resultado de no aplicar ocultación*
 
 La utilización del z-buffer permite resolver situaciones con múltiples objetos, manejando correctamente sus intersecciones. El siguiente código dibuja dos cubos que intersectan en el espacio, y el resultado de la ocultación permite tener una mejor referencia de su localización en el espacio tridimensional, ver la figura más abajo.
@@ -507,7 +506,7 @@ box(50);
 popMatrix();
 ```
 
-![nozbuffer](p4_oculta2.png)  
+![nozbuffer](images/p4_oculta2.png)  
 *Z-buffer aplicado con dos cubos*
 
 La desactivación del z-buffer, permite dibujar como un pintor, lo último dibujado siempre aparece *arriba*.
