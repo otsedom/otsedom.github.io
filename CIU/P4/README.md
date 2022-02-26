@@ -458,7 +458,7 @@ box(100);
 
 Se dibuja el cubo con las caras traseras ocultas.
 
-![zbuffer](p4_oculta.png)  
+![zbuffer](images/p4_oculta.png)  
 *Resultado de aplicar ocultación*
 
 El siguiente listado desactiva el z-buffer.
