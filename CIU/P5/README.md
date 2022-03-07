@@ -16,7 +16,7 @@ Un notorio paso en la mejora del realismo de una escena con objetos tridimension
 
 Como primer ejemplo básico, en el siguiente listado se activa la iluminación con su configuración por defecto al pulsar un botón del ratón, desactivándola al soltarlo.
 
-**Processing** [p5_ilubasico](https://github.com/otsedom/CIU/tree/master/P4/p5_ilubasico)
+**Processing** [p5_ilubasico](https://github.com/otsedom/CIU/tree/master/P5/p5_ilubasico)
 ```
 float ang;
 
@@ -74,7 +74,7 @@ Las modificaciones del modo por defecto deben integrarse en el método *draw*, y
 Para los ejemplos de configuración de la iluminación, adoptamos como objeto 3D la esfera que permite apreciar en mayor medida las posibilidades del comportamiento frente a la luz que un cubo, al ser un objeto con una superficie curvada. El listado mostrado a contnuación recuerda el modo de dibujar una esfera en el centro de la ventana, si bien en este caso se incrementa el nivel de detalle de la malla del objeto con la función
  *sphereDetail*, con el objetivo de obtener mejores resultados al iluminar. Observa las diferencias comentando dicha llamada.
 
- **Processing** [p5_esfera](https://github.com/otsedom/CIU/tree/master/P4/p5_esfera)
+ **Processing** [p5_esfera](https://github.com/otsedom/CIU/tree/master/P55p5_esfera)
 ```
 void setup()
 {
@@ -98,7 +98,7 @@ void draw ()
 La iluminación de ambiente no tiene definida dirección, e intenta simular la luz que llega a la superficie de los objetos por reflexión difusa de la luz tras rebotar en todos los elementos de la escena, aspecto no contemplado en el modelo de iluminación/reflexión que nos ocupa. La función admite tres o seis argumentos, los tres primeros definen el color, según del espacio de color activo, y los tres últimos localizan su posición. Con el objetivo de poder comparar, el siguiente listado muestra una escena con tres esferas desplazadas, iluminadas con las condiciones de iluminación establecidas por defecto, ver la figura justo a continuación para el resultado.  
 
 
-**Processing** [p5_lights1](https://github.com/otsedom/CIU/tree/master/P4/p5_lights1)
+**Processing** [p5_lights1](https://github.com/otsedom/CIU/tree/master/P5/p5_lights1)
 ```
 float ang;
 
@@ -150,7 +150,7 @@ void draw ()
 
 En un nuevo listado se muestra el efecto de configurar únicamentye la luz ambiental, como alternativa a la iluminación por defecto activada con la llamada a *lights*. En principio las esferas tienen iluminación por defecto, si bien al hacer clic se establece una intensidad ambiente rojiza, de mayor o menor intensidad dependiendo de la posición del puntero en *x*. La rotación de las esferas es prácticamente imperceptible.
 
-**Processing** [p5_lightsambient](https://github.com/otsedom/CIU/tree/master/P4/p5_lightsambient)
+**Processing** [p5_lightsambient](https://github.com/otsedom/CIU/tree/master/P5/p5_lightsambient)
 ```
 float ang;
 
@@ -207,7 +207,7 @@ void draw ()
 
 La función *directionalLight* define una luz direccional, es decir una fuente de luz que viene desde una dirección específica. Cualquier luz afectará a la superficie dependiendo del ángulo entre la normal a la superficie del objeto y la dirección de la fuente de luz. La función dispone de seis parámetros, definiendo en primer lugar el color de la fuente de luz en los tres primeros, y la dirección de la luz en los restantes. El siguiente listado, modifica el anterior estableciendo que al hacer clc con el ratón, además de la iluminación ambiental rojiza, una fuente de luz direccional, con mayor componente verde, que viene desde el lateral derecho hacia la izquierda.
 
-**Processing** [p5_lightsambientdir](https://github.com/otsedom/CIU/tree/master/P4/p5_lightsambientdir)
+**Processing** [p5_lightsambientdir](https://github.com/otsedom/CIU/tree/master/P5/p5_lightsambientdir)
 ```
 float ang;
 
@@ -265,7 +265,7 @@ void draw ()
 Las luces direccionales son luces localizadas en el infinito.
 Mayor flexibilidad la aporta la función *spotLight* que además de definir color y dirección, requiere parámetros para localizar la fuente de luz, el ángulo del cono de luz, y la concentración de la luz en dicho cono. El nuevo listado añade a la escena con iluminación no por defecto, una luz, que al mover el puntero llegará a provocar la presencia del reflejo sobre la superficie de la esfera.  
 
-**Processing** [p5_lightsspot](https://github.com/otsedom/CIU/tree/master/P4/p5_lightsspot)
+**Processing** [p5_lightsspot](https://github.com/otsedom/CIU/tree/master/P5/p5_lightsspot)
 ```
 float ang;
 
@@ -325,7 +325,7 @@ void draw ()
 
 Para luces no localizadas en el infinito, la función *pointLight* fija una luz con un cono de *180º*, simplificando la definición de luces localizadas, al requerir únicamente definir su color y posición, como se muestre en el siguiente código:
 
-**Processing** [p5_lightspoint](https://github.com/otsedom/CIU/tree/master/P4/p5_lightspoint)
+**Processing** [p5_lightspoint](https://github.com/otsedom/CIU/tree/master/P5/p5_lightspoint)
 ```
 float ang;
 
@@ -444,7 +444,7 @@ void draw ()
 
 El color de la luz con reflexión especular se fija con la función *lightSpecular* requiriendo los tres valores del espacio de color como parámetros. El siguiente listado en su configuración de iluminación no por defecto, al hacer clic define una luz puntual blanca posicionada con la posición del ratón, y establece el color del reflejo especular azul. Apreciar las diferencias cuando se activa y cuando no (pulsando cualquier tecla para intercambiar el modo).
 
-**Processing** [p5_lightspecular0](https://github.com/otsedom/CIU/tree/master/P4/p5_lightspecular0)
+**Processing** [p5_lightspecular0](https://github.com/otsedom/CIU/tree/master/P5/p5_lightspecular0)
 ```
 float ang;
 float modo;
@@ -517,7 +517,7 @@ void keyPressed() {
 El material del objeto también influye en la reflexión que se observa al incidir la luz sobre él. Para especificar características del material de un objeto están disponibles las funciones *ambient*, *emissive*, *specular* y *shininess* que configuran diversos aspectos de la respuesta a la iluminación ambiental (*ambient*) y reflexión (*specular* y *shininess*), mientras que *emissive* dará aspecto de emisor, si bien no afectará a otros objetos, pudiendo considerarse una iluminación ambiental a tope.
 El siguiente listado dibuja tres esferas, variando las características de la reflexión difusa y especular en cuatro vistas diferentes que se activan haciendo clic o con las teclas del cursor.
 
-**Processing** [p5_lightmaterial](https://github.com/otsedom/CIU/tree/master/P4/p5_lightmaterial)
+**Processing** [p5_lightmaterial](https://github.com/otsedom/CIU/tree/master/P5/p5_lightmaterial)
 ```
 float ang;
 int modo;
@@ -733,7 +733,7 @@ Para p5js, sugerir el [tutorial](https://www.youtube.com/watch?v=k2FguXvqp60) de
 
 En una práctica previa se describía la asignaci´çon de la textura a una esfera creada como *PShape* con la llamada a *settexture*. De forma general, pàra asociar uan textura a uan forma arbitrariase hace uso del método  *texture* que permite, a la hora de especificar cada uno de los vértices, establecer el mapeo de cada uno con respecto a las coordenadas *u* y *v* de la imagen de textura. Con *textureMode* (*IMAGE* o *NORMAL*) se especifica si se trabaja en coordenadas de la imagen o normalizadas *(0,1)*. El modo *NORMAL* evita tener claramente presentes las coordenadas de la imagen. Un ejemplo ilustrativo se muestra en el siguiente listado, que aplica una textura, el logo de la ULPGC, sobre una cara poligonal, compuesta por cuatro vértices. Si nuestra forma tuviera varias caras, tendrán que asociarse las coordenadas de la textura para cada cara poligonal. La llamada a la función *texture* debe estar entre *beginShape* y *endShape* para tener efecto.
 
-**Processing** [p5_textura](https://github.com/otsedom/CIU/tree/master/P4/p5_textura)
+**Processing** [p5_textura](https://github.com/otsedom/CIU/tree/master/P5/p5_textura)
 ```
 PImage img;
 
@@ -763,7 +763,7 @@ La función *textureWrap* permite establecer si la textura se aplica una única 
 
 
 
-**Processing** [p5_texturarepeat](https://github.com/otsedom/CIU/tree/master/P4/p5_texturarepeat)
+**Processing** [p5_texturarepeat](https://github.com/otsedom/CIU/tree/master/P5/p5_texturarepeat)
 ```
 PImage img;
 
@@ -792,7 +792,7 @@ void draw() {
 
 Haciendo uso de un *PGraphics*, podemos modificar la textura durante la ejecución, el listado a continuación, es similar al anterior, si bien añade líneas aleatorias progresivamente sobre la etxtura.
 
-**Processing** [p5_texturarepeatdynamic](https://github.com/otsedom/CIU/tree/master/P4/p5_texturarepeatdynamic)
+**Processing** [p5_texturarepeatdynamic](https://github.com/otsedom/CIU/tree/master/P5/p5_texturarepeatdynamic)
 ```
 PImage img;
 PGraphics mitex;
@@ -838,7 +838,7 @@ void addRandomLine(){
 Recuperando la textura básica, el nuevo listado se mapea la textura sobre una tira de triángulos, que exige probablemente una mayor concentración a la hora de asociar vértices y el mapa de textura, incluyendo la imagen resultante justo a continuación.
 
 
-**Processing** [p5_texturatrianglestrip](https://github.com/otsedom/CIU/tree/master/P4/p5_texturatrianglestrip)
+**Processing** [p5_texturatrianglestrip](https://github.com/otsedom/CIU/tree/master/P5/p5_texturatrianglestrip)
 ```
 PImage img;
 
@@ -874,7 +874,7 @@ Para objetos tridimensionales más complicados, el mapeo vértice a vértice es 
 
 <!--- https://github.com/processing/processing/issues/4378  problema setTexture--->
 
-**Processing** [p5_texturapshape](https://github.com/otsedom/CIU/tree/master/P4/p5_texturapshape)
+**Processing** [p5_texturapshape](https://github.com/otsedom/CIU/tree/master/P5/p5_texturapshape)
 ```
 PImage img;
 PShape globo;
@@ -918,7 +918,7 @@ void draw() {
 
 Un ejemplo final asocia como textura los fotogramas capturados por la cámara, podría hacerse también con los de un vídeo cargado de disco. El listado más abajo proyecta la imagen sobre un recuadro, vcomo se muestra en la figura posterior. Este ejemplo requiere tener instalada una webcam, y la biblioteca de vídeo basada en *GStreamer*, para más detalles consultar el guion de la práctica 6.
 
-**Processing** [p5_texturavid](https://github.com/otsedom/CIU/tree/master/P4/p5_texturavid)
+**Processing** [p5_texturavid](https://github.com/otsedom/CIU/tree/master/P5/p5_texturavid)
 ```
 import processing.video.*;
 
