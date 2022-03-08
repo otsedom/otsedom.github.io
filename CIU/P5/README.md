@@ -62,10 +62,10 @@ aspectos relativos a:
 
 Cuando se activa la iluminación, incluyendo la llamada a *lights* como en el ejemplo previo, se adopta la siguiente configuración de iluminación por defecto:
 
-- Luz ambiente, equivalente a la llamada  *ambientLight(128, 128, 128)}
-- Dirección de la luz, equivalente a la llamada  *directionalLight(128, 128, 128, 0, 0, -1)}
-- Decaimiento de la luz, equivalente a la llamada  *lightFalloff(1, 0, 0)}
-- Reflexión especular, equivalente a la llamada  *lightSpecular(0, 0, 0)}
+- Luz ambiente, equivalente a la llamada  *ambientLight(128, 128, 128)*
+- Dirección de la luz, equivalente a la llamada  *directionalLight(128, 128, 128, 0, 0, -1)*
+- Decaimiento de la luz, equivalente a la llamada  *lightFalloff(1, 0, 0)*
+- Reflexión especular, equivalente a la llamada  *lightSpecular(0, 0, 0)*
 
 Las modificaciones del modo por defecto deben integrarse en el método *draw*, ya que se resetea cualquier nueva configuración en cada nueva ejecución de dicha función. En los siguientes apartados se presentan opciones para evitar la configuración por defecto.
 
