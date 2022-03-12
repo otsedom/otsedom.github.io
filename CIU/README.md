@@ -12,9 +12,10 @@ Curso 2021/2022
 - [Práctica 3](P3/README.md)
 - [Práctica 4](P4/README.md)
 - [Práctica 5](P5/README.md)
+- [Práctica 6](P6/README.md)
 <!--- - ...  --->
 
 Esta obra está bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
 
 ***
-[Códigos fuente de ejemplo de la asignatura utilizados en el curso 20/21](https://github.com/otsedom/CIU)
+[Códigos fuente de ejemplos de la asignatura utilizados en el curso 20/21](https://github.com/otsedom/CIU)
