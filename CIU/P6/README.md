@@ -1078,6 +1078,11 @@ acceder al código con el enlace previo, es posiblesu acceso en modo [demo](http
 ![Macaronight](images/macaronight.png)  
 *QR de la demo p5js*
 
+La mencionada demo p5js no incluye aún modelos de [MediaPipe](https://google.github.io/mediapipe/), te recomiendo echar un vistazo a un [ejemplo p5js con la máscara facial](https://editor.p5js.org/lingdong/sketches/ef6FB-uNq).
+
+![MediapipeF](images/mediapipeface.png)  
+*Demo p5js malla facial*
+
 #### 6.4.2 Personas
 
 ##### 6.4.2.1 Kinect
@@ -1302,7 +1307,9 @@ La segunda versión del sensor proporciona mayor resolución y calidad tanto en 
 ##### 6.4.2.2 Esqueleto
 
 De nuevo basado en el [ejemplo de Bryan Chung para un único individuo](http://www.magicandlove.com/blog/2018/08/06/openpose-in-processing-and-opencv-dnn/), el listado siguiente aplica el detector basado en Openpose [CaoZ17] para determinar el esqueleto de una persona. En dicha referencia puedes además encontrar el enlace al modelo de *Caffe* necesario (en el listado se hace referencia al pesado *pose_iter_440000.caffemodel*), que no ha podido subirse al repositorio Github, y está disponible en el [enlace](http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel).
-Los requisitos computacionales suben significativamente, no habiendo probado su ejecución en un equipo con GPU.
+Los requisitos computacionales suben significativamente, contar con GPU se nota.
+
+
 
 **Processing** [p6_cam_openpose](https://github.com/otsedom/CIU/tree/master/P6/p6_cam_openpose)
 ```
@@ -1425,10 +1432,12 @@ public void draw() {
   }
 }
 ```
+![openpose](images/openpose.gif)  
+*Detección con Openpose*
 
 Inspirado en *FaceOSC* han surgido propuestas para acelerar el proceso, ejecutando el detector de pose externamente, y comunicando los datos de detección con OSC. No he localizado una versión de Openpose con OSC. Una opción alternativa es ejemplo para PoseNet es [PoseOSC](https://github.com/LingDong-/PoseOSC) desarrollado por Lingdong Huang. Su repositorio Github es una estupenda fuente de recursos. La versión de *PoseOSC* ejecutable en Windows está disponible en la sección *Releases* del Github, el código para Processing, en la carpeta *demos/PoseOSCProcessingReceiver*. Tras lanzar ambas aplicaciones, ver figura, la velocidad de detección es significativamente mayor, que en el ejemplo detectando directamente desde Processing. Tener en cuenta que para que el script de Processing reciba los datos, al estar configurado para xml en la aplicación *PoseOSC* debe especificarse *format XML* en lugar de *format ARR*.
 
-![Kazami](images/PoseOSC.png)  
+![PoseOSC](images/PoseOSC.png)  
 *Ejecución de PoseOSC y PoseOSCProcessingReceiver*
 
 <!--- %2021 Jonay Sánchez con PoseOSC no visible en github --->
@@ -1602,7 +1611,7 @@ Una vez finalizada la instalación pueden ejecutarse las aplicaciones con sus de
 
 
 
-![RealSense](images/p6_leapmotion.png)  
+![Leap](images/p6_leapmotion.png)  
 *Ejecución de LM_1_Basics*
 
 
@@ -1614,7 +1623,10 @@ aborda el reconocimiento de gestos realizados. En el  [enlace](http://michaelkip
 
 %https://www.linkedin.com/posts/hartwoolery_machinelearning-fingerdrum-ios-ugcPost-6595379443315937280-cCNc/ --->
 
+[MediaPipe](https://google.github.io/mediapipe/) ofrece l aposibilidad de no necesitar un sensor específoco, mira el [ejemplo p5js con detección de mano](https://editor.p5js.org/lingdong/sketches/1viPqbRMv).
 
+![MediapipeH](images/mediapipehands.png)  
+*Demo p5js detección mano*
 
 #### 6.5 Galería
 
@@ -1656,9 +1668,10 @@ Como cierre de este capítulo, esta sección incluye una breve selección de pro
 - [My little piece or privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy)  
 - [Starfield](https://www.creativeapplications.net/openframeworks/starfield-by-lab212-interactive-galaxy-the-swing-and-kinect/)  
 
-- [Face and hand tracking in the browser with MediaPipe and TensorFlow.js](https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html?m=1)  
+- Más información sobre Media pipe:   
+  - [Face and hand tracking in the browser with MediaPipe and TensorFlow.js](https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html?m=1)  
 
-- [Mediapipe Handpose and Facemesh Demos](https://github.com/LingDong-/handpose-demos)  
+  - [Mediapipe Handpose and Facemesh Demos](https://github.com/LingDong-/handpose-demos)  
 
 - [Funny Mirrors](https://www.learnopencv.com/funny-mirrors-using-opencv/?ck_subscriber_id=490036040)
 
