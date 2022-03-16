@@ -1078,7 +1078,7 @@ acceder al código con el enlace previo, es posiblesu acceso en modo [demo](http
 ![Macaronight](images/macaronight.png)  
 *QR de la demo p5js*
 
-La mencionada demo p5js no incluye aún modelos de [MediaPipe](https://google.github.io/mediapipe/), te recomiendo echar un vistazo a un [ejemplo p5js con la máscara facial](https://editor.p5js.org/lingdong/sketches/ef6FB-uNq).
+La mencionada demo p5js incluye un modelo de [MediaPipe](https://google.github.io/mediapipe/) para la máscara facialñ. Recomendar echar un vistazo al [ejemplo p5js base con la máscara facial](https://editor.p5js.org/lingdong/sketches/ef6FB-uNq).
 
 ![MediapipeF](images/mediapipeface.png)  
 *Demo p5js malla facial*
