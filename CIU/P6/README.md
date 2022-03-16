@@ -379,7 +379,7 @@ La detección de contornos o bordes es un proceso habitual sobre imágenes, evid
 
 
 
-**Processing** [p6_icamcanny(https://github.com/otsedom/CIU/tree/master/P6/p6_camcanny)
+**Processing** [p6_icamcanny](https://github.com/otsedom/CIU/tree/master/P6/p6_camcanny)
 ```
 import processing.video.*;
 import cvimage.*;
@@ -463,7 +463,7 @@ void  cpMat2CVImage(Mat in_mat,CVImage out_img)
 El ejemplo anterior sólo utiliza dos tonos, negro o blanco.
 Una gradación del resultado de los contornos se obtiene como resultado del código del listado que sigue, que a partir de los gradientes en *x* e *y*, obtenidos con la función *Sobel*, estima el valor total. El resultado, al ser degradado, da sensación de mayor estabilidad. Con respecto a los ejemplos previos, se modifica el procesamiento realizado, el bloque es similar.
 
-**Processing** [p6_camsobel)w](https://github.com/otsedom/CIU/tree/master/P6/p6_camsobel))
+**Processing** [p6_camsobel](https://github.com/otsedom/CIU/tree/master/P6/p6_camsobel)
 ```
 import processing.video.*;
 import cvimage.*;
@@ -565,7 +565,7 @@ Para una cámara fija, el siguiente listado utiliza la función *absdiff* para o
 
 
 
-**Processing** [p6_icamdiff(https://github.com/otsedom/CIU/tree/master/P6/p6_camdiff)
+**Processing** [p6_icamdiff](https://github.com/otsedom/CIU/tree/master/P6/p6_camdiff)
 ```
 import processing.video.*;
 import cvimage.*;
@@ -1078,11 +1078,6 @@ acceder al código con el enlace previo, es posiblesu acceso en modo [demo](http
 ![Macaronight](images/macaronight.png)  
 *QR de la demo p5js*
 
-La mencionada demo p5js incluye un modelo de [MediaPipe](https://google.github.io/mediapipe/) para la máscara facialñ. Recomendar echar un vistazo al [ejemplo p5js base con la máscara facial](https://editor.p5js.org/lingdong/sketches/ef6FB-uNq).
-
-![MediapipeF](images/mediapipeface.png)  
-*Demo p5js malla facial*
-
 #### 6.4.2 Personas
 
 ##### 6.4.2.1 Kinect
@@ -1307,9 +1302,7 @@ La segunda versión del sensor proporciona mayor resolución y calidad tanto en 
 ##### 6.4.2.2 Esqueleto
 
 De nuevo basado en el [ejemplo de Bryan Chung para un único individuo](http://www.magicandlove.com/blog/2018/08/06/openpose-in-processing-and-opencv-dnn/), el listado siguiente aplica el detector basado en Openpose [CaoZ17] para determinar el esqueleto de una persona. En dicha referencia puedes además encontrar el enlace al modelo de *Caffe* necesario (en el listado se hace referencia al pesado *pose_iter_440000.caffemodel*), que no ha podido subirse al repositorio Github, y está disponible en el [enlace](http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel).
-Los requisitos computacionales suben significativamente, contar con GPU se nota.
-
-
+Los requisitos computacionales suben significativamente, no habiendo probado su ejecución en un equipo con GPU.
 
 **Processing** [p6_cam_openpose](https://github.com/otsedom/CIU/tree/master/P6/p6_cam_openpose)
 ```
@@ -1432,12 +1425,10 @@ public void draw() {
   }
 }
 ```
-![openpose](images/openpose.gif)  
-*Detección con Openpose*
 
-Inspirado en *FaceOSC* han surgido propuestas para acelerar el proceso, ejecutando el detector de pose externamente, y comunicando los datos de detección con OSC. No he localizado una versión de Openpose con OSC. Una opción alternativa es ejemplo para PoseNet es [PoseOSC](https://github.com/LingDong-/PoseOSC) desarrollado por Lingdong Huang. Su repositorio Github es una estupenda fuente de recursos. La versión de *PoseOSC* ejecutable en Windows está disponible en la sección *Releases* del Github, el código para Processing, en la carpeta *demos/PoseOSCProcessingReceiver*. Tras lanzar ambas aplicaciones, ver figura, la velocidad de detección es significativamente mayor, que en el ejemplo detectando directamente desde Processing. Tener en cuenta que para que el script de Processing reciba los datos, al estar configurado para xml en la aplicación *PoseOSC* debe especificarse *format XML* en lugar de *format ARR*.
+Inspirado en *FaceOSC* han surgido propuestas para acelerar el proceso, ejecutando el detector de pose externamente, y comunicando los datos de detección con OSC. No he localizado una versión de Openpose con OSC. Una opción alternativa es ejemplo para PoseNet es [PoseOSC](https://github.com/LingDong-/PoseOSC) desarrollado por Lingdong Huang. Su repositorio Github es una estupenda fuente de recursos. La versión de *PoseOSC* ejecutable en Windows está disponible en la sección *Releases* del Github, el código para Processing, en la carpeta *demos/PoseOSCProcessingReceiver*. Tras lanzar ambas aplicaciones, ver figura, la velocidad de detección es significativamente mayor, que en el ejemplo detectando directamente desde Processing. Tener en cuenta que para que el escript e Processing reciba los datos, al estar configurado para xml en la aplicación *PoseOSC* debe especificarse *format XML* en lugar de *format ARR*.
 
-![PoseOSC](images/PoseOSC.png)  
+![Kazami](images/PoseOSC.png)  
 *Ejecución de PoseOSC y PoseOSCProcessingReceiver*
 
 <!--- %2021 Jonay Sánchez con PoseOSC no visible en github --->
@@ -1611,7 +1602,7 @@ Una vez finalizada la instalación pueden ejecutarse las aplicaciones con sus de
 
 
 
-![Leap](images/p6_leapmotion.png)  
+![RealSense](images/p6_leapmotion.png)  
 *Ejecución de LM_1_Basics*
 
 
@@ -1623,13 +1614,11 @@ aborda el reconocimiento de gestos realizados. En el  [enlace](http://michaelkip
 
 %https://www.linkedin.com/posts/hartwoolery_machinelearning-fingerdrum-ios-ugcPost-6595379443315937280-cCNc/ --->
 
-[MediaPipe](https://google.github.io/mediapipe/) ofrece l aposibilidad de no necesitar un sensor específoco, mira el [ejemplo p5js con detección de mano](https://editor.p5js.org/lingdong/sketches/1viPqbRMv).
 
-![MediapipeH](images/mediapipehands.png)  
-*Demo p5js detección mano*
 
 #### 6.5 Galería
 
+<!--- https://handsfree.js.org/#installing --->
 
 No dejar de citar algunas referencias para integrar otros dispositivos y elementos:
 
@@ -1639,17 +1628,11 @@ No dejar de citar algunas referencias para integrar otros dispositivos y element
 
 - Sugerir la visita al repositorio que integra [OpenFace con un cliente OSC](https://github.com/yurikleb/OpenFace).  
 
-De cursos anteriores
-
-- La propuesta de un compañero de CIU del curso 2021 que integra algunas modelos DNN preentrenados *[Leopoldo López(https://github.com/qwerteleven/CIU_prototipo_video) demo con DNN*
-
-![Leopoldo](https://github.com/qwerteleven/CIU_prototipo_video/blob/main/animation.gif)  
-
-- [Fruit Samurai](https://github.com/mariofdezzz/fruit-samurai) 20/21 integrando p5js con Mediapipe
-
 Como cierre de este capítulo, esta sección incluye una breve selección de propuestas que utilizan de imágenes para interacción:
 
+- La propuesta de un compañero de CIU del curso 2021 que integra algunas modelos DNN preentrenados *[Leopoldo Lópe](https://github.com/qwerteleven/CIU_prototipo_video) demo con DNN*
 
+![Leopoldo](https://github.com/qwerteleven/CIU_prototipo_video/blob/main/animation.gif)  
 
 - [Discrete figures](https://www.agolpedeefecto.com/teatro_2018/teatro-discrete-figures.html)  <!---  %https://youtu.be/hauXQQhwbgM  --->  
 - [Más que la cara](https://medium.com/@zachlieberman/más-que-la-cara-overview-48331a0202c0). Pueden interesar los filtros que muestra en su perfil de [instagram](https://www.instagram.com/zach.lieberman).  
@@ -1668,10 +1651,9 @@ Como cierre de este capítulo, esta sección incluye una breve selección de pro
 - [My little piece or privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy)  
 - [Starfield](https://www.creativeapplications.net/openframeworks/starfield-by-lab212-interactive-galaxy-the-swing-and-kinect/)  
 
-- Más información sobre Media pipe:   
-  - [Face and hand tracking in the browser with MediaPipe and TensorFlow.js](https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html?m=1)  
+- [Face and hand tracking in the browser with MediaPipe and TensorFlow.js](https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html?m=1)  
 
-  - [Mediapipe Handpose and Facemesh Demos](https://github.com/LingDong-/handpose-demos)  
+- [Mediapipe Handpose and Facemesh Demos](https://github.com/LingDong-/handpose-demos)  
 
 - [Funny Mirrors](https://www.learnopencv.com/funny-mirrors-using-opencv/?ck_subscriber_id=490036040)
 
@@ -1703,8 +1685,8 @@ La entrega se debe realizar a través del campus virtual, remitiendo un enlace a
 
 ### Referencias
 
-[Cao17] Zhe Cao and Tomas Simon and Shih-En Wei and Yaser Sheik. Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields. CVPR, 2017.  
-[Castrillon11] Modesto Castrillón, Oscar Déniz,DanielHernández, and Javier Lorenzo. A comparison of face  and facial feature detectors based on the violajones general object detection framework. Machine Vision and Applications,2011.   
+[Cao17] Zhe Cao and Tomas Simon and Shih-En Wei and Yaser Sheik. Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields. CVPR, 2017.
+[Castrillon11] Modesto Castrillón, Oscar Déniz,DanielHernández, and Javier Lorenzo. A comparison of face  and facial feature detectors based on the violajones general object detection framework. Machine Vision and Applications,2011.  
 [Lienhart02] Rainer Lienhart and Jochen Maydt. An extended set of Haar-like features for rapid object detection. ICIP 2002  
 [Szeliski22] Richard Szeliski. Computer Vision: Algorithms and Applications, 2nd ed., 2022  
 [Viola04] Paul Viola and Michael J. Jones. Robust real-time face detection. International Journal of Computer Vision, 2004  
