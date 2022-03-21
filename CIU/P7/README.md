@@ -606,7 +606,7 @@ void stop()
 ![Minim](images/p7_minimaudiovis.png)  
 *Onda de entrada*
 
-*Minim* permite también ofrece la posibilidad de grabar la señal de entrada. El nuevo listado se basa en el ejemplo *Basics->RecordAudioInput* de la biblioteca que además de visualizar la señal, permite definir el intervalo de grabación, y salvar la señal capturada (una única vez), por medio de una variable de tipo *ÁudioRecorder*.
+*Minim* también ofrece la posibilidad de grabar la señal de entrada. El nuevo listado se basa en el ejemplo *Basics->RecordAudioInput* de la biblioteca que además de visualizar la señal, permite definir el intervalo de grabación, y salvar la señal capturada (una única vez), por medio de una variable de tipo *ÁudioRecorder*.
 
 
 *Processing* [p7_minim_audiovis_record](https://github.com/otsedom/CIU/tree/master/P7/p7_minim_audiovis_record)
@@ -989,12 +989,15 @@ void mousePressed() {
 
 ### 7.4 Galería
 
-En la práctica anterior, se utilizaba OSC (Open Sound Control) para intercambiar información entre las aplicaciones FaceOSC y PoiseOSC con Processing. Para más información sobre su uso en el intercambio de mensajes entre dispositivos en Processing sugerir este [enlace](http://artandtech.aalto.fi/?page_id=550)
+Algunos enlaces de interés:
 
 <!---
 %Ejemplo DrmMachine
  --->
 - Otra interesante biblioteca para Processing es [SoundCipher](http://explodingart.com/soundcipher/), que requiere la descarga manual. Recomendar como primer ejemplo UnlimitedArt  
+- En la práctica anterior, se utilizaba OSC (Open Sound Control) para intercambiar información entre las aplicaciones FaceOSC y PoiseOSC con Processing. Para más información sobre su uso en el intercambio de mensajes entre dispositivos en Processing sugerir este [enlace](http://artandtech.aalto.fi/?page_id=550)
+
+
 
 - Un mezclador de pistas, [SoundMixer](https://github.com/YoneHernandezLeon/SoundMixer), fue una d elas propuestas del curso 20/21
 
@@ -1006,8 +1009,7 @@ En la práctica anterior, se utilizaba OSC (Open Sound Control) para intercambia
 
 Una breve selección de utilización de propuestas con audio más elaboradas:
 
-- [Playtronica](https://playtronica.com/studio)
-
+- [Playtronica](https://playtronica.com/studio
 
 
 - [Algo-Rhythm](https://www.youtube.com/watch?v=6fB4K5fcOzo&feature=youtu.be)  
