@@ -261,7 +261,7 @@ void keyPressed() {
 }
 ```
 
-Sugerir ejecutyar también el siguiente ejemplo de la biblioteca *sound*: *Ejemplos->Sound->Oscillators->OscillatorSpectrum*.
+Sugerir ejecutar también el siguiente ejemplo de la biblioteca *sound*: *Ejemplos->Sound->Oscillators->OscillatorSpectrum*.
 
 La combinación de osciladores básicos permite obtener ondas sonoras de mayor complejidad. En un nuevo listado se combinan hasta cinco osciladores sinusoidales. A partir de la primera frecuencia, mapeada con la posición en *x* del puntero, se incorporan con las teclas del cursor osciladores que doblan frecuencia, reduciendo la amplitud a la mitad.
 
