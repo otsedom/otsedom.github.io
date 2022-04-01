@@ -71,9 +71,9 @@ Un programa en Arduino se denomina *sketch} (bosquejo, esquema), y consta de dos
 - *setup()* de inicialización, que se ejecuta una única vez al lanzar el programa  
 - *loop()* de procesamiento, que se ejecuta por defecto de forma repetitiva.
 
-El ejemplo del listado a continuación puede considerarse el "Hola Mundo" de Arduino. El código cambia el estado del LED integrado en la tarjeta alternativamente entre niveles alto y bajo, consiguiendo un efecto de parpadeo con un periodo de un segundo.
+El ejemplo del listado que se muestra a continuación puede considerarse el "Hola Mundo" de Arduino. El código cambia el estado del LED integrado en la tarjeta alternativamente entre niveles alto y bajo, consiguiendo un efecto de parpadeo con un periodo de un segundo.
 
-*Processing* [p7_minim_instrumento](https://github.com/otsedom/CIU/tree/master/P7/p7_minim_instrumento)
+
 ```
 /*
   This example code is in the public domain.
@@ -115,7 +115,6 @@ En determinadas aplicaciones en las que un programa debe responder con rapidez a
 
 En el ejemplo del listado a continuación se configura una función como rutina de servicio para atender el cambio de estado de un pin de entrada de la tarjeta.
 
-*Processing* [p7_minim_instrumento](https://github.com/otsedom/CIU/tree/master/P7/p7_minim_instrumento)
 ```
 const byte ledPin = 13;
 const byte interruptPin = 2;
@@ -143,7 +142,7 @@ Operaciones matemáticas básicas:
 - *abs()*
 - *constrain()*
 - *map()*
-- *max(), *min()*
+- *max()*, *min()*
 - *pow()}*, *sq()*, *sqrt()*
 
 Trigonometría:
