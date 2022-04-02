@@ -174,9 +174,9 @@ En Arduino se puede acceder a un generador de números aleatorios a través de l
 
 ### 8.4 Algunas fuentes adicionales
 
-- [Arduino motor party] ~\cite{cmuart}
-- [Openframeworks and arduino]~\cite{ofard}
-- [IoT]~\cite{mone}}
+- [Arduino motor party](http://cmuems.com/2018/60212f/daily-notes/oct-12/arduino/)
+- [Openframeworks and arduino](http://openframeworks.cc/documentation/communication/ofArduino/)
+- [IoT Devices, Sensors, and Actuators Explained](https://blog.leanix.net/en/iot-devices-sensors-and-actuators-explained)
 
 
 ### 8.5 Tarea

@@ -186,10 +186,11 @@ void draw() {
 
 ### 9.4 Algunas fuentes y ejemplos
 
+- [Real Time Face Detection and Tracking Robot using Arduino](https://forum.processing.org/two/discussion/23461/real-time-face-detection-and-tracking-robot-using-arduino)
+- [Electronics by Hernando Barragán and Casey Reas](https://processing.org/tutorials/electronics/)
+- [Arduino and Processing](https://playground.arduino.cc/Interfacing/Processing/)
+- [Connecting Arduino to Processing](https://learn.sparkfun.com/tutorials/connecting-arduino-to-processing)
 
-- *Face tracking and Arduino~\cite{rtfdua,barragan}}
-
-- *Arduino and Processing~\cite{ardpro,ben}}
 
 
 ### 9.5 Tarea
