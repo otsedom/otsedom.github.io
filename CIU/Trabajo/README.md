@@ -22,18 +22,18 @@ La entrega definitiva se realizará a través del campus virtual con límite má
 A través del archivo comprimido entregado, se hará accesible al equipo docente al menos los siguientes elementos:  
 
 - Memoria (25% nota final del trabajo), conteniendo:
- - Motivación/argumentación de la propuesta
- - Descripción técnica del trabajo realizado
- - Fuentes y tecnologías utilizadas
- - Diario de actividades semanales llevadas a cabo por el grupo, hitos, decisiones adoptadas durante el desarrollo del proyecto
- - Tareas realizadas y porcentaje de participación de cada integrante
- - Enlace al código que permita su descarga y ejecución por parte del equipo docente
- - Conclusiones y propuesta de ampliación
- - Indicación de herramientas/tecnologías con las que les hubiera gustado contar
- - Créditos materiales no originales del grupo
+   - Motivación/argumentación de la propuesta
+   - Descripción técnica del trabajo realizado
+   - Fuentes y tecnologías utilizadas
+   - Diario de actividades semanales llevadas a cabo por el grupo, hitos, decisiones adoptadas durante el desarrollo del proyecto
+   - Tareas realizadas y porcentaje de participación de cada integrante
+   - Enlace al código que permita su descarga y ejecución por parte del equipo docente
+   - Conclusiones y propuesta de ampliación
+   - Indicación de herramientas/tecnologías con las que les hubiera gustado contar
+   - Créditos materiales no originales del grupo
 -	Vídeo teaser (15% nota final del trabajo) Limitar a 2’
- - Identificando autores
- - Créditos de herramientas y material utilizado
+  - Identificando autores
+  - Créditos de herramientas y material utilizado
 - Presentaciones: Tanto las preliminares (10 % nota final del trabajo) como la presentación final (10% nota final del trabajo)
 
 NOTA: Cualquier estudiante que no haya superado la parte práctica de la asignatura, debe realizar la entrega y defensa de las prácticas con al menos una semana de antelación a la fecha de convocatoria.
