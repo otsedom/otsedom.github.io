@@ -16,6 +16,8 @@ Curso 2021/2022
 - [Práctica 7](P7/README.md)
 - [Práctica 8](P8/README.md)
 - [Práctica 9](P9/README.md)
+- [Práctica 10](P10/README.md)
+- [Trabajo](Trabajo/README.md)
 <!--- - ...  --->
 
 Esta obra está bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
