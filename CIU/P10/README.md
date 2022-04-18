@@ -17,8 +17,8 @@
 
 ### 10.1 Introducción
 
-Un *shader* se define como una pieza de código que se ejecuta sobre un conjunto de píxeles de forma simultánea, y diferente para cada píxel. En muchos casos dicha ejecución aprovecha las capacidades de la GPU. Un *shader* ofrece la posibilidad de manipular la imagen de salida antes de mostrarla en pantalla, permitiendo aplicar efectos de reproducción (*rendering*), modificando dicha imagen resultante según nuestras intenciones.
-En [The Book of Shaders](https://thebookofshaders.com), se sugiere la analogía con la invención de la imprenta moderna, que supuso un extraordinario incremento de velocidad a la hora de producir documentos.
+Un *shader* se define como una pieza de código que se ejecuta sobre un conjunto de píxeles de forma simultánea, e independiente para cada píxel. En muchos casos dicha ejecución aprovecha las capacidades de la GPU. Un *shader* ofrece la posibilidad de manipular la imagen de salida antes de mostrarla en pantalla, permitiendo aplicar efectos de reproducción (*rendering*), modificando la imagen resultante según nuestras intenciones.
+En [The Book of Shaders](https://thebookofshaders.com) [Gon21], se sugiere la analogía con la invención de la imprenta moderna, que supuso un extraordinario incremento de velocidad a la hora de producir documentos.
 
 En un primer momento, los *shaders* fueron concebidos para desarrollar modelos de iluminación y  sombreado, por ello su nombre *shader*, si bien en la actualidad se aplican sobre todas las etapas de reproducción, distinguiéndose, los siguientes tipos:
 
@@ -42,17 +42,17 @@ En un primer momento, los *shaders* fueron concebidos para desarrollar modelos d
 
 Entre los diversos lenguajes  utilizados para el desarrollo de *shaders* (HLSL, GLSL, Cg) este guion se limita a GLSL por su vinculación con OpenGL.
 Processing, nuestro campo de juego, dispone de la clase *PShader* cubriendo las etapas de fragmentos y vértices.
-Las secciones a continuación se basan en los materiales sde referencia de [Patricio Gonzalez Vivo y Jen Lowe](https://thebookofshaders.com), y de [Andrés Colubri](https://codeanticode.github.io/curso-shaders/). La primera de ellas, *The Book of Shaders*[Gon21], declara ser *una guía paso a paso a través del abstracto y complejo universo de los Fragment Shaders* con pautas para Three.js, Processing u openFrameworks. La segunda de ellas es el tutorial de Processing para el desarrollo de *shaders*.
+Las secciones a continuación se basan en los materiales sde referencia de [Patricio Gonzalez Vivo y Jen Lowe](https://thebookofshaders.com), y de [Andrés Colubri](https://codeanticode.github.io/curso-shaders/). La primera de ellas, *The Book of Shaders* [Gon21], declara ser *una guía paso a paso a través del abstracto y complejo universo de los Fragment Shaders* con pautas para Three.js, Processing u openFrameworks. La segunda de ellas es el antiguo (hasta v3) tutorial de Processing para el desarrollo de *shaders*.
 
 Señalar que Processing distingue tres clases de shaders: *POINT*, *LINE* y *TRIANGLE*. Los dos primeros permiten alterar el modo de dibujar puntos y líneas, mientras que el tercer tipo se concibe para cualquier otro elemento gráfico, básicamente polígonos. Estos últimos al permitir combinar luces y texturas, dan lugar e cuatro combinaciones según lo que esté presente en el proceso de reproducción. Por ese motivo Processing habla de un total de seis grupos diferentes de *shaders*. Añadir que Processing realiza una autodetección del tipo de *shader* a partir del código, si bien se puede sobreescribir desde programa por medio de una directiva *#define* con una de las siguientes seis posibilidades:
 
 
-- *#define PROCESSING_POINT_SHAder*: *Shader* de puntos
-- *#define PROCESSING_LINE_SHAder*: *Shader* de líneas
-- *#define PROCESSING_COLOR_SHAder*: *Shader* de triángulos sin textura ni luces
-- *#define PROCESSING_LIGHT_SHAder*: *Shader* de triángulos con luces
-- *#define PROCESSING_TEXTURE_SHAder*: *Shader* de triángulos con textura
-- *#define PROCESSING_TEXLIGHT_SHAder*: *Shader* de triángulos con textura y luces
+- *#define PROCESSING_POINT_SHADER*: *Shader* de puntos
+- *#define PROCESSING_LINE_SHADER*: *Shader* de líneas
+- *#define PROCESSING_COLOR_SHADER*: *Shader* de triángulos sin textura ni luces
+- *#define PROCESSING_LIGHT_SHADER*: *Shader* de triángulos con luces
+- *#define PROCESSING_TEXTURE_SHADER*: *Shader* de triángulos con textura
+- *#define PROCESSING_TEXLIGHT_SHADER*: *Shader* de triángulos con textura y luces
 
 
 Para el desarrollo de *shaders* no soportados en Processing, desde Processing puede escribirse directamente código a nivel bajo [OpenGL](https://github.com/processing/processing/wiki/Advanced-OpenGL), si bien queda fuera del objetivo de esta práctica. En las siguientes secciones no trataremos los dos primeros grupos, remitiendo a las personas interesadas al [tutorial](https://github.com/processing/processing/wiki/Advanced-OpenGL) para los relacionados con puntos y líneas.
@@ -69,13 +69,13 @@ Para el desarrollo de *shaders* no soportados en Processing, desde Processing pu
 %endPGL();
 %``` --->
 
-Se incluyen en este capítulo un recorrido por los  *shaders* de fragmentos, dejando para la siguiente práctica la introducción a os  *shaders* de vértices.
+Se incluyen en este capítulo un recorrido por los  *shaders* de fragmentos, dejando para la siguiente práctica la introducción a los  *shaders* de vértices.
 
 ### 10.2 *Shaders* de fragmentos
 
 En primer término obviamos el *shader* de vértices, centrando la atención en el *shader* de fragmentos, siguiendo el esquema propuesto en [The Book of Shaders](https://thebookofshaders.com). Los ejemplos mostrados en esta sección, no especifican ningún *shader* de vértices, por lo que Processing adoptará el *shader* de vértices por defecto. Por dicha razón, no entraremos en  detalles del *shader* de vértices en esta práctica, con excepción de una leve mención en la sección dedicada a imágenes.
 
-Un *shader* se ejecuta como como una función que recibe una localización, y devuelve un color. Para ejecutarse en paralelo, cada hilo o *thread* es independiente de todos los demás, va *ciego* sin saber lo que hace el resto, no habiendo comunicación posible entre ellos, evitando de esta forma poner en riesgo la integridad de los datos.
+Un *shader* se ejecuta como una función que recibe una localización, y devuelve un color. Para ejecutarse en paralelo, cada hilo o *thread* es independiente de todos los demás, va *ciego* sin saber lo que hace el resto, no habiendo comunicación posible entre ellos, evitando de esta forma poner en riesgo la integridad de los datos.
 
 #### 10.2.1 Hola mundo y formas básicas
 
@@ -107,7 +107,7 @@ void draw() {
 }
 ```
 
- Manteniendo el botón del ratón pulsado, se activa un *shader* de fragmentos, con la homónima función *shader*, que previamente ha sido cargado en el *setup* con la función *loadShader*. Este *shader* en concreto, basado en un [ejemplo (intereactivo) de The Book os Shaders](https://thebookofshaders.com/02/?lan=es)), altera la reproducción asignando un color a todos los píxeles del objeto, cpmn elñ resultado de la figura a continuación.  El *shader* se describe en un archivo, en concreto *Colorea.glsl*, que debe estar presente en la carpeta *data*  o la mnismoa del .pde con el editor de Processing en el modo *Java*, o necesariamente en la misma carpeta con el editor de Processing en modo *Shader*, siendo en ese caso editable directamente (señalar que este modo no parece compatible hasta ahora con la versión 4). El código de dicho *shader* sería:
+ Manteniendo el botón del ratón pulsado, se activa un *shader* de fragmentos, con la homónima función *shader*, que previamente ha sido cargado en el *setup* con la función *loadShader*. Este *shader* en concreto, basado en un [ejemplo (intereactivo) de The Book os Shaders](https://thebookofshaders.com/02/?lan=es)), altera la reproducción asignando el mismo color a todos los píxeles del objeto, cpmn elñ resultado de la figura a continuación.  El *shader* se describe en un archivo, en concreto *Colorea.glsl*, que debe estar presente en la carpeta *data*  o la mnismoa del .pde con el editor de Processing en el modo *Java*, o necesariamente en la misma carpeta con el editor de Processing en modo *Shader*, siendo en ese caso editable directamente (señalar que este modo no parece compatible hasta ahora con la versión 4). El código de dicho *shader* sería:
 
  **GLSL**
  ```
@@ -141,7 +141,7 @@ Básicamente el *shader* tiene una línea de código en la que asigna un vector 
 
 <!--- %Basado en https://thebookofshaders.com/03/?lan=es --->
 
-Si bien cada hilo no conoce lo que ocurre en el resto, es posible enviar valores de entrada desde la CPU. Estos valores serán iguales o constantes para todos los hilos, siendo variables denominadas *uniformm*, pudiendo tener distintos tipos: *float*, *vec2*, *vec3*, *vec4*, *mat2*, *mat3*, *mat4*, *sampler2D* y *samplerCube*. Este tipo de variables no pueden modificarse en el *shader*.
+Si bien cada hilo no conoce lo que ocurre en el resto, es posible enviar valores de entrada desde la CPU. Estos valores serán iguales o constantes para todos los hilos, siendo variables denominadas *uniform*, pudiendo tener distintos tipos: *float*, *vec2*, *vec3*, *vec4*, *mat2*, *mat3*, *mat4*, *sampler2D* y *samplerCube*. Este tipo de variables no pueden modificarse en el *shader*.
 
 El siguiente ejemplo, que modifica el código del anterior, pasa al *shader* información de la posición de ratón, resolución de la ventana de visualización, y tiempo de ejecución transcurrido. En Processing, se
 utiliza la función *set* de las variables *PShader* para enviar las dimensiones de la ventana, *width* y *height*, las coordenadas del puntero, *mouseX* y *mouseY*, y el tiempo transcurrido tras obtenerlo con la función *millis*.
@@ -308,7 +308,7 @@ El resultado es una línea, una salida gráfica, eso sí, sin efecto de escalera
 *Editor en línea con salida de Dibuja1.glsl*
 
 La línea dibujada con el *shader* *Dibuja1.glsl*, muestra
- bordes duros, para evitarlo, el código del *shader* *Dibuja2.glsl*, basado en los ejemplos de [The Book of Shaders](https://thebookofshaders.com), suaviza la transición de los bordes de la línea haciendo uso de *smoothstep*, ver figura. La salida de la función *plot* proporciona un valor suavizado entre 0 y 1, dependiendo del valor de *grosor*. Dicha salida permite decidir en qué porcentaje cada píxel se pinta promediando el correspondiente valor de la escala de grises y el verde. La transición entre la salida gráfica y el fondo se suaviza.
+ bordes duros, para evitarlo, el código del *shader* *Dibuja2.glsl*, basado en los ejemplos de [The Book of Shaders](https://thebookofshaders.com), suaviza la transición de los bordes de la línea haciendo uso de [*smoothstep*](https://thebookofshaders.com/glossary/?search=smoothstep), ver figura. La salida de la función *plot* proporciona un valor suavizado entre 0 y 1, dependiendo del valor de *grosor*. Dicha salida permite decidir en qué porcentaje cada píxel se pinta promediando el correspondiente valor de la escala de grises y el verde. La transición entre la salida gráfica y el fondo se suaviza.
 
 
   **GLSL**
@@ -715,7 +715,7 @@ void draw() {
 }
 ```
 
-Con el sioguiente código *shader*:
+Con el siguiente código *shader*:
 
 **GLSL**
 ```
@@ -1101,7 +1101,7 @@ void main(){
 
 ### 10.3 Generativos
 
-Al ejecutarse en paralelo para cada píxel en una GPU, el número de repeticiones no influye en el coste, siendo una potente herramienta para crear patrones. Tras la breve muestra de dibujo de formas gráficas con técnicas procedimentales del apartado anterior, el *shader* *Dibuja20.glsl*, basado en [este de The Book os Shaders](https://thebookofshaders.com/09/?lan=es), aprovecha el escalado para replicar nueve veces un círculo (número de repeticiones configurable modificando el valor de *scale*). La función *fract* permite *moverse* entre celdas de la rejilla resultante. La función utilizada para dibujar el círculo, se basa en la propuesta en [The Book of Shaders](https://thebookofshaders.com) que evita el uso de la costosa *sqrt* en el cálculo de distancias, utilizando *dot*, y una transición suave con *smoothstep*.
+Al ejecutarse en paralelo para cada píxel en una GPU, el número de repeticiones no influye en el coste, siendo una potente herramienta para crear patrones. Tras la breve muestra de dibujo de formas gráficas con técnicas procedimentales del apartado anterior, el *shader* *Dibuja20.glsl*, basado en [este ejemplo](https://thebookofshaders.com/09/?lan=es) de The Book of Shaders], aprovecha el escalado para replicar nueve veces un círculo (número de repeticiones configurable modificando el valor de *scale*). La función [*fract*](https://thebookofshaders.com/glossary/?search=fract) se queda con la parte fraccionaria, permitiendo *moverse* entre celdas de la rejilla resultante. La función utilizada para dibujar el círculo, se basa en la propuesta en [The Book of Shaders](https://thebookofshaders.com) que evita el uso de la costosa *sqrt* en el cálculo de distancias, utilizando *dot*, y una transición suave con *smoothstep*.
 
 **GLSL**
 ```
@@ -1163,10 +1163,10 @@ void main() {
     vec3 color = vec3(0.0);
 
     // Traslación dependiente de st.y
-   if (floor(mod(st. y*scale,2.0)) == 1. )
+   if (floor(mod(st.y*scale,2.0)) == 1. )
         st.x += 0.5;
 
-    //Escala en función de la escala adoptada
+    //Tamaño en función de la escala adoptada
     st = fract(st*scale);
 
     // Dibuja un círculo en cada "celda"
