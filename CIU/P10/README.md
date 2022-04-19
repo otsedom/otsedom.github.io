@@ -4,8 +4,8 @@
 
 [Introducción](#101-introducción)  
 [Sheders de fragmentos](#102-shaders-de-fragmentos)  
-[Generativos](#103-generativos)
-[Aleatoriedad](#104-aleatoriedad)
+[Generativos](#103-generativos)  
+[Aleatoriedad](#104-aleatoriedad)  
 [Imágenes](#105-imágenes)  
 [Galería](#106-galería)  
 [Tarea](#107-tarea)  
