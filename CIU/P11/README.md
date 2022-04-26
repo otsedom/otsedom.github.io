@@ -211,8 +211,8 @@ void main() {
   gl_FragColor = vec4(vec3(intensity),1.);    
 }
 ```
-
 Al observar en detalle los *shader*, en este caso el *shader* de vértices se limita a proporcionar la información de la normal y el vector hacia la luz, a través de las variables *varying* *vertNorm_al* y *vertLightDi*, delegando al *shader* de fragmentos el cálculo de la intensidad. En el caso de *ToonFrag1.glsl* el valor asignado depende del ángulo entre ambos vectores, siendo un resultado de franjas en el caso del *shader* de fragmentos *ToonFrag*.
+
 
 <!---
 %en el de fragmentos aparece la variable ya conocida *gl_FragColor*, que almacena la información del color de cada fragmento. En el de vértices está la variable reservada *gl_Position*  que contiene la posición homogénea del vértice. Por otro lado, existen dos variables de tipo *varying* compartidas entre ambos *shader*: *vertNorm_al* y *vertLightDi* que permiten pasar desde el *shader* de vértices la normal y vector hacia la luz del vértice. Básicamente el *shader* de vértices las pasa al de fragmentos que realiza el cálculo del nuevo color a asignar al píxel. Se presentan dos variantes del *shader* de fragmentos para mostrar dos posible usos de la información recibida. Para cambiar entre ellas debe hacerse clic con el ratón. --->
@@ -294,10 +294,10 @@ void setup() {
   textureMode(NORMAL);
   beginShape();
   obj = createShape(SPHERE, 120);
-  obj.setStroke(255); //Aristas con color de la esfera
   obj.setTexture(img);
-  endShape();
+  obj.setStroke(255); //Aristas con color de la esfera
 }
+endShape();
 
 void draw() {
   background(0);
@@ -1176,7 +1176,7 @@ Complementamops la lista de la práctica anterior con referencias a ejemplos, in
  [EveryOne is talking](https://youtu.be/EbfsPFbcBB4)
 
 
-### 11.2 Tarea
+### 11.4 Tarea
 
 
 
