@@ -17,7 +17,8 @@ En la práctica previa, el discurso se centraba en el *shader* de fragmentos, cu
 
 Al igual que en los *shaders* de fragmentos, se cuenta con variables *uniform* que tendrán el mismo valor para todos los vértices de la escena. Las matrices de proyección y transformación son dos de dichas variables, al afectar de igual forma a todos los vértices, como también ocurre con los parámetros de iluminación (posición y color).
 Sin embargo existen otras variables que cambian para cada vértice, y se denominan *attribute*, entre las que se distinguen las definidas (*defined*) y las genéricas ()*generic*). Entre las primeras nombrar las normales, corrdenadas de texturas, color, etc, (definidas al crear la forma) mientras que entre las segundas son valores definidos para mallas como tangentes, propiedades de partículas, información de esqueleto (*bones*), etc. como por ejemplo la posición, color y normal del vértice. Para acceder a estas variables desde el *shader* de vértices, debe declararse como *attribute*.  
-Por último, existen las variables *varying* que permiten el paso de información entre ambos *shaders*, y que veremos en los siguientes ejemplos que se utilizan para pasar información desde el *shader* de vértices, al de fragmentos. En el ejemplo del listado~\ref{code:processing-glsl-toonshade}, se pasan las variables  *varying* denominadas %*vertColo*,
+
+Por último, existen las variables *varying* que permiten el paso de información entre ambos *shaders*, y que veremos en los siguientes ejemplos que se utilizan para pasar información desde el *shader* de vértices, al de fragmentos. En el ejemplo *p9_shader_toon* mostrado más abajo, se pasan las variables  *varying* denominadas *vertColo*,
 *vertNormal* y *vertLightDi* para realizar el cálculo de iluminación por píxel en lugar de por vértice, que es el establecido por defecto.
 
 Ejemplos habituales de variables *varying* , además de las dos mencionadas, son las de color del vértice *vertNorm_al*, y las coordenadas de texturas, que son atributos de los vértices. En concreto las  coordenadas de textura fueron utilizadas en los últimos ejemplos del capítulos previo.
@@ -101,7 +102,7 @@ precision mediump int;
 varying vec4 vertColor;
 
 void main() {
-  //Asigna al fragmento/píxel el color recebido desde el shader de vértices
+  //Asigna al fragmento/píxel el color recibido desde el shader de vértices
   gl_FragColor = vertColor;
 }
 ```
@@ -211,7 +212,7 @@ void main() {
   gl_FragColor = vec4(vec3(intensity),1.);    
 }
 ```
-Al observar en detalle los *shader*, en este caso el *shader* de vértices se limita a proporcionar la información de la normal y el vector hacia la luz, a través de las variables *varying* *vertNorm_al* y *vertLightDi*, delegando al *shader* de fragmentos el cálculo de la intensidad. En el caso de *ToonFrag1.glsl* el valor asignado depende del ángulo entre ambos vectores, siendo un resultado de franjas en el caso del *shader* de fragmentos *ToonFrag*.
+Al observar en detalle los *shaders*, en este caso el *shader* de vértices se limita a proporcionar la información de la normal y el vector hacia la luz, a través de las variables *varying* *vertNormal* y *vertLightDir*, delegando al *shader* de fragmentos el cálculo de la intensidad. En el caso de *ToonFrag1.glsl* el valor asignado depende del ángulo entre ambos vectores, siendo un resultado de franjas en el caso del *shader* de fragmentos *ToonFrag*.
 
 
 <!---
@@ -327,7 +328,7 @@ void mousePressed() {
 }
 ```
 
-El código crea una lista *shader* que se cargan en el *setup*, activando uno en concreto a través del clic de ratón. La lista contiene ocho combinaciones de *shader* de vértices y fragmentos.
+El código crea una lista de *shaders* que se cargan en el *setup*, activando uno en concreto a través del clic de ratón. La lista contiene ocho combinaciones de *shaders* de vértices y fragmentos.
 
 En primer término, se muestran las combinaciones de propuestas de *shader* de color (sin textura ni luces). Un ejemplo mínimo con ambos *shaders*:
 
@@ -431,7 +432,7 @@ void main() {
 La novedad es la variable *uniform*
  *texMatrix* que transforma convenientemente (escala e invierte de la coordenada *y) la textura para cada vértice. El *shader* de fragmentos incluye el puntero a la imagen de la textura remitida desde Processing.
 
-En la cuarta variante, también de tetxura, se obtiene un efecto de pixelado sobre la texturamodificando el *shader* de fragmentos:
+En la cuarta variante, también de tetxura, se obtiene un efecto de pixelado sobre la textura modificando el *shader* de fragmentos:
 
 **GLSL** *TexFrag1.glsl*
 ```
