@@ -3,8 +3,9 @@
 ### Contenidos
 
 [Sheders de vértices](#111-shaders-de-vértices)  
-[Transparencias y perturbaciones](#112-transparencias-y-pertuirbaciones)
-[Tarea](#9113-tarea)  
+[Transparencias y perturbaciones](#112-transparencias-y-pertuirbaciones)  
+[Galería](#113-galería)  
+[Tarea](#114-tarea)  
 
 
 
