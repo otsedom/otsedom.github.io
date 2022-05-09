@@ -18,8 +18,8 @@ Posteriormente deberías ver un menú similar a
 
 Es probable que tengas que conectarte a la red para algunas actividades, puedes hacewrlo con la red ULPGC. Y definir la [zona de juego](https://youtu.be/zh5ldprM5Mg). Tras ello, en el menú inferior, la zona derecha te permite ir a las aplicaciones instaladas. La primera aplicación sugerida es *first steps*, que vviene instalada de fábrica, y hace un recorrido por las posibilidades de los controladores.
 
-Si quisieras compartir pantalla al PC
-- En PC acceder a https://www.oculus.com/casting
+Si quisieras compartir pantalla al PC, parece ser necesario estar en la  misma red, y luego:
+- En el PC acceder a https://www.oculus.com/casting
 - E gafas
   - Botón Oculus
   - Seleccionar transmitir
@@ -27,12 +27,19 @@ Si quisieras compartir pantalla al PC
 
 ### 12.1 Galería
 
-He instalado un par de aplicaciones adicionales
+He instalado un par de aplicaciones adicionales:
 
 - Aplicaciones instaladas
   - ISS Mission
   - Space explorers, meterial producido por Felix & Paul Studios, uno de sus documentales 360 que resultan interesantes de ver
-  - Youtube VR
+  - Youtube VR. Vídeos con punblicidad. Aplaudidos:
+    - Elton John - Farewell Yellow Brick Road: The Legacy
+    - Elephant Encounter in 360 – Ep. 2 | The Okavango Experience
+    - Blue Angels in 360-degree video
+    - White Sharks 360 Video
+    - Global gamer
+    - Mission Impossible: Fallout
+    - Earth: Total Solar Eclipse: 360
 
 
 Otras aplicaciones que he probado, pero habría que instalar en esteas gafas son:
@@ -41,16 +48,21 @@ Otras aplicaciones que he probado, pero habría que instalar en esteas gafas son
 - Goliath: Playing with reality. Un documental ganador del permio al mejor trabajo inmersivo en el festival de Venecia de 2021. Estima al menos 20 minutos de experiencia
 
 
-El botón más a la izquierda, el azul, de la ventana inferior, te permite explorar. Accediendo a la sección *Entretenimiento tienes acceso a vídeos enbvolventes entre otras cosas. Busca y prueba.
+El botón más a la izquierda, el azul, de la ventana inferior, te permite explorar. Accediendo a la sección *Entretenimiento* tienes acceso a vídeos envolventes entre otras cosas. Busca y prueba. Algunbo que he probado:
+
+- everest VR
+- Matterhorn VR
 
 
-Para acceder a páginas web, podemos hacer uso de la aplicación *Browser*
+
+Para acceder a páginas web, podemos hacer uso de la aplicación *Browser*:
 
 ![Browser](images/browser.png)  
  *Seleccionando un aplicación*
 
 Sugerir una visita a:
   - MonRider.xyz en el navegador, recuerda pasar a modo VR (abajo a la derecha)
+  - Visita  constructarcade.com para un recopilatorio de juegos en el navegador
   - [p5.xr examples+](https://p5xr.org/#/quick-start/examples)
   - [Three.js xamples](https://threejs.org/examples/?q=webxr) y busca webxr
   - [WebXR sample spages](https://immersive-web.github.io/webxr-samples/)
