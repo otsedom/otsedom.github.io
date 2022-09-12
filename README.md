@@ -9,8 +9,9 @@
 ### Materiales docentes
 
 - [Creando Interfaces de Usuario (CIU)](CIU/README.md)
-- [Visión por Computador](VC/README.md)
 - Informática y Programación (IyP)
+- [Visión por Computador (VC)](VC/README.md)
+
 
 ### Divulgación
 
