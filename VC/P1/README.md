@@ -3,7 +3,7 @@
 ### Contenidos
 
 [Instalación](#11-instalando-el-entorno-de-desarrollo)
-[Aspectos cubiertos]
+[Aspectos cubiertos](#12-aspectos-cubiertos)
 
 ### 1.1. Instalando el entorno de desarrollo  
 
@@ -18,7 +18,7 @@ proporcionados, resumo los pasos que tuve que realizar:
 - Lanzar VS Code
 
 - Instalar la extensión de Python en VS Code. Desde el [enlace](https://code.visualstudio.com/docs/languages/python) con VS Code abierto me lleva al
-[enlace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) en el #Marketplace#
+[enlace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) en el *Marketplace*
 
 - Lanzar *Anaconda Prompt*
 
@@ -78,4 +78,4 @@ El objetivo de esta práctica es comprender de forma aplicada la representación
 - Detectar los píxeles más claro y oscuro de una imagen
 - Hacer una propuesta pop art con la entrada de la cámara web o vídeo
 
-La entrega será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (22 de septiembre)
+La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (22 de septiembre)
