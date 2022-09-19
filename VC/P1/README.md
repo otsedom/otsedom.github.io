@@ -2,7 +2,7 @@
 
 ### Contenidos
 
-[Instalación](#11-instalando-el-entorno-de-desarrollo)
+[Instalación](#11-instalando-el-entorno-de-desarrollo)  
 [Aspectos cubiertos](#12-aspectos-cubiertos)
 
 ### 1.1. Instalando el entorno de desarrollo  
@@ -22,8 +22,9 @@ proporcionados, resumo los pasos que tuve que realizar:
 
 - Lanzar *Anaconda Prompt*
 
-- Crear el *environment* con la configuración que nos interese. Reproduzco la instalación que está en funcionamiento en mi equipo, con Python 3.7.3, si bien incluye
-paquetes no necesarios en las primeras prácticas. Sugiero sustituir *ENV_NAME* por un nombre de su elección.
+- Crear el *environment* con la configuración que nos interese. Reproduzco la instalación que está en funcionamiento en mi equipo, bajo Windows, con Python 3.7.3, si bien incluye
+paquetes no necesarios en las primeras prácticas. Sugiero sustituir *ENV_NAME* por un nombre de su elección. En el caso de
+trabajar en otro sistema operativo, evitar incluir *spec-list.txt* e ir añadiendo los paquetes que vayan siendo necesarios.
 
 ```
 conda create --name ENV_NAME python=3.7.3 --file spec-list.txt
@@ -65,7 +66,8 @@ conda env remove -n ENV_NAME
 
 ### 1.2. Aspectos cubiertos
 
-El objetivo de esta práctica es comprender de forma aplicada la representación de imágenes de grises y color, su modificación, visualización y tratamiento básico. Se proponen varias tareas:
+El objetivo de esta práctica es comprender de forma aplicada la representación de imágenes de grises y color, su modificación, visualización y tratamiento básico. AL finalizar la práctica, debes ser capaz de crear una imagen de un determinado tamaño,
+acceder a los valores asociados a un determinado píxel, modificar dichos valores, dibujar primitivas gráficas básicas sobre una imagen, abrir una imagen de disco, así como acceder a los fotogramas de un vídeo o captura de cámara. Para todo ello, se proponen varias tareas:
 
 - Crear una imagen con la textura de un tablero de ajedrez
 - Crear una imagen estilo Mondrian
@@ -78,4 +80,4 @@ El objetivo de esta práctica es comprender de forma aplicada la representación
 - Detectar los píxeles más claro y oscuro de una imagen
 - Hacer una propuesta pop art con la entrada de la cámara web o vídeo
 
-La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (22 de septiembre)
+La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (29 de septiembre)
