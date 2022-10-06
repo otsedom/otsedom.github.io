@@ -80,4 +80,4 @@ acceder a los valores asociados a un determinado píxel, modificar dichos valore
 - Detectar los píxeles más claro y oscuro de una imagen
 - Hacer una propuesta pop art con la entrada de la cámara web o vídeo
 
-La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (29 de septiembre)
+La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes será individual, a través del campus virtual teniendo como límite el comienzo de la siguiente sesión práctica (29 de septiembre).
