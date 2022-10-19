@@ -125,7 +125,7 @@ const esfera = new THREE.Mesh(geometry, material);
 scene.add(esfera);
 
 
-//Bucle de animación
+//Bucle de visualización
 function animate() {
   requestAnimationFrame(animate);
 
@@ -141,11 +141,11 @@ animate();
 La principal diferencia es el tipo de *geometría* creada, la mencionada esfera, teniendo los parámetros distinto significado al cubo. Para conocer otras geometrías disponibles,
 además de la [documentación sobre geometrías de threejs](https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry), recomendar el [tutorial](https://r105.threejsfundamentals.org/threejs/lessons/threejs-primitives.html) de *Three.js Fundamentals* sobre primitivas.
 
-En este caso en el bucle de animación se modifica la rotación en *x* de la esfera. Rota sobre el origen localizado en el centro de la ventana. Observa que al crear el material se añade la propiedad *wrireframe* a verdadero.
+En este caso en el bucle de visualización se modifica la rotación en *x* de la esfera. Rota sobre el origen localizado en el centro de la ventana. Observa que al crear el material se añade la propiedad *wrireframe* a verdadero.
 
 **Ejecuta con la propiedad wireframe a true y false.**
 
-**Modifica en el bucle de visualziación las propiedades de posición y orientación de la esfera-**
+**Modifica en el bucle de visualización las propiedades de posición y orientación de la esfera-**
 
 **Crea una segunda esfera, prueba con el mismo y distinto material, que toque parcialmente a la ya existente. Ejecuta visualizando en modo alambre y relleno.**
 
