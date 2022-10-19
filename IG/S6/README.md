@@ -4,10 +4,10 @@
 [Ejemplo mínimo](#ejemplo-mínimo)  
 [Objetos](#objetos)  
 [Modularidad](#modularidad)  
-[Asistentes](#asistentesd)  
+[Asistentes](#asistentes)  
 [Botones y texto](#botones-y-texto)  
 [Control orbital](#control-orbital)  
-[Coordenadas del puntero](#coordenadas-del-puntero)
+[Coordenadas del puntero](#coordenadas-del-puntero)  
 [Referencias](#referencias)
 
 ## Introducción
@@ -473,7 +473,6 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-
 ```
 
 La documentación de three.js de [Raycaster](https://threejs.org/docs/#api/en/core/Raycaster) incluye varios ejemplos de utilización con variedad de primitivas.
