@@ -9,7 +9,7 @@
 En esta práctica el objetivo es extraer información geométrica de los objetos presentes en una imagen. Para ello, se presentan ejemplos haciendo uso de detección de contornos y cálculo de la transformada de Hough para la detección de formas circulares.
 
 En una primera tarea se asume que todos los objetos de interés en la imagen son circulares, en concreto monedas de la UE. Tras mostrar diversas aproxomaciones para obtener sus contornos, el reto o tarea consiste en determinar la cantidad de dinero presente en la imagen.
-Para la segunda tarea, se proporcionan tres subimágeens de tres clases de microplásticos recogidos en playas canarias. La tarea propuesta consiste en determinar patrones en sus características geométricas que puedan permitir su clasificación en dichas imágenes y otras. Como sugerencia, se proporciona enlace al trabajo  [SMACC: A System for Microplastics Automatic Counting and Classification](https://doi.org/10.1109/ACCESS.2020.2970498) en el que se adoptan algunas propiedades geométricas para dicho fin. De forma resumida, las características geométricas utilizadas en dicho trabajo fueron:
+Para la segunda tarea, se proporcionan tres subimágeens de tres clases de microplásticos recogidos en playas canarias. La tarea propuesta consiste en determinar patrones en sus características geométricas que puedan permitir su clasificación en dichas imágenes y otras. Como sugerencia, se proporciona enlace al trabajo [SMACC: A System for Microplastics Automatic Counting and Classification](https://doi.org/10.1109/ACCESS.2020.2970498) en el que se adoptan algunas propiedades geométricas para dicho fin. De forma resumida, las características geométricas utilizadas en dicho trabajo fueron:
 
 - Área en píxeles
 - Perímetro en píxele
