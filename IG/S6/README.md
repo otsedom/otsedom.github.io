@@ -209,7 +209,7 @@ function Esfera(px,py,pz, radio, nx, ny, col) {
       });
 
   let mesh = new THREE.Mesh(geometry, material)
-  mesh.position.x = px
+  mesh.position.set(px,py,pz);
   scene.add(mesh)
   objetos.push(mesh)
 }
@@ -481,7 +481,7 @@ La documentación de three.js de [Raycaster](https://threejs.org/docs/#api/en/co
 
 ## TAREA
 
-**El código ejemplo del apartado anterior crea una polilínea. Como tarea para la entrega semanal, se pide hacer uso de las funciones para la generación de curvas, como por ejemplo [CatmullRomCurve3](https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3), para generar una curva a partir de los puntos proporcionados con el ratón. Posteriormente, al dar por finalizado la introducción de puntos,  extraer de la curva definida puntos a través de una llamada a *getPoints* y que sean utilizados como entrada para generar una superficie de revolución (*LatheGeometry*). Tener presente las restricciones de *LatheGeometry* sobre los puntos proporcionados.**
+**El código ejemplo del apartado anterior crea una polilínea. Como tarea para la entrega semanal, se pide hacer uso de las funciones para la generación de curvas, como por ejemplo [CatmullRomCurve3](https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3), para crear una curva a partir de los puntos proporcionados con el ratón. Posteriormente, al dar por finalizado la introducción de puntos, extraer de la curva definida una serie de puntos a través de una llamada a *getPoints* y que sean utilizados como entrada para crear una superficie de revolución (*LatheGeometry*). Tener presente las restricciones de *LatheGeometry* sobre los puntos proporcionados.**
 
 
 Un posible extra interesante sería hacer uso del control de transformación sobre los vértices creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls). La documentación incluye ejemplos de uso, y existe también un [ejemplo específico](https://threejs.org/docs/#api/en/extras/curves/SplineCurve) que permite editar los puntos de una curva spline tridimensional.
