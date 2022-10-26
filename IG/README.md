@@ -10,6 +10,7 @@ Universidad de Las Palmas de Gran Canaria
 
 
 - [Semana 6](S6/README.md)
+- [Semana 7](S7/README.md)
 
 ***
 Obra bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
