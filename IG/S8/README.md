@@ -452,7 +452,7 @@ var canvas = document.createElement('canvas');
 
 ## Control de cámara
 
-En ejemplo previos se ha introducido *OrbitControl*, dedico unas líneas en este apartado a [*FlyControls*](https://threejs.org/docs/#examples/en/controls/FlyControls) que permite modificar la posición y orientación dela cámara. En mi ejemplo he tenido que incluir en *index.html* lo siguiente:
+En ejemplo previos se ha introducido *OrbitControl*, dedico unas líneas en este apartado a [*FlyControls*](https://threejs.org/docs/#examples/en/controls/FlyControls) que permite modificar la posición y orientación dela cámara. Com punto de partida, usar por ejemplo *script_25_esferasimple*. En mi máquina he tenido que incluir en *index.html* lo siguiente:
 
 ```
 <script src="https://threejs.org/examples/js/controls/FlyControls.js"></script>
