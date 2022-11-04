@@ -52,7 +52,7 @@ python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source 0 --dev
 ```
 
 Creo que apreciarán que no va muy lento. Como en el PC del despacho tengo una GPU, he intentado configurar el
-*envorinment* para poder usarla con el demostrador. Sin embargo hasta ahora no he tenido fortuna, pese a tener instalado CUDA y considerar haber seguido la documentación de [pytorch](https://pytorch.org/get-started/locally/),
+*environment* para poder usarla con el demostrador. Sin embargo hasta ahora no he tenido fortuna, pese a tener instalado CUDA y considerar haber seguido la documentación de [pytorch](https://pytorch.org/get-started/locally/),
 para instalar la combinación de
 CUDA, pytorch, torchvision y cudatoolkit con el supuesto comando:
 
