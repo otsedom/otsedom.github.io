@@ -2085,13 +2085,14 @@ Esta práctica pretende mostrar una visión superficial sobre los *shaders*, no 
 - Los mencionados ejemplos en Processing, ver *File->Examples->Topics->Shaders*., además de los disponibles si está activado el modo *Shader*. Sugeror ejecutar *Nebula*, *Landscape*, *Infinitetiles* y *Monjori*.
 - [Welcome to p5.js shaders](https://itp-xstory.github.io/p5js-shaders/#/)
 - [p5.js Shader Examples](https://github.com/aferriss/p5jsShaderExamples)-->
-- Galería CIU   
 
-- [Codeanticode shader experiments]https://github.com/codeanticode/pshader-experiments)
+
+- [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 - [Shadertoy](https://www.shadertoy.com) y [Three.js and Shadertoy](https://r105.threejsfundamentals.org/threejs/lessons/threejs-shadertoy.html)
 - [GLSL Sandbox](http://glslsandbox.com)
-- [Marcelo Fernando](https://github.com/Refesh/Shaders)
-- [Gabriel García SP5rals](https://github.com/CaptainChameleon/SP5rals)
+- Galería CIU:   
+  - [Marcelo Fernando](https://github.com/Refesh/Shaders)
+  - [Gabriel García SP5rals](https://github.com/CaptainChameleon/SP5rals)
 - [Shaderific App](https://shaderific.com)
 - [OpenGL ES Shading Language Reference](http://shaderific.com/glsl/)
 - [TyphoonLabs' OpenGL Shading Language tutorials](https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/)
@@ -2116,17 +2117,7 @@ Realizar una propuesta de prototipo que haga uso al menos de un *shader* de frag
 
 ### Referencias
 
-[Gon21] Patricio Gonzalez Vivo and Jen Lowe. [The Book of Shaders](https://thebookofshaders.com)
-
-
-
-
-
-
-
-## Referencias
-
-Referencias que han servido para la confección de los diversos ejemplos:
+- [Gon21] Patricio Gonzalez Vivo and Jen Lowe. [The Book of Shaders](https://thebookofshaders.com)
 
 - [Documentación](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)  
 - [Three.js Fundamentals](Three.js Fundamentals)
