@@ -2080,12 +2080,6 @@ El p5.js existe la clase *Shder* y comando análogos como *loadShader*, *shader*
 
 Esta práctica pretende mostrar una visión superficial sobre los *shaders*, no habiendo cubierto otras posibilidades como por ejemplo la carga de *shaders* distintos para cada objeto de la escena. Se incluyen en este apartado referencias a ejemplos, información y lugares de encuentro de la comunidad:
 
-<!--
-
-- Los mencionados ejemplos en Processing, ver *File->Examples->Topics->Shaders*., además de los disponibles si está activado el modo *Shader*. Sugeror ejecutar *Nebula*, *Landscape*, *Infinitetiles* y *Monjori*.
-- [Welcome to p5.js shaders](https://itp-xstory.github.io/p5js-shaders/#/)
-- [p5.js Shader Examples](https://github.com/aferriss/p5jsShaderExamples)-->
-
 
 - [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 - [Shadertoy](https://www.shadertoy.com) y [Three.js and Shadertoy](https://r105.threejsfundamentals.org/threejs/lessons/threejs-shadertoy.html)
