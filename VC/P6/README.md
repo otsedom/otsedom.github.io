@@ -78,10 +78,11 @@ conda activate deepface
 pip install deepface
 ```
 
-Para estos ejemplos necesitarás instalar también
+Para estos ejemplos es probable que necesites instalar:
 
 ```
 pip install scikit-learn
+pip install scipy
 ```
 
 La demo contenida en *VC_P6_deepface_kfold* es similar a la del apartado previo, plantea un experimento kfold, tomando en este caso como características los *embeddings* proporcionados por uno de los modelos presentes en deepface. En concreto he tomado FaceNet, si bien el código está preparado para escoger otro modelo antes de realizar la carga de datos. Al cargar los datos se obtiene el correspondiente *embedding* que se almacena en *X*, siendo por ello el proceso de carga más lento. En la primera ejecución se descargará el modelo si fuera necesario, siendo almacenado en la carpeta *.deepface*. Tenlo presente si vas justo de disco.
