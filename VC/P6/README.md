@@ -2,7 +2,11 @@
 
 ### Contenidos
 
-[Tarea](#71-tarea)
+[Conjunto de datos](#conjunto-de-datos)  
+[Autocaras](#autocaras)  
+[Descriptores locales](#descriptores locales)  
+[deepface](#deepface)  
+[Tarea](#tarea)
 
 
 ## Conjunto de datos
@@ -90,15 +94,30 @@ La demo contenida en *VC_P6_deepface_kfold* es similar a la del apartado previo,
 Posteriormente se lanza el experimento kfold. ¿Qué te parecen los resultados?
 ¿Qué ocurre con otros modelos?
 
-
-
 En la cuarta práctica se mostró la posibilidad de usar deepface para detectar caras, también dispone de utilidades para reconocimiento, descripción y estimación de la expresión facial, que puedes ver en su web.
 
 Sin embargo, quiero mostrar una demo, *Demo_BuscaParecidos*,  que busca parecidos en un conjunto de caras a partir de distancias obtenidas con *embeddings* de FaceNet. Advierto que es una demo compuesta en ratos libres durante sesiones de actividades de divulgación bajo alguna carpa en una plaza, por lo que pueden existir errores.
 Un proceso similar es el que está detrás de [Art selfie](https://artsandculture.google.com/camera/selfie).
 
+La biblioteca deepface cuenta con utilizadas para verificación y reconocimiento de identidad. En ambos casos se le proporciona dos parámetros:
+
+- Para verificar, se proporcionan dos imágenes
+- Para reconocer una imagen y la ruta  a la carpeta con la base de datos de identidades registradas.
+
+En el último ejemplo, se ilustra brevemente la utilidad de descripción facial a través de la función *analyze* que permite estimar:
+
+- identidad
+- sexo
+- raza
+- emoción
+
+En los dos últimos casos proporciona probabilidades de cada clase considerada, además de la ganadora. Un pequeño ejemplo es el incluido en *VC_P6_deepface_analyze*
 
 
+## Tarea
+
+Se sugiere tomar como punto de partida las utilidades ofrecidas por deepface, y proponer *reacciones* a partir de la información obtenida. Además de la demo mostrada de parecidos,
+recomendar la lectura de [Working with Faces](https://kcimc.medium.com/working-with-faces-e63a86391a93) por [Kyle McDonald](https://kylemcdonald.net), y ver alguna de suspropuestas como [Sharing Faces](https://vimeo.com/96549043).
 
 
 ***
