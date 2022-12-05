@@ -224,11 +224,11 @@ https://www.youtube.com/watch?v=zXqCj8jeAi0 -->
 
 ## Física
 
-Existen distintas bibliotecas, tanto para 3D como para 2D, sin embargo [ammo.js](https://github.com/kripken/ammo.js/) cuenta con bastantes ejemplos incluidos entre la galería oficial de three.js, y por dicha razón la he adoptado para el ejemlop incluido en esta introducción.
+Existen distintas bibliotecas, tanto para 3D como para 2D, sin embargo [ammo.js](https://github.com/kripken/ammo.js/) cuenta con bastantes ejemplos incluidos entre la galería oficial de three.js, y por dicha razón la he adoptado para el ejemplo incluido en esta introducción.
 
 Cuentan que Ammo viene de *Avoided Making My Own js physics engine by compiling bullet from C++*, estando basada en la biblioteca C++ [*Bullet Collision Detection & Physics Library*](https://pybullet.org/Bullet/BulletFull/classbtTransform.html). Permite gravedad, empujar, colisiones, fricciones, restricciones de movimiento, etc.
 
-Para su uso debemos decargar del repositorio, y añadir en nuestro *index.html* algo como, adaptado anuestra estructura de directorios. En el ejemplo Glitch, he copiado el archivo al mismo nivel con lo que he necesitado:
+Para su uso debemos descargar del repositorio, y añadir en nuestro *index.html* algo como, adaptado anuestra estructura de directorios. En el ejemplo Glitch, he copiado el archivo al mismo nivel con lo que he necesitado:
 
 ```
 <script src="./ammo.js"></script>
@@ -610,7 +610,7 @@ function updatePhysics(deltaTime) {
 
 ```
 
-El código crea una escena con luz direccional, activando sombras, y ambiente, definiendo una estructura de suelo, para la que hace uso de una textura muy sencilla que repite. Sobre ella compone un *muro* compuesto de bloques de color. Haciendo clic con el atón se lanzan *proyectiles* que si impactan con el muro lo rompen. La gran diferencia con ejemplos previos es que además de la escena o universo gráfico, es necesario crear un universo físico, en el que los objetos que deseamos que tengan comportamiento físico se configuran. LA biblioteca Ammo, proporciona el marco para condifurar dicho universo en el que se crean entidades con comportamiento dinámico dirigido por las fuerzas definidas. De forma solidaria y coherente con el universo gráfico, el universo físico requiere su actualización desde el bucle de visualización, función *updatePhysics*, afectando a la transformación de los objetos en dicho universo, dado que se han asociado objetos del mundo gráfico y físico.
+El código crea una escena con luz direccional, activando sombras, y ambiente, definiendo una estructura de suelo, para la que hace uso de una textura muy sencilla que repite. Sobre ella compone un *muro* compuesto de bloques de color. Haciendo clic con el ratón se lanzan *proyectiles* que si impactan con el muro lo rompen. La gran diferencia con ejemplos previos es que además de la escena o universo gráfico, es necesario crear un universo físico, en el que los objetos que deseamos que tengan comportamiento físico se configuran. LA biblioteca Ammo, proporciona el marco para configurar dicho universo en el que se crean entidades con comportamiento dinámico dirigido por las fuerzas definidas. De forma solidaria y coherente con el universo gráfico, el universo físico requiere su actualización desde el bucle de visualización, función *updatePhysics*, afectando a la transformación de los objetos en dicho universo, dado que se han asociado objetos del mundo gráfico y físico.
 
 El ejemplo introducido se limita al uso de cuerpos rígidos (para cuerpos deformables, sugerir los ejemplos de la galería [cloth](https://threejs.org/examples/?q=ammo#physics_ammo_cloth) y [volume](https://threejs.org/examples/?q=ammo#physics_ammo_volume) ), los cuales se verán afectados por fuerzas, tienen masa, velocidad, y pueden colisionar. Cada iteración de la dinámica del mundo físico, puede modificar su matriz de transformación. Todos los objetos no reaccionan igual, en el código ejemplo tendremos objetos físicos con forma de paralelepípedo y esferas
 *btBoxShape* y *btSphereShape*, que se asociarán a objetos del mundo gráfico
@@ -686,9 +686,9 @@ Cap. 12 Física -->
 
 ## Estructuras articuladas
 
-Threejs cuenta con elementospara la descripción de estructuras articuladas ([*Skeleton*](https://threejs.org/docs/#api/en/objects/Skeleton)) compuestas de huesos ([*Bone*](https://threejs.org/docs/#api/en/objects/Bone)) a los que asociar mallas que permiten la animación de la geometría ([*SkinnedMesh*](https://threejs.org/docs/#api/en/objects/SkinnedMesh)). La documentación de *SkinnedMesh* incluye un ejemplo de estructura articulada, con la interfaz para modificar los parámetros de los elementos que la componen.
+Threejs cuenta con elementos para la descripción de estructuras articuladas ([*Skeleton*](https://threejs.org/docs/#api/en/objects/Skeleton)) compuestas de huesos ([*Bone*](https://threejs.org/docs/#api/en/objects/Bone)) a los que asociar mallas que permiten la animación de la geometría ([*SkinnedMesh*](https://threejs.org/docs/#api/en/objects/SkinnedMesh)). La documentación de *SkinnedMesh* incluye un ejemplo de estructura articulada, con la interfaz para modificar los parámetros de los elementos que la componen.
 
-Sin embargo, threejs no es un marco pensado para facilitar la creación de los clips de animación de estructuras articuladas, es más frecuentepara tal fin utilizar herramientas como Blender exportar a glTF. En la galería de ejemplos buscando el término *skinning*, accedes a una descriptiva colección incluyendo ejemplos con [cinemática inversa](https://threejs.org/examples/?q=skinning#webgl_animation_skinning_ik). Threejs cuenta con [CCDIKSolver](https://threejs.org/docs/#examples/en/animations/CCDIKSolver) para resolver lacinemática inversa de una estructura articulada. Acepta objetos *SkinnedMesh*, así como obtenidos con [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader), como el ejemplo anterior, o [MMDLoader](https://threejs.org/docs/#examples/en/loaders/MMDLoader), echa un vistazo a este [ejemplo MMD](https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_mmd.html).
+Sin embargo, threejs no es un marco pensado para facilitar la creación de los clips de animación de estructuras articuladas, es más frecuente para tal fin utilizar herramientas como Blender exportar a glTF. En la galería de ejemplos buscando el término *skinning*, accedes a una descriptiva colección incluyendo ejemplos con [cinemática inversa](https://threejs.org/examples/?q=skinning#webgl_animation_skinning_ik). Threejs cuenta con [CCDIKSolver](https://threejs.org/docs/#examples/en/animations/CCDIKSolver) para resolver la cinemática inversa de una estructura articulada. Acepta objetos *SkinnedMesh*, así como obtenidos con [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader), como el ejemplo anterior, o [MMDLoader](https://threejs.org/docs/#examples/en/loaders/MMDLoader), echa un vistazo a este [ejemplo MMD](https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_mmd.html).
 
 
 <!-- Ejemplo con keyframetrack https://discourse.threejs.org/t/create-skeletal-animation-using-bones/13789/6
@@ -714,9 +714,11 @@ La aparición de propuestas como [Stable Diffusion](https://stablediffusionweb.c
 ![Img2](images/FeoLK0DWAAMyGsq.jfif)
 ![Img3](images/2022-11-28-11-28-29-5-Darth_Vader_running_Transgrancanaria_at_Roque_Nublo_in_a_yellow_suit_made_by_Pablo_Picasso__surrealist-1176887456-scale8.00-k_euler_a-sd-v1-5-fp16.png)
 
-Personalizaro con Dreambooth, [tutorial de dot.csv](https://youtu.be/rgKBjRLvjLs) pero no era para SDv2 ...
+Personalizar con Dreambooth, [tutorial de dot.csv](https://youtu.be/rgKBjRLvjLs) pero no era para SDv2 ...
 
-Y no sólo imágenes, un grupo de trabajo proporne animación sobre Stable Diffusion, es [deforum](https://deforum.github.io), incluyen [guía rápida](https://docs.google.com/document/d/1RrQv7FntzOuLg4ohjRZPVL7iptIyBhwwbcEYEW2OfcI/edit), cuaderno colab, enlace github, etc.
+<!-- Hugingfaces https://twitter.com/angrypenguinPNG/status/1599611909623332864?t=NbSjp3D7ELw-HLGZbQIP_g&s=03 -->
+
+Y no sólo imágenes, un grupo de trabajo propone animación sobre Stable Diffusion, es [deforum](https://deforum.github.io), incluyen [guía rápida](https://docs.google.com/document/d/1RrQv7FntzOuLg4ohjRZPVL7iptIyBhwwbcEYEW2OfcI/edit), cuaderno colab, enlace github, etc.
 
 ## Tareas
 
