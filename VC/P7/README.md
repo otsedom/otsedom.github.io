@@ -55,16 +55,13 @@ https://www.v7labs.com/blog/cvat-guide
 -->
 
 
-<!--
+
 ## Entrenamiento
 
-Buscar
-training yolov7 on custom dataset
+Como comentaba en prácticaws previas, la reciente propuesta de
+[YOLOv7](https://github.com/WongKinYiu/yolov7) declara [batir los registros](https://amalaj7.medium.com/yolov7-now-outperforms-all-known-object-detectors-fd7170e8542d) de versiones anteriores de esta familia de esta tores de una etapa, mejorando tanto las tasas de detección, como reduciendo los tiempos de procesamiento. Por dicho motivo, tras usar Yolov7 como detector en una práctica anterior, el propósito de esta práctica es entrenar un detector basado en Yolov7 del objeto u objetos que nos sea de interés.
 
-En esta línea la reciente propuesta de
-[YOLOv7](https://github.com/WongKinYiu/yolov7) declara [batir los registros](https://amalaj7.medium.com/yolov7-now-outperforms-all-known-object-detectors-fd7170e8542d) de versiones previas.
-
-En los dos enlaces previos se incluyen instrucciones de instalación. En mi experiencia para su instalación en Windows, en primer lugar me he colocado en la carpeta en la que quiero descargar y tecleado los siguientes comandos:
+S i bien ya deberían tener una instalación de prácticas anteriores, recordar los pasos de mi experiencia para su instalación en Windows, en primer lugar me he colocado en la carpeta en la que quiero descargar y tecleado los siguientes comandos:
 
 ```
 git clone https://github.com/WongKinYiu/yolov7.git
@@ -74,39 +71,98 @@ conda activate yolov7
 pip install -r requirements.txt
 ```
 
+Una vez que tenemos el *environment* preparado, tras recopilar las imágenes y realizar las anotaciones, antes de proceder a entrenar con Yolov7, es necesario disponer las imágenes de determinada forma, y posteriormente especificar las rutas en la llamada. La siguiente imagen
+muestra la estructura de directorios creadas para un conjunto de datos denominado *TGCRBNW*.
+
+![Directorios](images/dirs.png)
+
+Contiene tres subcarpetas:
+
+- *test*
+- *train*
+- *val*.
+
+Cada una de ellas a su vez contiene dos subcarpetas:
+
+- *images*
+- *labels*.
+
+La primera de ellas contiene las imágenes que se han anotado, mientras que la segunda carpeta contiene para cada imagen anotada su archivo *.txt* homónimo con las correspondientes anotaciones de la imagen. Recordar que el formato esperado por Yolov7 debe ser algo como:
+
+```
+<object-class-id> <x> <y> <width> <height>
+```
+
+Los datos de cada línea se refieren a:
+
+- *object-class-id*: identificador numérico de la clase del objeto anotado
+- *x*: coordenada *x* de la esquina superior izquierda
+- *y*: coordenada *y* de la esquina superior izquierda
+- *width*: ancho del contenedor
+- *height*: alto del contenedor
+
+Las coordenadas de la esquina y dimensiones del contenedor estarán normalizadas, es decir, divididas por las dimensiones de la imagen.
+
+Para distribuir las imágenes en las tres subcarpetas, debemos llevar a cabo un reparto. Lo habitual es realizar una división aleatoria, donde por ejemplo podemos hacer uso de un 80% para entrenamiento y validación, y un 20% para test. Dentro del primer grupo, puedes optar de nuevo a una división 80/20 o 90/10.
+
+Una vez conformada la estructura de directorios y distribuidas las imágenes, he procedido a crear, en mi caso dentro de la carpeta *yolov7/data*, un archivo *.yaml* que permite especificar las rutas de las imágenes que se proporcionan para entrenamiento, validación y test, además del número de clases a considerar, y sus nombres. En mi caso con una única clase:
+
+```
+# TGCRBNW
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: C:/Users/otsed/Desktop/RUNNERS/Datasets/TGC_RBNW/train/
+val: C:/Users/otsed/Desktop/RUNNERS/Datasets/TGC_RBNW/val/  
+test: C:/Users/otsed/Desktop/RUNNERS/Datasets/TGC_RBNW/test/  
+
+# number of classes
+nc: 1
+
+# class names
+names: [ 'bib' ]
+```
+
+A partir de este punto es posible lanzar el entrenamiento. Un par de variantes especificando o no el número de épocas, indicando el tamaño de las imágenes a considerar (por defecto 640), y los pesos tomados como punto de partida:
+
+```
+python train.py --weights yolov7.pt --data "data/bib.yaml" --workers 4 --batch-size 4 --img 416 --cfg cfg/training/yolov7.yaml --name yolov7 --hyp data/hyp.scratch.p5.yaml
+
+python train.py --weights yolov7.pt --data "data/bib.yaml" --workers 4 --batch-size 4 --img 640 --cfg cfg/training/yolov7.yaml --name yolov7 --hyp data/hyp.scratch.p5.yaml --epochs 40
+```
+
+Otros modelos ya entrenados para tomar como punto de partida están disponibles en este [enlace](https://github.com/WongKinYiu/yolov7#performance).
+
+Finalizado el entreno, en la carpeta *train* se encuentra el resultado. Puedes probarlo con algo como:
+
+```
+python detect.py --weights runs/train/yolov7/weights/best.pt --source C:\Users\otsed\Pictures\Fotos\K42Anaga
+```
+
+Los resultados se vuelcan en *yolov7\runs\detect\exp2*. ERl entrenamiento puede llevarse a cabo en CPU, siendo sensiblemente más lento que si contamos con GPU. También es posible hacer uso de Colab (n [tutorial para ejecutar en Colab](https://machinelearningprojects.net/train-yolov7-on-the-custom-dataset/) ).
+
+<!--
+Buscar
+training yolov7 on custom dataset
+
 Ver Illinois DL4CV hay sobre training
-
-train yolo on custom dataset
-
-https://blog.paperspace.com/yolov7/
 
 Detectando matrículas con yolo
 https://towardsdatascience.com/how-to-detect-license-plates-with-python-and-yolo-8842aa6d25f7
 
-//Reconocer matrículs con tesseract
+blog sobre YOLOv7
+https://blog.paperspace.com/yolov7/
+-->
 
-oficial https://pypi.org/project/pytesseract/
-https://yashlahoti.medium.com/number-plate-recognition-in-python-using-tesseract-ocr-cc15853aca36
-https://www.section.io/engineering-education/license-plate-detection-and-recognition-using-opencv-and-pytesseract/
-
-y localización https://builtin.com/data-science/python-ocr
-
-pip install pytesseract
 
 
 Recursos OCR https://github.com/kba/awesome-ocr
 
 
 
-yolov7 custom dataset
-https://youtu.be/-QWxJ0j9EY8
-
-https://youtu.be/a9RJV5gI2VA
-
 ## Tarea
 
+La tarea consiste en desarrollar un detector para objetos no incluidos en los modelos existentes de Yolov7. La entrega incluirá una descripción de la motivación y etapas cubiertas durante el proceso de anotación y entrenamiento, detallando fuentes utilizadas. La entrega incluirá los pesos entrenados del detector,las imágenes anotadas, y un vídeo con el resultado de detección.
 
--->
 
 ***
 Bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
