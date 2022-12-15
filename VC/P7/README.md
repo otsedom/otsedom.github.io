@@ -155,7 +155,6 @@ https://blog.paperspace.com/yolov7/
 
 
 
-Recursos OCR https://github.com/kba/awesome-ocr
 
 
 
