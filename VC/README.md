@@ -4,7 +4,7 @@ Modesto Castrillón Santana
 Universidad de Las Palmas de Gran Canaria  
 Escuela de Ingeniería en Informática  
 Grado de Ingeniería Informática  
-Curso 2022/2023
+Curso 2023/2024
 Universidad de Las Palmas de Gran Canaria
 
 
@@ -16,6 +16,6 @@ Universidad de Las Palmas de Gran Canaria
 - [Práctica 5](P5/README.md)
 - [Práctica 6](P6/README.md)
 - [Práctica 7](P7/README.md)
-- [Trabajo](Trabajo/README.md)-->
+- [Trabajo](Trabajo/README.md) -->
 ***
 Obra bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
