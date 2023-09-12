@@ -1,4 +1,4 @@
-## Guion de prácticas de la asignatura Visión por Computador (CIU)
+## Guion de prácticas de la asignatura Visión por Computador (VC)
 
 Modesto Castrillón Santana  
 Universidad de Las Palmas de Gran Canaria  
