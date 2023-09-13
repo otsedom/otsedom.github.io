@@ -125,7 +125,7 @@ acceder a los valores asociados a un determinado píxel, modificar dichos valore
 - Destacar tanto el píxel con el color más claro como con el color más oscuro de una imagen
 - Hacer una propuesta pop art con la entrada de la cámara web o vídeo
 
-La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes se realizará por grupos a través del campus virtual por medio de un enlace github preferentemente, teniendo como límite el comienzo de la siguiente sesión práctica. Durante la siguiente sesión práctica cada grupo, en orden aleatorio, presentará y defenderá el resultado al profesor de la asignatura.
+La entrega del cuaderno o cuadernos con la resolución de tareas propuestas e imágenes resultantes se realizará por grupos a través del campus virtual por medio de un enlace github, teniendo como límite el comienzo de la siguiente sesión práctica. Durante la siguiente sesión práctica cada grupo, en orden aleatorio, presentará y defenderá el resultado al profesor de la asignatura. De forma genérica, para todas las prácticas, el enlace github debe incluir un archivo README describiendo el trabajo realizado, incluyendo referencia a todas las fuentes que hayan sido utilizadas de alguna forma en el desarrollo de la práctica, además de indicar si la ejecución del cuaderno requiere alguna instalación adicional. Además incluirán uno o varios cuadernos comentados con la resolución de la tarea o tareas solicitadas .
 
 
 
