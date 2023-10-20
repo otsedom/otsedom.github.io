@@ -578,10 +578,15 @@ La documentación de three.js de [Raycaster](https://threejs.org/docs/#api/en/co
 
 ## TAREA
 
-**El código ejemplo del apartado anterior crea una polilínea. Como tarea para la entrega semanal, se pide hacer uso de las funciones para la generación de curvas, como por ejemplo [CatmullRomCurve3](https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3), para crear una curva a partir de los puntos proporcionados con el ratón (ojo, requiere un array Vector3). Posteriormente, al dar por finalizada la introducción de puntos, extraer de la curva resultante la serie de puntos a través de una llamada a *getPoints* y que sean utilizados como entrada para crear una superficie de revolución (*LatheGeometry*). Tener presente las restricciones de *LatheGeometry* sobre los puntos proporcionados.
+**El código ejemplo del apartado anterior crea una polilínea. Como tarea para la entrega semanal, se pide hacer uso de las funciones para la generación de curvas, como por ejemplo [CatmullRomCurve3](https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3), para crear una curva a partir de los puntos proporcionados con el ratón (ojo, requiere un array Vector3). Posteriormente, al dar por finalizada la introducción de puntos, extraer de la curva resultante la serie de puntos a través de una llamada a *getPoints* y que sean utilizados como entrada para crear una superficie de revolución ([*LatheGeometry*](https://threejs.org/docs/#api/en/geometries/LatheGeometry)). Tener presente las restricciones de *LatheGeometry* sobre los puntos proporcionados.
 Recomendar que en el material del objeto, la propiedad *side* se fije a *THREE.DoubleSide*.**
 
-Un posible extra interesante sería hacer uso del control de transformación sobre los vértices creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls). La documentación incluye ejemplos de uso, y existe también un [ejemplo específico](https://threejs.org/docs/#api/en/extras/curves/SplineCurve) que permite editar los puntos de una curva spline tridimensional.
+Entre posibles extras para subir nota:
+- Poder generar nuevos objetos  
+- Poder modificar los vértices guía  
+- Poder hacer uso del control de transformación sobre los vértices creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls).
+
+La documentación incluye ejemplos de uso, y existe también un [ejemplo específico](https://threejs.org/docs/#api/en/extras/curves/SplineCurve) que permite editar los puntos de una curva spline tridimensional.
 
 Si quisieras exportar la malla resultante, tienes a tu disposición [GLTFExporter](https://threejs.org/docs/#examples/en/exporters/GLTFExporter).
 
