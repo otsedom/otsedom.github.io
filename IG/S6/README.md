@@ -584,7 +584,7 @@ Recomendar que en el material del objeto, la propiedad *side* se fije a *THREE.D
 Entre posibles extras para subir nota:
 - Poder generar nuevos objetos  
 - Poder modificar los vértices guía  
-- Poder hacer uso del control de transformación sobre los vértices creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls).
+- Poder hacer uso del control de transformación sobre los vértices creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls)
 
 La documentación incluye ejemplos de uso, y existe también un [ejemplo específico](https://threejs.org/docs/#api/en/extras/curves/SplineCurve) que permite editar los puntos de una curva spline tridimensional.
 
