@@ -11,7 +11,7 @@
 
 Tras la sesión anterior que introducía aspectos básicos de three.js, en esta sesión práctica utilizaremos el archivo *index_S7.html*. Señalar que para poder hacer uso en el último ejemplo de *dat.gui*, he hecho uso de una versión previa de three.js.
 
-Como punto de partida de la sesión, el código del archivo *script_11_estrella* integra varios de los elementos abordados en la semana anterior para dibujar una esfera, básicamente es el de *script_13_esfera_modular.js* reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
+Como punto de partida de la sesión, el código del archivo *script_11_estrella* integra varios de los elementos abordados en la semana anterior para dibujar una esfera, básicamente es el de *script_03_esfera_modular.js* reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
 
 ```
 import * as THREE from "three";
