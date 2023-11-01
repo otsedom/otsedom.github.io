@@ -3,10 +3,10 @@
 ### Contenidos
 
 [Tarea](#51-tarea)  
-<!--[YOLOv7](#52-yolov7)  -->
 [YOLOv8](#52-yolov8)  
 [OCRs](#53-ocrs)  
 
+<!--[YOLOv7](#52-yolov7)  -->
 
 
 ## 5.1 Tarea
@@ -15,7 +15,7 @@ En esta práctica describo en primer término la tarea:  **El objetivo es desarr
 
 Nos centraremos en matrículas españolas, siendo una primera subtarea recopilar o capturar imágenes o vídeos que contengan vehículos con su matrícula visible. Si necesitan cámaras, trípode, etc. hablen conmigo.
 
-Si bien cuentan con libertad a la hora de escoger los módulos que integren en el prototipo, les propongo los siguientes apartados un detector de objetos, que permita localizar vehículos, y un reconocedor de texto, para el que deberán definir alguna estrategia de cara a que se focalice en las zonas de probable presencia de la matrícula. En una primera fase, las zonas probables se asumen qeu corresponden a zonas rectangulares (su contorno lo es), y en una segunda fase, les propongo crear un detector de matrículas basado en YOLOv8.
+Si bien cuentan con libertad a la hora de escoger los módulos que integren en el prototipo, les propongo los siguientes apartados un detector de objetos, que permita localizar vehículos, y un reconocedor de texto, para el que deberán definir alguna estrategia de cara a que se focalice en las zonas de probable presencia de la matrícula. En una primera fase, las zonas probables se asumen que corresponden a zonas rectangulares (su contorno lo es), y en una segunda fase, les propongo crear un detector de matrículas basado en YOLOv8.
 
 
 
@@ -73,7 +73,7 @@ Me sigue devolviendo *false*. En cualquier caso, me va con CPU con aceptable tas
 
 ## 5.2 yolov8
 
-<!-- environment deepafce e portátil -->
+<!-- environment VC_P1 e portátil -->
 
 Durantes este año 2023, Ultralytics presenta yolov8. Para su instalación en el environment *VC_P1* he seguido los pasos del  [tutorial de instalación de Ultralytics] (https://docs.ultralytics.com/quickstart/#install-ultralytics). No dejes de lado la [documentación](https://docs.ultralytics.com)
 
@@ -132,7 +132,7 @@ pip install pytesseract
 ```
 
 
-Por otro lado, [easyOCR](https://github.com/JaidedAI/EasyOCR) queofreceun cómodo soporte para multitud de lenguas, cuya instalacón es aún más simple, basta con:
+Por otro lado, [easyOCR](https://github.com/JaidedAI/EasyOCR) queofreceun cómodo soporte para más de 80 lenguas, cuya instalacón es aún más simple, basta con:
 
 ```
 pip install easyocr
@@ -142,9 +142,7 @@ pip install easyocr
 
 
 
-
-
-
+***
 
 
 Llegado a este punto:
