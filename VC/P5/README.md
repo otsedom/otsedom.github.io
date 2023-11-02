@@ -71,11 +71,11 @@ print(torch.cuda.is_available())
 Me sigue devolviendo *false*. En cualquier caso, me va con CPU con aceptable tasa de fotogramas por segundo con la webcam, por lo que parece viable u uso aún sin GPU. Ustedes aportarán más visiones y experiencias.
 -->
 
-## 5.2 yolov8
+## 5.2 YOLOv8
 
 <!-- environment VC_P1 e portátil -->
 
-Durantes este año 2023, Ultralytics presenta yolov8. Para su instalación en el environment *VC_P1* he seguido los pasos del  [tutorial de instalación de Ultralytics] (https://docs.ultralytics.com/quickstart/#install-ultralytics). No dejes de lado la [documentación](https://docs.ultralytics.com)
+Durante este año 2023, Ultralytics presenta yolov8. Para su instalación en el environment *VC_P1* he seguido los pasos del  [tutorial de instalación de Ultralytics] (https://docs.ultralytics.com/quickstart/#install-ultralytics). No dejes de lado la [documentación](https://docs.ultralytics.com)
 
 ```
 pip install ultralytics
@@ -90,16 +90,18 @@ Ha sido muy poco engorroso en mi experiencia. Una vez instalada, puede ejecutars
 yolo detect predict model=yolov8n.pt source="rutavideo"
 ```
 
-Con el parámetro model se define el modelo preentrenado a utilizar, los resultados los almacena en una carpeta *runs/detect/predict*. Los distintos parámetros de la ejecución sedescriben en la documentación del modo [*predict*](https://docs.ultralytics.com/modes/predict/). El modelo escogido detecta contenedores, para la segmentación semántica sugerir por ejemplo el modelo *yolov8n-seg.pt*.
+Con el parámetro model se define el modelo preentrenado a utilizar, los resultados los almacena en una carpeta *runs/detect/predict*. Los distintos parámetros de la ejecución se describen en la documentación del modo [*predict*](https://docs.ultralytics.com/modes/predict/). El modelo escogido detecta contenedores, para la segmentación semántica sugerir por ejemplo el modelo *yolov8n-seg.pt*.
 
 <!--A este segundo también le añadí la opción "device" para decirle qué tarjetas tiene que usar.-->
 
-Si nos interesa detectar desde nuestro código, como en *VC_P5_yolov8.ipynb*
+En las primeras celdas del cuaderno ejemplo, *VC_P5.ipynb*, se incluye un ejemplo de procesamiento y dibujado de las cajas contenedoras haciendo uso de un modelo desde código python. Se presentan todas las clases sin realizar ningún tipo de filtrado.
 
 
-https://stackoverflow.com/questions/75714505/how-to-only-detect-person-class-from-yolov8
+
 
 <!--
+
+https://stackoverflow.com/questions/75714505/how-to-only-detect-person-class-from-yolov8
 
 El código para entrenar es este:
 
@@ -121,7 +123,7 @@ Para ambos se incluyen demostradores mínimos en el cuaderno proporcionado esta 
 <!-- Al ser un nuevo *environment* no olvidar  que es necesario instalar el paquete para ejecutar cuadernos, desde consola-->
 
 
-Por un lado, [Tesseract](https://github.com/tesseract-ocr/tesseract), para el que desde python será necesario un wrapper, además de instalarlo.
+Por un lado, el conocido [Tesseract](https://github.com/tesseract-ocr/tesseract), para el que desde python será necesario un wrapper, además de instalarlo previamente.
 La documentación de [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html) dispone de información para su instalación en distintos sistemas operativos
 Para entorno Windows, siguiendo las instrucciones de la mencionada documentación, me he descargado los binarios desde el repositorio para tal fin de la [Universidad Manheim](https://github.com/UB-Mannheim/tesseract/wiki). Al instalar he indicado que incluya datos de otros lenguajes, en mi caso español. Además he anotado la carpeta donde se instala.
 
@@ -132,7 +134,7 @@ pip install pytesseract
 ```
 
 
-Por otro lado, [easyOCR](https://github.com/JaidedAI/EasyOCR) queofreceun cómodo soporte para más de 80 lenguas, cuya instalacón es aún más simple, basta con:
+Por otro lado, [easyOCR](https://github.com/JaidedAI/EasyOCR) que ofrece un cómodo soporte para más de 80 lenguas, cuya instalación es aún más simple, basta con:
 
 ```
 pip install easyocr

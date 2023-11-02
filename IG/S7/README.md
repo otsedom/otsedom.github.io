@@ -11,7 +11,7 @@
 
 Tras la sesión anterior que introducía aspectos básicos de three.js, en esta sesión práctica utilizaremos el archivo *index_S7.html*. Señalar que para poder hacer uso en el último ejemplo de *dat.gui*, he hecho uso de una versión previa de three.js.
 
-Como punto de partida de la sesión, el código del archivo *script_11_estrella* integra varios de los elementos abordados en la semana anterior para dibujar una esfera, básicamente es el de *script_03_esfera_modular.js* reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
+Como punto de partida de la sesión, el código del archivo *script_11_estrella* integra varios de los elementos abordados en la semana anterior para dibujar una esfera, básicamente es el de *script_13_esfera_modular.js* reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
 
 ```
 import * as THREE from "three";
@@ -544,7 +544,7 @@ Ldir_Info.add(Ldir_Params, 'visible').onChange((value) => {
 
 Three.js utiliza mapas de sombras, que requieren visualizar la escena desde el punto de vista de cada fuente de luz, suponiendo su utilización por ello un coste importante. Una alternativa podría ser el uso de *sombras falsas*, básicamente texturas. Para mayor información puede serte de interés este [tutorial](https://r105.threejsfundamentals.org/threejs/lessons/threejs-shadows.html).
 
-En mis pruebas con la luz [direccional](https://threejs.org/docs/#api/en/lights/shadows/DirectionalLightShadow) ha sido inmediato el resultado, pero no me se han mostrado evidentes las sombras producidas por luces [focales](https://threejs.org/docs/#api/en/lights/shadows/SpotLightShadow) y [puntuales](https://threejs.org/docs/#api/en/lights/shadows/PointLightShadow), a pesar de estar documentadas.
+En mis pruebas con la luz [direccional](https://threejs.org/docs/#api/en/lights/shadows/DirectionalLightShadow) ha sido inmediato el resultado, pero no me se han mostrado evidentes las sombras producidas por luces [focales](https://threejs.org/docs/#api/en/lights/shadows/SpotLightShadow) y [puntuales](https://threejs.org/docs/#api/en/lights/shadows/PointLightShadow), a pesar de estar documentadas y con ejemplos como este con [luces puntuales](https://threejs.org/examples/?q=shadow#webgl_shadowmap_pointlight).
 
 
 ## Tarea
