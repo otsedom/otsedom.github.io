@@ -490,7 +490,7 @@ renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 //Se activan las sombras
 renderer.shadowMap.enabled = true;
-//renderer.shadowMap.type = THREE.PCFSoftShadowMap; // por defecto THREE.PCFShadowMap
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // por defecto THREE.PCFShadowMap
 document.body.appendChild( renderer.domElement );
 ```
 
@@ -544,7 +544,7 @@ Ldir_Info.add(Ldir_Params, 'visible').onChange((value) => {
 
 Three.js utiliza mapas de sombras, que requieren visualizar la escena desde el punto de vista de cada fuente de luz, suponiendo su utilización por ello un coste importante. Una alternativa podría ser el uso de *sombras falsas*, básicamente texturas. Para mayor información puede serte de interés este [tutorial](https://r105.threejsfundamentals.org/threejs/lessons/threejs-shadows.html).
 
-En mis pruebas con la luz [direccional](https://threejs.org/docs/#api/en/lights/shadows/DirectionalLightShadow) ha sido inmediato el resultado, pero no me se han mostrado evidentes las sombras producidas por luces [focales](https://threejs.org/docs/#api/en/lights/shadows/SpotLightShadow) y [puntuales](https://threejs.org/docs/#api/en/lights/shadows/PointLightShadow), a pesar de estar documentadas y con ejemplos como este con [luces puntuales](https://threejs.org/examples/?q=shadow#webgl_shadowmap_pointlight).
+En mis pruebas con la luz [direccional](https://threejs.org/docs/#api/en/lights/shadows/DirectionalLightShadow) ha sido inmediato el resultado. Con luces [focales](https://threejs.org/docs/#api/en/lights/shadows/SpotLightShadow) y [puntuales](https://threejs.org/docs/#api/en/lights/shadows/PointLightShadow), la sombra producida puede ser más sutil y hasta pasar desapercibida, al estar afectada por la intensidad, atenuación, etc.
 
 
 ## Tarea
