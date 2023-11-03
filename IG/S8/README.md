@@ -15,7 +15,7 @@ En primer término abordo ejemplos básicos de mapeo de texturas, para posterior
 
 ### Texturas básicas
 
-Como ejemplo básico de mapeo de texturas, presento el ejemplo *script_21_texturabasica.js* en cuyo código se añade una propiedad al material de la malla de la esfera y del cubo, justamente la textura que se previamente a través de llamadas a *TextureLoader*, queseasocia ala propiedad *texture* del material en caso de estar definida como parámetro de entrada. Las funciones de creación de esferas y cubos:
+Como ejemplo básico de mapeo de texturas, presento el ejemplo *script_21_texturabasica.js* en cuyo código se añade una propiedad al material de la malla de la esfera y del cubo, justamente la textura que se previamente a través de llamadas a *TextureLoader*, que se asocia a la propiedad *texture* del material en caso de estar definida como parámetro de entrada. Las funciones de creación de esferas y cubos:
 
 
 ```
