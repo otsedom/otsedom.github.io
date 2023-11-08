@@ -6,6 +6,7 @@
 [YOLOv8](#52-yolov8)  
 [OCRs](#53-ocrs)  
 [Entrenando YOLOv8](#54-entrenando-yolov8)
+[Incidencias](#55-incidencias)
 
 <!--[YOLOv7](#52-yolov7)  -->
 
@@ -332,7 +333,18 @@ El entrenamiento puede llevarse a cabo en CPU, siendo sensiblemente más lento q
 Finalizado el entreno localmente, en la carpeta *runs/detect/trainX* se encuentra el resultado. Ya estarías en disposición de probarlo, desde línea de comando o en tu propio código.
 
 
+## 5.5 Incidencias
+
+Hemos observado problemas al instalar YOLOv8 y easyOCR, puedes llegar a un punto en que la instalación de opencv no vaya bien. Lo hemos conseguido resolver con:
+
+```
+pip uninstall opencv-python
+pip install opencv-python --upgrade
+```
+
 <!-- en el despacho  
+
+
 
 
 Llegado a este punto:
