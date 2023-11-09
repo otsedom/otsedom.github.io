@@ -1458,7 +1458,6 @@ Las posibilidades de aplicación de la aleatoriedad  es amplia. El siguiente *sh
 
   **GLSL**
   ```
-\begin{lstlisting}[frame=single,caption={Patrón Truchet (Dibuja31.glsl)},label=code:processing-glsl-dibujando31]
 #ifdef GL_ES
 precision mediump float;
 #endif
