@@ -1333,7 +1333,7 @@ void main() {
 }
 ```
 
-Simplificamos en un uevo *shader*, moviendo el patrón a lo largo de los ejes *x* e *y* en función del tiempo.
+Simplificamos en un nuevo *shader*, moviendo el patrón a lo largo de los ejes *x* e *y* en función del tiempo.
 
 **GLSL**
 ```
@@ -1419,7 +1419,7 @@ void main() {
 ### Aleatoriedad
 
 
-Una interesante posibilidad es el uso de aleatoriedad a distintos niveles en la creación del contenido gráfico. En el *shader* a continuación, basado en [este](https://thebookofshaders.com/10/?lan=es), se replica la propuesta de  [The Book of Shaders](https://thebookofshaders.com) para el uso de valores aleatorios en 2D, dada la ausencia de funciones en GLSL.
+Una interesante posibilidad es el uso de aleatoriedad a distintos niveles en la creación del contenido gráfico. En el *shader* a continuación, basado en [este](https://thebookofshaders.com/10/?lan=es), se replica la propuesta de [The Book of Shaders](https://thebookofshaders.com) para el uso de valores aleatorios en 2D, dada la ausencia de funciones en GLSL.
 
   **GLSL**
   ```
@@ -1508,7 +1508,7 @@ void main() {
 *Captura del resultado*
 
 
-Los valores aleatorios presentan una frecuencia muy alta, siendo excesiva en determinadas situaciones. Las funciones de ruido se adaptan mejor al suavizar las frecuencias presentes en la salida resultante. Destacar en primer lugar el ruido de Perlin aplicado en el *shader* a continuacion, basado en [este ejemplo](https://thebookofshaders.com/11/?lan=es), una vez disponible una rejilla, se interpola en posiciones intermedias
+Los valores aleatorios presentan una frecuencia muy alta, siendo excesiva en determinadas situaciones. Las funciones de ruido se adaptan mejor al suavizar las frecuencias presentes en la salida resultante. Destacar en primer lugar el ruido de Perlin aplicado en el *shader* a continuación, basado en [este ejemplo](https://thebookofshaders.com/11/?lan=es), una vez disponible una rejilla, se interpola en posiciones intermedias
 
   **GLSL**
   ```
@@ -1722,7 +1722,7 @@ void main() {
 }
 ```
 
-Finalizo con un ejemplo de aplicación de filtros, una gaussiana o la  máscara de Sobel, requiriendo conocer la dimensión de la textura.
+Finalizo con un ejemplo de aplicación de filtros, una gaussiana 3x3 o unaa máscara de Sobel, requiriendo conocer la dimensión de la textura.
 
 
 ```
