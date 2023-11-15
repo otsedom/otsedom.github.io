@@ -141,6 +141,10 @@ pip install lap
 
 ![Segmentación](images/yolov8-tracker.png)  
 *Resultado del BoT-SORT*
+
+Si quieres acceder a vídeos utilizados para evaluar las técnicas de seguimiento, prueba este [enlace](https://motchallenge.net/data/MOT15/).
+
+
 <!--
 
 https://stackoverflow.com/questions/75714505/how-to-only-detect-person-class-from-yolov8
