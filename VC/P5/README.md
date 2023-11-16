@@ -5,7 +5,7 @@
 [Tarea](#51-tarea)  
 [YOLOv8](#52-yolov8)  
 [OCRs](#53-ocrs)  
-[Entrenando YOLOv8](#54-entrenando-yolov8)
+[Entrenando YOLOv8](#54-entrenando-yolov8)  
 [Incidencias](#55-incidencias)
 
 <!--[YOLOv7](#52-yolov7)  -->
