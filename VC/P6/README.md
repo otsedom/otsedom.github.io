@@ -19,7 +19,7 @@ Para las primeras demos, será necesario hacer uso del *environment* utilizado e
 
 ## Autocaras
 
-Antes de comenzar, si quieres trabajar con un environment desde cero:
+Antes de comenzar, si quieres trabajar con un *environment* desde cero:
 
 ```
 conda create --name VC_P6 python=3.11.5
@@ -27,6 +27,7 @@ conda activate VC_P6
 pip install opencv-python
 pip install matplotlib
 pip install scikit-learn
+pip install scikit-image
 ```
 
 La primera de las demos está contenida en el archivo *VC_P6_eigenfaces* que a modo de resumen realiza las siguientes acciones:
@@ -55,12 +56,7 @@ Tras la ejecución, para todas las variantes se muestran métricas y matriz de c
 
 ## Descriptores locales
 
-El segundo demostrador *VC_P6_eigenfaces_handcrafted_kfold* diseña un experimento kfold, comparando el uso de autocaras con un par de configuraciones basadas en LBP y HOG. Para su ejecución puede que necesites instalar algún paquete adicional en el *environment*:
-
-```
-pip install scikit-image
-```
-
+El segundo demostrador *VC_P6_eigenfaces_handcrafted_kfold* diseña un experimento kfold, comparando el uso de autocaras con un par de configuraciones basadas en LBP y HOG. 
 A modo de resumen realiza las siguientes acciones:
 
 - De nuevo, recuerda en primer lugar modificar la ruta especificada en el código en la variable *folder* para adaptarla a tu equipo
