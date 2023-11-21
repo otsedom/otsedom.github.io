@@ -11,7 +11,7 @@
 
 ## Conjunto de datos
 
-Como conjunto de datos para varias de las demos descritas a continuación se utiliza **DatabaseGender59x65**,  que puede descargarse desde el campus virtual. Tras descomprimir, observarás que contiene dos
+Como conjunto de datos para varias de las demos descritas a continuación se utiliza **DatabaseGender59x65**, que puede descargarse desde el campus virtual. Tras descomprimir, observarás que contiene dos
 carpetas, dado que se asume un problema de dos clases.
 
 Para las primeras demos, será necesario hacer uso del *environment* utilizado en las primeras prácticas, mientras que para aquellas que hacen uso de deepface, es necesario utilizar un *environment* con deepface instalado.
@@ -19,11 +19,21 @@ Para las primeras demos, será necesario hacer uso del *environment* utilizado e
 
 ## Autocaras
 
+Antes de comenzar, si quieres trabajar con un environment desde cero:
+
+```
+conda create --name VC_P6 python=3.11.5
+conda activate VC_P6
+pip install opencv-python
+pip install matplotlib
+pip install scikit-learn
+```
+
 La primera de las demos está contenida en el archivo *VC_P6_eigenfaces* que a modo de resumen realiza las siguientes acciones:
 
-- Antes de nada, modifica la ruta especificada en el código en la variable *folder* para adaptarla a tu equipo.
+- Antes de nada, modifica la ruta especificada en el código en la variable *folder* para adaptarla a tu equipo
 - Carga el conjunto de datos sin aplicar ningún tipo de recorte, cada imagen se recompone como vector, obteniendo la matriz *X* con todas las muestras, y la matriz *Y* con sus etiquetas numéricas
-- Se visualiza la primera muestra de cada clase y estadísticas del conjunto de datos
+- Visualiza la primera muestra de cada clase y estadísticas del conjunto de datos
 - De forma aleatoria se divide en conjunto de datos en entrenamiento y test usando *train_test_split*, es un *hold-out* 70/30.
 - A continuación se realizan varios experimentos de clasificación:
   - Utiliza el valor de los píxeles como vector de características, clasificando por mayoría entre los k vecinos más cercanos (k=5 en el código)
@@ -35,10 +45,10 @@ La primera de las demos está contenida en el archivo *VC_P6_eigenfaces* que a m
     - utilizando una máquina de vectores soporte (SVM)
 
 
-    ![PCA](images/pca.png)  
-    *Caras principales*
+![PCA](images/pca.png)  
+*Caras principales*
 
-Para todas las variantes se muestran métricas y matriz de confusión. ¿Qué esquema consideras que es mejor?
+Tras la ejecución, para todas las variantes se muestran métricas y matriz de confusión. ¿Qué esquema consideras que es mejor?
 
 ¿Qué ocurriría si se realiza el mismo proceso sobre una zona recortada de la imagen, por ejemplo te centras en la zona ocular. Comentar que las imágenes tienen un tamaño 59x65, habiendo sido normalizadas para que los ojos anotados/detectados estén en las posiciones (16,17) y (42,17).
 
@@ -53,10 +63,10 @@ pip install scikit-image
 
 A modo de resumen realiza las siguientes acciones:
 
-- Recuerda antes modificar la rute especificada en el código en la variable *folder* para adaptarla a tu equipo.
+- De nuevo, recuerda en primer lugar modificar la ruta especificada en el código en la variable *folder* para adaptarla a tu equipo
 - Carga el conjunto de datos sin aplicar ningún tipo de recorte, cada imagen se recompone como vector, obteniendo la matriz *X* con todas las muestras, y la matriz *Y* con sus etiquetas numéricas
 - Se visualizan varias muestras de cada clase y estadísticas del conjunto de datos
-- De forma aleatoria se divide en conjunto de datos en varios subconjuntos usando *StratifiedKFold* para diseñar el kfold.
+- De forma aleatoria se divide en conjunto de datos en varios subconjuntos usando *StratifiedKFold* para diseñar el kfold
 - Realiza el análisis de componentes principales del conjunto de entrenamiento, tomando las componentes que cubran el 95%de la varianza del conjunto
 - Posteriormente aplica los siguientes esquemas de clasificación:
   - Clasifica con píxeles como características y KNN
