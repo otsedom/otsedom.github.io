@@ -25,12 +25,11 @@ Como experiencia personal, la demo de las manos funciona con ambas, el cuaderno 
 ## Imagen y vídeo 360
 
 Mi experiencia con imagen y vídeo 360 se centra en la Gopro MAX.
-Para trabajar con material capturado con la Gopro MAX en el PC, tuve que instalar [Gopro Player](https://gopro.com/es/es/info/gopro-player). Mi experiencia con el enlace ha sido obtener siempre un *"Ha habido un problema"*, por lo que acabé con un enlace a una [beta](https://install.appcenter.ms/orgs/sw-team-devops-rimo/apps/gopro-player-for-windows-beta/distribution_groups/public?fbclid=IwAR2AVN9jQSLJETcmC57ILYKT1_B4JxVPa8MOYhg3mRvdSDQYh2sCVvuZ6VI). No me hago responsable.
+Para trabajar con material capturado con la Gopro MAX en el PC, tuve que instalar [Gopro Player](https://gopro.com/es/es/info/gopro-player). Realmente con el enlace anterior siempre obtengo como respuesta *"Ha habido un problema"*, por lo que acabé con un enlace a una [beta](https://install.appcenter.ms/orgs/sw-team-devops-rimo/apps/gopro-player-for-windows-beta/distribution_groups/public?fbclid=IwAR2AVN9jQSLJETcmC57ILYKT1_B4JxVPa8MOYhg3mRvdSDQYh2sCVvuZ6VI). No me hago responsable.
 
-Gopro utiliza el códec HEVC, según mis notas tuve que
- instalar el códec, y aparentemente lo obtuve a través de este [enlace](https://apps.microsoft.com/detail/9MW2BVRCG0B2?rtc=1&hl=es-es&gl=ES), en cualquier caso, he dejado un enlace en el campus.
+Gopro utiliza el códec HEVC, según mis notas tuve que instalar el códec, y aparentemente lo obtuve a través de este [enlace](https://apps.microsoft.com/detail/9MW2BVRCG0B2?rtc=1&hl=es-es&gl=ES), en cualquier caso, he dejado un enlace en el campus.
 
-De cara a verlo en las gafas de RV, conecté con cable USB y exporté al dispositivo, tras aceptarlo en ambos dispositivos. Una vez en as gafas utilizando *Mi TV* como aplicación en las gafas, accediendo a Mi contenido.
+De cara a verlo en las gafas de RV, conecté con cable USB (puerto USB-3), y aparece como una unidad USB. Si no es conexión USB-3 y no del frontal de la torre, no he conseguido acceder. Tengo dudas si además he tenido que tener instalada la [aplicación de Quest](https://www.meta.com/es/quest/setup/) para el PC. En algún equipo tuve que dar permiso para que se pudiera acceder a las gafas. Una vez que el contenido haya sido copiado en las gafas, he probado en la carpeta *Movies*, lo he visualizado en 360 utilizando la aplicación *Meta Quest TV* como aplicación en las gafas accediendo a *Tu contenido*.
 
 <!--
 
