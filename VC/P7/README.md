@@ -39,7 +39,20 @@ https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/
 -->
 
 
+<!--
 
+Setup
+https://www.youtube.com/watch?v=VicWnzy-O5Y
+
+Balance
+
+Cable, Sony Multi
+
+
+Arrancar
+
+App, calibración
+-->
 
 
 ***

@@ -11,6 +11,22 @@ el trabajo forme parte de un desarrollo presentado también para otra(s) asignat
 - etc.
 
 
+Algunas posibles inspiraciones que añadir a otras ya vistas:
+
+- [V Motion Project](https://vimeo.com/45417241)
+- [Starfield](https://vimeo.com/13301486)
+- [KInect Virtual Drumming](https://youtu.be/IBr3-nWQvJ4?feature=shared)
+
+<!-- Galería 
+
+https://github.com/otsedom/otsedom.github.io/tree/main/CIU/P6#65-galería
+
+Galería trabajos CIU?
+
+Kinect virtual instrument
+
+-->
+
 <!-- https://pypi.org/project/pythreejs/
 -->
 
