@@ -49,11 +49,13 @@ Una vez que ya está el *environment* creado:
 
 - En algunas máquinas al intentar el comando anterior, ha aparecido un error con algo como *interpreter not found*. Se ha resuelto seleccionando en la parte inferior izquierda el modo *Trust* en lugar de *Restricted*.
 
-- Una vez llegados a este punto, la primera ejecución de un cuaderno probablemente produzca un error, ya que es necesario instalar *ipykernel* con elementos para el uso de los cuadernos. Habitualmente, VS Code da error y sugiere el siguiente comando desde línea de comando. Nuestra experiencia desde *Anaconda Prompt* ha sido positiva al lanzarlo desde el *environment* original, es decir no desde el environment *VC_P1* sino el *base*.
+- Una vez llegados a este punto, la primera ejecución de un cuaderno probablemente produzca un error, ya que es necesario instalar *ipykernel* con elementos para el uso de los cuadernos. Si no funciona de forma automática, VS Code dará error y sugerirá lanzar desde línea de comando (en ocasiones hemos tenido que lanzarlo desde el environment *base*):
 
 ```
 conda install -n ENV_NAME ipykernel --update-deps --force-reinstall
 ```
+
+
 
 - Llegados a este punto, ya fue posible ejecutar el cuaderno de esta primera práctica. Cruzo los dedos, y veremos las variantes con las que se encuentran ustedes.
 
@@ -109,7 +111,7 @@ Si algo hubiera ido mal y quisieras eliminar el *environment* para empezar de nu
 
 ### 1.2. Aspectos cubiertos y entrega
 
-El objetivo de esta práctica en primer término es poder ejecutar el cuaderno proporcionado en nuestro propio equipo o el del laboratorio. Este primer cuaderno (VC_P1.ipynb) debe servir para comprender de forma aplicada la representación de imágenes de grises y color, su modificación, visualización y tratamiento básico. Al finalizar la práctica, debes ser capaz de crear una imagen de un determinado tamaño,
+El objetivo de esta práctica en primer término es poder ejecutar el cuaderno proporcionado en nuestro propio equipo o el del laboratorio. Este primer cuaderno (*VC_P1.ipynb*) debe servir para comprender de forma aplicada la representación de imágenes de grises y color, su modificación, visualización y tratamiento básico. Al finalizar la práctica, debes ser capaz de crear una imagen de un determinado tamaño,
 acceder a los valores asociados a un determinado píxel, modificar dichos valores, dibujar primitivas gráficas básicas sobre una imagen, abrir una imagen de disco, así como acceder a los fotogramas de un vídeo o captura de cámara. Para todo ello, se proponen varias tareas (espero no dejarme ninguna atrás aquí):
 
 - Crear una imagen con la textura de un tablero de ajedrez
