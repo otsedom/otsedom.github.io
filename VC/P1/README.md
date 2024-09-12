@@ -67,8 +67,6 @@ conda remove --name ENV_NAME --all # Elimina el environment ENV_NAME
 conda list --explicit > spec-file.txt   # genera un txt con los elementos presentes en el environment activado
 ```
 
-
-
 #### 1.1.2. Un environment para varias prácticas
 
 En ocasiones puede ser necesario clonar un *environment* en otro equipo. Una posibilidad es exportando la lista de requisitos, y proceder a su instalación en el otro equipo. Reproduzco la instalación que está en funcionamiento en mi equipo portátil en su partición bajo Windows (no funcionará con otros sistemas operativos). Hace uso de la versión Python 3.7.3, e incluye
