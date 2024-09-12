@@ -15,10 +15,6 @@ los distintos ejemplos en el laboratorio con Python desde Windows ha sido [Anaco
 
 Los equipos del laboratorio ya cuentan con Anaconda y VS Code instalados, si bien no completamente configurados para ejecutar el cuaderno de esta práctica. Conocida esta circunstancia, para poder ejecutar un primer cuaderno proporcionado tras contar en el equipo con la instalación de Anaconda y VS Code, los pasos a realizar son:
 
-- Lanzar VS Code (en el PC del laboratorio disponible en el escritorio)
-
-- Instalar la extensión de Python en VS Code. Desde el [enlace](https://code.visualstudio.com/docs/languages/python) con VS Code abierto debería llevar al [enlace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) en el *Marketplace*
-
 - Lanzar *Anaconda Prompt*
 
 - Crear el *environment* con la configuración que nos interese. Para crear uno que ejecute el cuaderno de esta práctica, sin darle muchas vueltas con una versión reciente de Python, se les propone lo siguiente:
@@ -27,7 +23,7 @@ Los equipos del laboratorio ya cuentan con Anaconda y VS Code instalados, si bie
 conda create --name VC_P1 python=3.11.5
 ```
 
-Observen que crea  el *environment* *VC_P1* con una versión de Python en particular. Sustituye *VC_P1* por el nombre que decidas. Tras crearlo, y activarlo, instala un par de paquetes adicionales (recuerda sustituir *VC_P1* por el nombre que hayas decidido):
+Observen que crea el *environment* *VC_P1* con una versión de Python en particular. Sustituye *VC_P1* por el nombre que decidas. Tras crearlo, y activarlo, instala un par de paquetes adicionales (recuerda sustituir *VC_P1* por el nombre que hayas decidido):
 
 ```
 conda activate VC_P1
@@ -39,13 +35,17 @@ NOTA: Para aquellas personas que quieren trabajar bajo Windows, tienen disponibl
 
 Una vez que ya está el *environment* creado:
 
-- Tener en ejecución tanto VS Code como la terminal de *Anaconda Prompt*
+- Descargar los archivos disponibles en github de la práctica 1 (carpeta *P1*)
 
-- Abrir el cuaderno de la práctica en VS Code
+- Lanzar VS Code (en el PC del laboratorio disponible en el escritorio)
 
-- Desde VS Code, se hace necesario lanzar su *Command Palette* con la combinación *CTRL+SHIT+Palette*
+- Instalar la extensión de Python en VS Code. Desde el [enlace](https://code.visualstudio.com/docs/languages/python) con VS Code abierto debería llevar al [enlace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) en el *Marketplace*
 
-- Es el momento de seleccionar el *environment* recientemente creado, tecleando *Python: Seleccionar intérprete*, escogiendo el que nos interese.
+- Abrir el cuaderno de la práctica en VS Code (si el doble clic no va, puedes abrir el archivo desde VC Code)
+
+- Con el cuaderno abierto, en la parte superior derecha aparece *Select Kernel*. Tras picar deberías poder escoger el *environment*
+
+- Si no funcionara lo anterior, se hace necesario lanzar su *Command Palette* con la combinación *CTRL+SHIT+Palette*. Desde ella selecciona el *environment* recientemente creado, tecleando *Python: Seleccionar intérprete*, escogiendo el que nos interesa, el *environment* *VC_P1*. En caso de no aparecer, a pesar de  haber sido creado, en algunos equipos ha sido necesario cerrar y volver a lanzar VS Code.
 
 - En algunas máquinas al intentar el comando anterior, ha aparecido un error con algo como *interpreter not found*. Se ha resuelto seleccionando en la parte inferior izquierda el modo *Trust* en lugar de *Restricted*.
 
@@ -55,9 +55,7 @@ Una vez que ya está el *environment* creado:
 conda install -n ENV_NAME ipykernel --update-deps --force-reinstall
 ```
 
-
-
-- Llegados a este punto, ya fue posible ejecutar el cuaderno de esta primera práctica. Cruzo los dedos, y veremos las variantes con las que se encuentran ustedes.
+- Llegados a este punto, ya debería ser posible ejecutar el cuaderno de esta primera práctica. Cruzo los dedos, y veremos las variantes con las que se encuentran ustedes.
 
 #### 1.1.1. Comandos básicos de Anaconda
 
