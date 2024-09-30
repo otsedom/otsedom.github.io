@@ -23,7 +23,7 @@ A lo largo del cuaderno se propone resolver algunas variaciones sobre el código
   - [Messa di voce](https://youtu.be/GfoqiyB1ndE?feature=shared), por Golan Levin y Zachary Lieberman
   - [Virtual air guitar](https://youtu.be/FIAmyoEpV5c?feature=shared)
 
-No olvidar todas las indicaciones dadas en la práctica anterior sobre la entrega: enlace github por medio del campus virtual incluyendo cuaderno(s) resolviendo las tareas y su correspondiente *README*.
+No olvidar todas las indicaciones dadas en la práctica anterior sobre la entrega: **enlace github** por medio del campus virtual incluyendo **cuaderno(s)** resolviendo las tareas y su correspondiente **README**.
 
 ***
 Bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
