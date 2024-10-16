@@ -45,7 +45,13 @@ pip install ultralytics
 pip install lap
 ```
 
-Si cuentas con GPU, para hacer uso de su potencia de cálculo en el *environment*, necesitas contar con CUDA instalado, y seguir las instrucciones para instalar todos los paquetes compatibles necesarios. Para la instalación, cuentas con esta [guía](https://pytorch.org/get-started/locally/) que te prepara la línea de comando a lanzar. Un ejemplo de la utilizada en mi equipo con CUDAv11.6:
+Si no funcina con *lap*, probar
+
+```
+pip install lapx
+```
+
+Si **cuentas con GPU**, para hacer uso de su potencia de cálculo en el *environment*, necesitas contar con CUDA instalado, y seguir las instrucciones para instalar todos los paquetes compatibles necesarios. Para la instalación, cuentas con esta [guía](https://pytorch.org/get-started/locally/) que te prepara la línea de comando a lanzar. Un ejemplo de la utilizada en mi equipo con CUDAv11.6:
 
 ```
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
@@ -130,7 +136,7 @@ Pero surge una **incidencia** con OpenCV, dado que funciones de visualización, 
 puedes llegar a un punto en que la instalación de OpenCV no sea completa para nuestro cuaderno. Lo hemos conseguido resolver con:
 
 ```
-pip uninstall opencv-python
+pip uninstall opencv-python opencv-python-headless
 pip install opencv-python --upgrade
 ```
 
