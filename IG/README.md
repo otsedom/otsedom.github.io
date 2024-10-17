@@ -8,7 +8,7 @@ Curso 2024/2025
 
 
 
-<!-- - [Semana 6](S6/README.md)  -->
+<- [Semana 6](S6/README.md)>
 <!-- - [Semana 7](S7/README.md)  -->
 <!-- - [Semana 8](S8/README.md)  -->
 <!-- - [Semana 9](S9/README.md)  -->
