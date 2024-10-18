@@ -75,7 +75,7 @@ var listener = app.listen(process.env.PORT, function () {
 });
 ```
 
-Tras la breve descripción de los archivos presentes, de forma análoga al tutorial se presenta en primer término un ejemplo básico que dibuja un cubo verde, el archivo *script_01_cubo_minimo.js* del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2425) proporcionado:
+Tras la breve descripción de los archivos presentes, de forma análoga al tutorial se presenta en primer término un ejemplo básico que dibuja un cubo verde, el archivo [*script_01_cubo_minimo.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_01_cubomin.js) del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2425) proporcionado:
 
 ```
 import * as THREE from "three";
@@ -135,53 +135,8 @@ En el bucle de este ejemplo, se incluye código comentado que permite modificar 
 
 ## Objetos
 
-Tras comprender el ejemplo inicial, y modificar de varias formas el cubo, como primera modificación en lugar de un cubo, un nuevo ejemplo crea una esfera en rotación. El código de *script_02_esfera_minimo.js*:
+Tras comprender el ejemplo inicial, y modificar de varias formas el cubo, como primera modificación en lugar de un cubo, un nuevo ejemplo crea una esfera en rotación. Es el momento de observar el código [*script_02_esfera_minimo.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_02_esfera_minimo.js). Desde este punto dejaré de incluir códigos completos.
 
-```
-import * as THREE from "three";
-
-// Fuentes
-//https://threejs.org/docs/#manual/en/introduction/Creating-a-scene -->
-// https://r105.threejsfundamentals.org/threejs/lessons/threejs-primitives.html  -->
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75,
-        window.innerWidth / window.innerHeight, 0.1, 1000);
-//Posición de la cámara
-camera.position.set(0, 0, 5);
-
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-//Objeto esfera (radio, eltos ancho, eltos alto)
-const geometry = new THREE.SphereBufferGeometry(1, 30, 10);
-//Material relleno (z-buffer) o alambres
-const material = new THREE.MeshBasicMaterial({
-        color: 0xffff00,
-        wireframe: true, //Descomentar para activar modelo de alambres
-      });
-
-//Malla resultante
-const esfera = new THREE.Mesh(geometry, material);
-//Se añade al grafo de escena
-scene.add(esfera);
-
-//Coloca la esfera en el espacio
-//esfera.position.set(2,3,0);
-
-//Bucle de animación
-function animate() {
-  requestAnimationFrame(animate);
-
-  //Modifica rotación de la esfera
-  esfera.rotation.x += 0.01;
-  //esfera.rotation.z += 0.01;
-
-  renderer.render(scene, camera);
-}
-
-animate();
-```
 
 La principal diferencia con el código anterior, es el tipo de *geometría* creada, la mencionada esfera, teniendo los parámetros de la llamada distinto significado al cubo. Para conocer otras geometrías disponibles,
 además de la [documentación sobre geometrías de threejs](https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry), recomendar el [tutorial](https://r105.threejsfundamentals.org/threejs/lessons/threejs-primitives.html) de una *release* de Three.js previa sobre primitivas.
@@ -217,93 +172,8 @@ Las propiedades de los objetos 3D están descritas en la clase [Object3D](https:
 
 ## Modularidad
 
-De cara a crear escenas con mayor número de objetos, sabes que estructurar el código facilita el trabajo. El código *script_03_esfera_modular.js*, da un pasito para facilitar crear múltiples esferas, además de incluir otras novedades de interacción:
+De cara a crear escenas con mayor número de objetos, sabes que estructurar el código facilita el trabajo. El código [*script_03_esfera_modular.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_03_esfera_modular.js), da un pasito para facilitar crear múltiples esferas, además de incluir otras novedades de interacción.
 
-```
-import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-
-let scene;
-let camera;
-let renderer;
-let objetos = [];
-let grid;
-
-init()
-animationLoop()
-
-function init() {
-
-  //Integrando un título
-  var info = document.createElement('div');
-			info.style.position = 'absolute';
-			info.style.top = '30px';
-			info.style.width = '100%';
-			info.style.textAlign = 'center';
-			info.style.color = '#fff';
-			info.style.fontWeight = 'bold';
-			info.style.backgroundColor = 'transparent';
-			info.style.zIndex = '1';
-			info.style.fontFamily = 'Monospace';
-			info.innerHTML = "three.js - hola, mi título aquí";
-			document.body.appendChild(info);
-
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-  camera.position.set(0, 0, 10);
-
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  document.body.appendChild( renderer.domElement );
-
-  //Objetos
-  Esfera(0,0,0,1,10,10, 0xffff00);
-  Esfera(1,0,0,1,10,10, 0xff00ff);
-
-  var controls = new OrbitControls(camera, renderer.domElement);
-
-  //Rejilla de referencia indicando tamaño y divisiones
-  grid = new THREE.GridHelper(20, 40);
-  //Mostrarla en vertical
-  grid.geometry.rotateX( Math.PI / 2 );
-  grid.position.set(0, 0, .05);
-  grid.visible = false;
-  scene.add(grid);
-
-  //Manejador de evento del botón de ratón
-  document.getElementById("onoff").addEventListener("click",
-			function(){
-				grid.visible = !grid.visible;
-			});
-}
-
-
-function Esfera(px,py,pz, radio, nx, ny, col) {
-  let geometry = new THREE.SphereBufferGeometry(radio, nx, ny)
-  //Material con o sin relleno
-  let material = new THREE.MeshBasicMaterial({
-        color: col,
-        //wireframe: true, //Descomenta para activar modelo de alambres
-      });
-
-  let mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(px,py,pz);
-  scene.add(mesh)
-  objetos.push(mesh)
-}
-
-//Bucle de animación
-function animationLoop() {
-  requestAnimationFrame(animationLoop);
-
-  //Modifica rotación de todos los objetos
-  for(let object of objetos) {
-    object.rotation.x += 0.01;
-  }
-
-  renderer.render(scene, camera);
-}
-```
 
 Observar que cada esfera creada también se añade a un vector de objetos, permitiendo posteriormente realizar acciones sobre los objetos según nos interese.
 
@@ -319,11 +189,11 @@ c.set( THREE.MathUtils.randInt(0, 65535) );
 c.getHexString();
 ```
 
-**Modifica *script_03_esfera_modular.js* para crear un número *n* esferas. ¿Hasta qué valor de *n* consigues llegar sin que se deteriore el bucle de visualización?**
+**Modifica [*script_03_esfera_modular.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_03_esfera_modular.js) para crear un número *n* esferas. ¿Hasta qué valor de *n* consigues llegar sin que se deteriore el bucle de visualización?**
 
 ## Asistentes
 
-Para situarnos mejor en el escenario 3D, una rejilla aporta referencia. Three.js dispone de varios tipos de asistentes, en el código, presente en el ejemplo previo, se añade un [GridHelper](https://threejs.org/docs/#api/en/helpers/GridHelper) que visualiza una rejilla por defecto sobre el plano *xz*. El código a continuación, presente en *script_03_esfera_modular.js*, coloca la rejilla en vertical, es decir paralela al plano *xy*.
+Para situarnos mejor en el escenario 3D, una rejilla aporta referencia. Three.js dispone de varios tipos de asistentes, en el código, presente en el ejemplo previo, se añade un [GridHelper](https://threejs.org/docs/#api/en/helpers/GridHelper) que visualiza una rejilla por defecto sobre el plano *xz*. El código a continuación, presente en [*script_03_esfera_modular.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_03_esfera_modular.js), coloca la rejilla en vertical, es decir paralela al plano *xy*.
 
 ```
 //Rejilla de referencia indicando tamaño y divisiones
@@ -383,7 +253,7 @@ var info = document.createElement('div');
 
 Es un texto definido en el DOM, si bien existen otras opciones que puedes consultar en la [documentación](https://threejs.org/docs/#manual/en/introduction/Creating-text).
 
-Los cambios introducidos los tienes integrados en el ejemplo  *script_03_esfera_boton_rejilla.js*
+Los cambios introducidos los tienes integrados en el ejemplo  [*script_04_esfera_boton_rejilla.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_04_esfera_boton_rejilla.js)
 
 
 ## Control orbital
@@ -422,74 +292,7 @@ Tras su definición teóricamente es posible activarlo o desactivarlo con la pro
 ## Rotaciones
 
 
-Como punto de partida de la sesión, el código del archivo *script_05_estrellayplanetas.js* integra varios de los elementos de ejemplos previos, reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
-
-```
-import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-
-
-let scene, renderer;
-let camera;
-let info;
-let grid;
-let estrella;
-
-init()
-animationLoop()
-
-function init() {
-	info = document.createElement('div');
-	info.style.position = 'absolute';
-	info.style.top = '30px';
-	info.style.width = '100%';
-	info.style.textAlign = 'center';
-	info.style.color = '#fff';
-	info.style.fontWeight = 'bold';
-	info.style.backgroundColor = 'transparent';
-	info.style.zIndex = '1';
-	info.style.fontFamily = 'Monospace';
-	info.innerHTML = "three.js - sol y planetas";
-	document.body.appendChild(info);
-
-	//Defino cámara
-	scene = new THREE.Scene();
-	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-	camera.position.set(0, 0, 10);
-
-	renderer = new THREE.WebGLRenderer();
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.body.appendChild( renderer.domElement );
-
-	let camcontrols = new OrbitControls(camera, renderer.domElement);
-
-	//Rejilla de referencia indicando tamaño y divisiones
-	grid = new THREE.GridHelper(20, 40);
-	//Mostrarla en vertical
-	grid.geometry.rotateX( Math.PI / 2 );
-	grid.position.set(0, 0, .05);
-	scene.add(grid);
-
-  //Objetos
-	Estrella(1.8, 0xffff00);
-
-}
-
-function Estrella(rad,col) {
-	let geometry = new THREE.SphereGeometry( rad, 10, 10 );
-	let material = new THREE.MeshBasicMaterial( { color: col } );
-	estrella = new THREE.Mesh( geometry, material );
-	scene.add( estrella );
-}
-
-
-	//Bucle de animación
-	function animationLoop() {
-    requestAnimationFrame(animationLoop);
-
-		renderer.render( scene, camera );
-}
-```
+Como punto de partida de la sesión, el código del archivo [*script_05_estrellayplanetas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_05_estrellayplanetas.js) integra varios de los elementos de ejemplos previos, reduciendo los parámetros de entrada y renombrando la función de creación de esferas, que ahora se denomina *Estrella*.
 
 El resultado es una esfera amarilla, nuestra *estrella*, en el centro de la escena.
 Para crear *planetas* alrededor de la estrella, adopto una nueva función: *Planeta*, haciendo uso de un array *Planetas*. En
@@ -566,110 +369,8 @@ Una solución para desligar ambas rotaciones es calcular *a pelo* la rotación d
 ![Rotation](images/rotacion.png)  
 *Rotación 2D*
 
-Tras resumir los cambios en *script_06_estrellasyplanetas.js* la función *Planeta* admite como parámetros la distancia a la estrella, tamaño y velocidad de rotación alrededor de su estrella, que se asocian al objeto a través de *userData*. Mi planeta inicialmente estará en la posición *(dist,0,0)* por lo que la transformación *a pelo* es sencilla, dado que al rotar sobre *z* el valor de *y* de partida es nulo. Asumiendo un ángulo inicial de rotación nulo, *&theta;=0*
+Tras resumir los cambios en [*script_06_estrellasyplanetas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_06_estrellayplanetas.js) la función *Planeta* admite como parámetros la distancia a la estrella, tamaño y velocidad de rotación alrededor de su estrella, que se asocian al objeto a través de *userData*. Mi planeta inicialmente estará en la posición *(dist,0,0)* por lo que la transformación *a pelo* es sencilla, dado que al rotar sobre *z* el valor de *y* de partida es nulo. Asumiendo un ángulo inicial de rotación nulo, *&theta;=0*
 , creciente en función del tiempo, *x = dist * cos &theta;* e *y = dist * sen &theta;*, para lo se hace uso de *Date* para definir un *timestamp*.
-
-```
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
-let scene, renderer;
-let camera;
-let info;
-let grid;
-let estrella,
-  Planetas = [],
-  Lunas = [];
-let t0 = 0;
-let accglobal = 0.001;
-let timestamp;
-
-init();
-animationLoop();
-
-function init() {
-  info = document.createElement("div");
-  info.style.position = "absolute";
-  info.style.top = "30px";
-  info.style.width = "100%";
-  info.style.textAlign = "center";
-  info.style.color = "#fff";
-  info.style.fontWeight = "bold";
-  info.style.backgroundColor = "transparent";
-  info.style.zIndex = "1";
-  info.style.fontFamily = "Monospace";
-  info.innerHTML = "three.js - sol y planetas";
-  document.body.appendChild(info);
-
-  //Defino cámara
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  camera.position.set(0, 0, 10);
-
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-  let camcontrols = new OrbitControls(camera, renderer.domElement);
-
-  //Rejilla de referencia indicando tamaño y divisiones
-  grid = new THREE.GridHelper(20, 40);
-  //Mostrarla en vertical
-  grid.geometry.rotateX(Math.PI / 2);
-  grid.position.set(0, 0, 0.05);
-  scene.add(grid);
-
-  //Objetos
-  Estrella(1.8, 0xffff00);
-  Planeta(0.5, 4.0, 1.0, 0x00ff00);
-  Planeta(0.8, 5.8, 1.2, 0xffff0f);
-
-  //Inicio tiempo
-  t0 = Date.now();
-  //EsferaChild(objetos[0],3.0,0,0,0.8,10,10, 0x00ff00);
-}
-
-function Estrella(rad, col) {
-  let geometry = new THREE.SphereGeometry(rad, 10, 10);
-  let material = new THREE.MeshBasicMaterial({ color: col });
-  estrella = new THREE.Mesh(geometry, material);
-  scene.add(estrella);
-}
-
-function Planeta(radio, dist, vel, col) {
-  let geom = new THREE.SphereGeometry(radio, 10, 10);
-  let mat = new THREE.MeshBasicMaterial({ color: col });
-  let planeta = new THREE.Mesh(geom, mat);
-  planeta.userData.dist = dist;
-  planeta.userData.speed = vel;
-
-  Planetas.push(planeta);
-  scene.add(planeta);
-}
-
-
-//Bucle de animación
-function animationLoop() {
-  timestamp = (Date.now() - t0) * accglobal;
-
-  requestAnimationFrame(animationLoop);
-
-  //Modifica rotación de todos los objetos
-  Planetas.forEach(function (planeta) {
-    planeta.position.x =
-      Math.cos(timestamp * planeta.userData.speed) * planeta.userData.dist;
-    planeta.position.y =
-      Math.sin(timestamp * planeta.userData.speed) * planeta.userData.dist;
-  });
-
-  renderer.render(scene, camera);
-}
-```
 
 Tras estas acciones se obtienen planetas que rotan alrededor de una estrella, sin que los movimientos de ambos objetos estén acoplados. Dado que no necesariamente las órbitas son circulares, añado en la creación del planeta como parámetros *f1* y *f2* que me permitirán definir una órbita elíptica, quedando de nuevo almacenado a través de *userData*. Su presencia se tiene en cuenta al realizar la rotación en el bucle de visualización.
 
@@ -797,7 +498,7 @@ function animationLoop() {
 ```
 
 El uso de un pivote intermedio en el grafo de escena aportará mayor flexibilidad,
-permitiendo por ejemplo que la órbita lunar esté en un plano distinto. Un extracto del archivo *script_07_estrellasyplanetasylunas.js*
+permitiendo por ejemplo que la órbita lunar esté en un plano distinto. Un extracto del archivo [*script_07_estrellasyplanetasylunas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_07_estrellayplanetasylunas.js).
 
 ```
 //En init
@@ -831,143 +532,8 @@ En un apartado previo se menciona el uso de un botón HTML para modificar la vis
 Al necesitar crear una polilínea cuyo número de puntos se va modificando, no existe (o no la conozco) la posibilidad de ir aumentando el tamaño de la *BufferGeometry* según nos interese. Es por ello que se adopta prealojar un número de puntos, siguiendo las indicaciones de la documentación sobre cómo hacerlo en [*How to update things*](https://threejs.org/docs/#manual/en/introduction/How-to-update-things).
 
 Para definir con el puntero las coordenadas sobre el plano *z=0*, en el código a continuación se define como referencia un *GridHelper* sobre el plano *xy*, haciendo uso de la clase [Raycaster](https://threejs.org/docs/#api/en/core/Raycaster) para determinar la intersección del puntero con la escena. En mi caso no he tenido buena respuesta al hacer intersectar con el asistente *GridHelper*, es por ello que hago uso de un plano, no visible, para realizar la intersección con el rayo.
-Incluyo completo el código ejemplo del archivo *script_08_polilinea*:
+Incluyo completo el código ejemplo del archivo [*script_08_polilinea*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_08_polilinea.js):
 
-
-```
-import * as THREE from "three";
-
-// Fuentes
-//https://threejs.org/docs/#manual/en/introduction/Creating-a-scene -->
-//https://r105.threejsfundamentals.org/threejs/lessons/threejs-primitives.html  -->
-let scene;
-let camera;
-let renderer;
-let objetos = [];
-
-let grid, perfil, plano;
-const MAX_POINTS = 500;
-let raycaster;
-let npuntos;
-
-init();
-animate();
-
-function init() {
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  camera.position.set(0, 0, 5);
-
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-  //Asistente GridHelper
-  grid = new THREE.GridHelper(10, 10);
-  grid.position.set(0, 0, 0);
-  grid.geometry.rotateX(Math.PI / 2);
-  //Desplaza levemente hacia la cámara
-  grid.position.set(0, 0, 0.05);
-
-  scene.add(grid);
-
-  //Creo un plano en z=0 que no muestro para la intersección
-  let geometryp = new THREE.PlaneGeometry(20, 20);
-  let materialp = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    side: THREE.DoubleSide,
-  });
-  plano = new THREE.Mesh(geometryp, materialp);
-  plano.visible = false;
-  scene.add(plano);
-
-  //Rayo para intersección
-  raycaster = new THREE.Raycaster();
-
-  //Polilínea dinámica prealojada ver https://threejs.org/docs/#manual/en/introduction/How-to-update-things
-  let geometry = new THREE.BufferGeometry();
-  // Tres valores por vértice
-  let positions = new Float32Array(MAX_POINTS * 3);
-  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-  //Rango a dibujar
-  npuntos = 0;
-  geometry.setDrawRange(0, npuntos);
-  let material = new THREE.LineBasicMaterial({ color: 0xff0000 });
-  perfil = new THREE.Line(geometry, material);
-  //Añade al grafo de escena
-  scene.add(perfil);
-
-  //Manejador de eventos
-  document.addEventListener("mousedown", onDocumentMouseDown);
-}
-function onDocumentMouseDown(event) {
-  //Conversión coordenadas del puntero
-  const mouse = {
-    x: (event.clientX / renderer.domElement.clientWidth) * 2 - 1,
-    y: -(event.clientY / renderer.domElement.clientHeight) * 2 + 1,
-  };
-
-  //Intersección, define rayo
-  raycaster.setFromCamera(mouse, camera);
-
-  // Intersecta
-  const intersects = raycaster.intersectObject(plano);
-  // ¿Hay alguna intersección?
-  if (intersects.length > 0) {
-    //Añade vértice a la pòlilínea
-    const vertices = perfil.geometry.attributes.position.array;
-
-    vertices[npuntos * 3] = intersects[0].point.x;
-    vertices[npuntos * 3 + 1] = intersects[0].point.y;
-    vertices[npuntos * 3 + 2] = intersects[0].point.z;
-    npuntos++;
-    //Muestra el valor de la intersección
-    console.log(intersects[0].point);
-
-    Esfera(
-      intersects[0].point.x,
-      intersects[0].point.y,
-      intersects[0].point.z,
-      0.2,
-      10,
-      10,
-      0xff00ff
-    );
-  }
-}
-
-function Esfera(px, py, pz, radio, nx, ny, col) {
-  let geometry = new THREE.SphereBufferGeometry(radio, nx, ny);
-  //Material con o sin relleno
-  let material = new THREE.MeshBasicMaterial({
-    color: col,
-    //wireframe: true, //Descomenta para activar modelo de alambres
-  });
-
-  let mesh = new THREE.Mesh(geometry, material);
-  //Posición de la esfera
-  mesh.position.set(px, py, pz);
-  scene.add(mesh);
-  objetos.push(mesh);
-}
-
-//Bucle de animación
-function animate() {
-  requestAnimationFrame(animate);
-
-  //Polilínea, define el número de vértices y actualiza posiciones
-  perfil.geometry.setDrawRange(0, npuntos);
-  perfil.geometry.attributes.position.needsUpdate = true;
-
-  renderer.render(scene, camera);
-}
-```
 
 La documentación de three.js de [Raycaster](https://threejs.org/docs/#api/en/core/Raycaster) incluye varios ejemplos de utilización con variedad de primitivas.
 
