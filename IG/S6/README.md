@@ -189,7 +189,7 @@ c.set( THREE.MathUtils.randInt(0, 65535) );
 c.getHexString();
 ```
 
-**Modifica [*script_03_esfera_modular.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_03_esfera_modular.js) para crear un número *n* esferas. ¿Hasta qué valor de *n* consigues llegar sin que se deteriore el bucle de visualización?**
+**Modifica [*script_03_esfera_modular.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_03_esfera_modular.js) para crear un número *n* de esferas. ¿Hasta qué valor de *n* consigues llegar sin que se deteriore el bucle de visualización?**
 
 ## Asistentes
 
