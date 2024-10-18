@@ -21,7 +21,7 @@ Aunque no forme parte del proyecto docente de la asignatura, si tuvieras interé
 
 ## Ejemplo mínimo
 
-Para un primer ejemplo, esta guía adopta el primer tutorial de la documentación oficial disponible en la web de three.js, [Creación de una escena](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene). De inicio describe el HTML básico para incrustar el código JavaScript. En los ejemplos que se presentan a través del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2324) se hace uso del archivo *index_SX.html*, que para esta semana el correspondiente *index_S6.html* luce una estructura similar a:
+Para un primer ejemplo, esta guía adopta el primer tutorial de la documentación oficial disponible en la web de three.js, [Creación de una escena](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene). De inicio describe el HTML básico para incrustar el código JavaScript. En los ejemplos que se presentan a través del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2425) se hace uso del archivo *index_SX.html*, que para esta semana el correspondiente *index_S6.html* luce una estructura similar a:
 
 ```
 <!DOCTYPE html>
