@@ -15,7 +15,7 @@ Tras la sesión anterior que introducía aspectos básicos de three.js, esta ses
 
 ## Luces
 
-Para introducir los aspectos básicos de iluminación, hago uso del código ejemplo [*script_11_luces.js*]((https://github.com/otsedom/otsedom.github.io/blob/main/IG/S7/code/script_11_luces.js)), en el que una vez abierto pueden observar que tiene distintos bloques de código comentados. De inicio muestra tres esferas con los colores rojo, verde y azul, creadas con la función *Esfera*, que básicamente las define como en los ejemplos previos con *MeshBasicMaterial* que colorea el objeto con un color único, o lo muestra en modo alambres. De cara a la integración de la iluminación, threejs ofrece distintos materiales:
+Para introducir los aspectos básicos de iluminación, hago uso del código ejemplo [*script_11_luces.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S7/code/script_11_luces.js), en el que una vez abierto pueden observar que tiene distintos bloques de código comentados. De inicio muestra tres esferas con los colores rojo, verde y azul, creadas con la función *Esfera*, que básicamente las define como en los ejemplos previos con *MeshBasicMaterial* que colorea el objeto con un color único, o lo muestra en modo alambres. De cara a la integración de la iluminación, threejs ofrece distintos materiales:
 
 - [*MeshLambertMaterial*](https://threejs.org/docs/#api/en/materials/MeshLambertMaterial): El modelo de Lambert básicamente considera reflexión difusa, no hay destellos como en el caso de objetos metálicos. Poco costoso, y efectivo cuando no se quiere iluminación modelada físicamente.
 
@@ -63,7 +63,7 @@ Finalmente indicar que three.js también ofrece cierto soporte para sondas lumin
 
 ## Sombras
 
-Si definimos luces, deberían aparecer las sombras. Three.js proporciona soporte para sombras por medio de mapas de sombras, obtenido tras reproducir la escena desde cada fuente de luz. Al no estar activo su cálculo (costoso) por defecto, debe indicarse al definir un objeto si proyecta sombras, propiedad *.castShadow*, y/o si las recibe, propiedad *.receiveShadow*. Sugerir duplicar el código *script_11_luces.js* y renombrar (por ejemplo a *script_12_lucesysombras*), tras esto en el nuevo archivo modificar la función *EsferaPhong* añadiendo un nuevo parámetro de entrada, *sombra*, que permitirá definir si el objeto produce o no sombras, activando la propiedad *castShadow*.
+Si definimos luces, deberían aparecer las sombras. Three.js proporciona soporte para sombras por medio de mapas de sombras, obtenido tras reproducir la escena desde cada fuente de luz. Al no estar activo su cálculo (costoso) por defecto, debe indicarse al definir un objeto si proyecta sombras, propiedad *.castShadow*, y/o si las recibe, propiedad *.receiveShadow*. Sugerir duplicar el código [*script_11_luces.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S7/code/script_11_luces.js) y renombrar (por ejemplo a *script_12_lucesysombras*), tras esto en el nuevo archivo modificar la función *EsferaPhong* añadiendo un nuevo parámetro de entrada, *sombra*, que permitirá definir si el objeto produce o no sombras, activando la propiedad *castShadow*.
 
 
 ```
