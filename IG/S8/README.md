@@ -5,7 +5,7 @@
 [Tarea](#tarea)  
 [Referencias](#referencias)
 
-#https://x.com/CiudadCanaria/status/1780708905267667341
+
 
 ## Terrenos
 
@@ -160,12 +160,14 @@ La tarea a entregar en ambos casos consiste en hacer uso de información disponi
 Por si pudiera servir de ilustración, como añadido a lo incluido en las dispositivas de clase:
 
 - El perfil de [Pedro Suárez 🔗 x-y.es](https://twitter.com/x_y_es) en el que junto a su [canal youtube](https://www.youtube.com/xyesz) utiliza como  escaparate para mostrar visualizaciones en 2, 3 y 4D con three.js. Muchas de ellas centradas en nuestro archipiélago. De hecho, durante la erupción de La Palma, su perfil tuvo gran repercusión.
-Pedro Suárez https://x.com/x_y_es/status/1438589144901603329?s=20
+<!-- Pedro Suárez https://x.com/x_y_es/status/1438589144901603329?s=20  #https://x.com/CiudadCanaria/status/1780708905267667341 -->
 - Propuestas más votadas del curso pasado:
   - [Juan Pereiro](https://costa-norte-surf.glitch.me/)
   - [Alejandro Ortega y Joaquín Villamonte](https://dataviz-joaquinalejandro-2324.glitch.me/) <!-- https://glitch.com/edit/#!/jvp-pr10 -->
   - [Agustín Vizcaíno](https://verdant-jazzy-keeper.glitch.me)
 <!--2223, creo que Kenai https://glitch.com/edit/#!/mejora-sitycleta-kenai https://glitch.com/edit/#!/kenai-sitycleta-2223?path=README.md%3A1%3A0 Falla algo-->
+
+
 
 ## Referencias
 
