@@ -1470,7 +1470,7 @@ void main() {
 }
 ```
 
-En las tres últimas, aplicamos en primer término una inversión sobre el valor del píxeles
+En las tres últimas, aplicamos en primer término una inversión sobre el valor de cada píxel de la textura:
 
 ```
 uniform sampler2D texture2;
@@ -1509,6 +1509,8 @@ void main() {
     }
 }
 ```
+
+Y en la última aplica un filtro sobre la textura, como aperitivo del ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js).
 
 Añadimos un ejemplo que juega con dos texturas sobre la superficie de una esfera, en concreto los shaders de [*script_36_shader_dobletextura.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_36_shader_dobletextura.js) adoptan una textura diferente si el *planeta* mira hacia la estrella. Ha sido necesario modificar el *shader* de vértices para proporcionar al deo fragmentos información de la posición de la fuente de luz, y las normales.
 
@@ -1552,7 +1554,7 @@ void main() {
 ```
 
 
-Finalizo con un ejemplo de aplicación de filtros, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_sobel.js) asplica un filtro gaussiano, de detección de bordes o de relieve sobre la etextura en función de las coordenadas del ratón.
+Si bien en  con un ejemplo de aplicación de filtros, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js) asplica un filtro gaussiano, de detección de bordes o de relieve sobre la etextura en función de las coordenadas del ratón.
 
 
 ```
@@ -1624,7 +1626,11 @@ void main(){
 }
 ```
 
-Usar como textura la captura de la webcam, requiere algunos ajustes adicionales, adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js).
+Usar como textura la captura de la webcam, requiere algunos ajustes adicionales, adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js). Observe que es necesario incluir en el html, la línea
+
+```
+<video id="video" style="display:none" autoplay playsinline></video>
+```
 
 ### Galería
 
@@ -1656,7 +1662,7 @@ https://youtu.be/dRo7SnOJlEM
 
 ### Tarea
 
-Realizar una propuesta de prototipo que haga uso al menos de un *shader* de fragmentos, sugiriendo como posibilidades la creación de texturas y/o diseños generativos, y su posible integración en prácticas precedentes.
+Realizar una propuesta de prototipo que haga uso al menos de un *shader* de fragmentos, sugiriendo como posibilidades la creación de texturas y/o diseños generativos, recomendando su **integración en al menos una de las dos prácticas precedentes**.
 
 
 ### Referencias
