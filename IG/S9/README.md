@@ -66,7 +66,7 @@ Un *shader* se ejecuta como una función que recibe una localización, y devuelv
 #### Hola mundo y formas básicas
 
 Como ejemplo mínimo de *shader*, partimos del código [*script_31_shadermin.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_31_shadermin.js)
-que crea dos esferas de color amarillo, si bien el material de la segunda de ellas es de tipo *ShaderMaterial* y el color resultante se estyablece en el *shader* de fragmentos asociado.
+que crea dos esferas, una con material amarillo, y el material de la segunda de ellas es de tipo *ShaderMaterial* y el color resultante se establece en el *shader* de fragmentos asociado.
 Más en concreto, para el material de la segunda esfera se definen un *shader* de vértices mínimo, y un *shader* de fragmentos que básicamente asigna
  el mismo color a todos los píxeles del objeto, modificando la propiedad de color del objeto.
 El *shader* de fragmentos tiene una línea de código en la que asigna un vector de cuatro valores, tipo *vec4*, a la variable reservada ([*built-in*](https://www.khronos.org/opengl/wiki/Built-in_Variable_(GLSL))) *gl_FragColor*. El código del *shader*, listado anterior evidencia diversos aspectos:
