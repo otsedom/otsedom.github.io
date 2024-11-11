@@ -168,16 +168,56 @@ Una primera propuesta establece un color en base a la coordenada *x* del fragmen
 uniform vec2 u_resolution;
 
 void main() {
-  //Normalizamos coordenadas del píxel en base a la resolución
-  vec2 st = gl_FragCoord.xy/u_resolution;
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color;
+    float c = 0.;
+        
+	  c = st.x;
+    
+    color = vec3(c);
 
-  //Escala de grises izquierda a derecha
-  gl_FragColor = vec4(vec3(st.x),1.0);
+    gl_FragColor = vec4(color,1.0);
 }
 ```
 
 ![Values](images/p9_editor.png)  
 *Resultado del editor en línea*
+
+Las funciones *step* y *smoothstep*, permiten aplicar umbralizados con forma de escalón o más cuaves
+
+```
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color;
+    float c = 0.;
+        
+	  c = step(0.2,st.x);
+    
+    color = vec3(c);
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+![Values](images/p9_editorstep.png)  
+*Resultado con step*
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color;
+    float c = 0.;
+        
+	  c = smoothstep(0.2,0.4,st.x);
+    
+    color = vec3(c);
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorsmoothstep.png)  
+*Resultado con smoothstep*
 
 Se establece una relación entre el valor de *st.x*, la proporción de la coordenada x del píxel en la ventana, con el nivel de gris utilizado para pintar. En el código puede observarse la flexibilidad en el manejo de variables tipo *vec*, *gl_FragCoord.xy* hace referencia a los dos primeros valores, con *vec4(vec3(st.x),1.0)* se entiende que los tres primeros valores serán idénticos. El resultado es que muestra una escala de grises de izquierda (negro) a derecha (blanco)
 
