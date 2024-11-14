@@ -306,7 +306,6 @@ La tarea consiste en proponer un prototipo three.js de temática libre que integ
 Referencias que han servido para la confección de los diversos ejemplos:
 
 - [Documentación](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)  
-- [Three.js Fundamentals](Three.js Fundamentals)
 - [Discover three.js](https://discoverthreejs.com)
 - [Learning Three.js](https://github.com/josdirksen/learning-threejs) por [Jos Dirksen](https://github.com/josdirksen)
 - [Three.js Cookbook](https://github.com/josdirksen/threejs-cookbook) por [Jos Dirksen](https://github.com/josdirksen) de 2015
