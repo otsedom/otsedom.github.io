@@ -12,7 +12,7 @@ Curso 2024/2025
 - [Práctica 3](P3/README.md)
 - [Práctica 4](P4/README.md)
 - [Práctica 5](P5/README.md)
-<!-- - [Práctica 6](P6/README.md) -->
+- [Práctica 6](P6/README.md)
 - [Trabajo](Trabajo/README.md)
 ***
 Obra bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
