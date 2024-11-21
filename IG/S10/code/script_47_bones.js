@@ -1,8 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.5.0/dist/tween.esm.js'
-
 let scene, renderer;
 let camera, grid;
 let camcontrols;

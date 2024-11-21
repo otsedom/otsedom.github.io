@@ -156,7 +156,10 @@ También aparecen las funciones *.onRepeat* para realizar acciones tras cada rep
 
 El último ejemplo de esta serie, [*script_43_tween_play_record.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S10/code/script_43_tween_play_record.js), además de realizar una nueva coreografía con varios cubos, salva a disco la salida de pantalla marcando con la tecla *r* el inicio y final del corte deseado. Para ello hace uso de *MediaRecorder*.
 
-Como cierre, recomendar ver la [documentación de *tween.js*](https://github.com/tweenjs/tween.js/blob/main/docs/user_guide.md), señalar que hay posibilidades de añadir *tweens* a la lista activa, detener, agrupar, etc.
+Desde estas líneas, recomendar ver la [documentación de *tween.js*](https://github.com/tweenjs/tween.js/blob/main/docs/user_guide.md), señalar que hay posibilidades de añadir *tweens* a la lista activa, detener, agrupar, etc.
+
+Como cierre del bloque, comentar brevemente el uso de audio en three.js, el ejemplo [*script_44_tween_play_record_audio.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S10/code/script_44_tween_play_record_audio.js), para añadir la reproducción
+de una pista de audio durante la animación. Se lleva a cabo haciendo uso de las [utilidades para audio de three.js](https://threejs.org/docs/?q=audio#api/en/audio/Audio). Dos son los ejemplos disponibles en la documentación, uno similar de [reproducción de un archivo de audio](https://threejs.org/examples/#webaudio_visualizer) y otro de [síntesis de audio](https://threejs.org/examples/#webaudio_sandbox).
 
 <!-- ejemplo con animation track https://threejs.org/examples/misc_animation_keys -->
 
@@ -254,13 +257,15 @@ Si no se plantea la deformación de la geometría, un ejemplo como el mostrado e
 
 Como es de esperar, *three.js* dispone de utilidades para la descripción de estructuras articuladas ([*Skeleton*](https://threejs.org/docs/#api/en/objects/Skeleton)) compuestas de huesos ([*Bone*](https://threejs.org/docs/#api/en/objects/Bone)) a los que asociar mallas permitiendo de esta forma que la animación de uno o varios huesos afecte a la geometría, resultando en una animación. Para ello se utiliza un tipo de malla ([*SkinnedMesh*](https://threejs.org/docs/#api/en/objects/SkinnedMesh)). La documentación de *SkinnedMesh* incluye un [ejemplo de estructura articulada](https://threejs.org/docs/index.html?q=skeleton#api/en/objects/SkinnedMesh), con la interfaz para modificar los parámetros de los elementos que la componen.
 Combinando el mencionado ejemplo de [SkinnedMesh de three.js](https://threejs.org/docs/index.html?q=skeleton#api/en/objects/SkinnedMesh) y la propuesta de [gusano](https://boytchev.github.io/etudes/threejs/psychedelic-tapeworm.html) realizada por [Pavel Boytchev](https://github.com/boytchev), el código [*script_47_bones.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S10/code/script_47_bones.js) que hace uso del tiempo para modificar los huesos asociados a una geometría cilíndrica, provocando un efecto de defomación sobre la *SkinnedMesh* asociada.
+Sin embargo, threejs no es un marco pensado para facilitar la creación de los clips de animación de estructuras articuladas, es más frecuente para tal fin utilizar herramientas como Blender y exportar a glTF. Posteriormente, desde *three.js* realizar la carga y animar el clip con [AnimationMixer](https://threejs.org/docs/#api/en/animation/AnimationMixer), como por ejemplo en [webgl_animation_multiple](https://threejs.org/examples/webgl_animation_multiple.html).
 
+Como cierre de la sección, destacar que three.js cuenta con [CCDIKSolver](https://threejs.org/docs/#examples/en/animations/CCDIKSolver) para resolver la cinemática inversa de una estructura articulada. En la galería de ejemplos buscando el término *skinning*, accedes a una descriptiva colección incluyendo ejemplos con 
+[cinemática inversa](https://threejs.org/examples/?q=skinning#webgl_animation_skinning_ik), si bien fue concebida en primer término para esqueletos cargados  con [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader) o [MMDLoader](https://threejs.org/docs/#examples/en/loaders/MMDLoader), también está disponible este [ejemplo que ilustra el uso con una *SkinnedMesh* genérica](https://hofk.de/main/discourse.threejs/2022/CCDIK-Solver/CCDIK-Solver.html).
 
+<!-- 
+lo hemos combinado con la estructura cilíndrica de *gusano* del ejemplo previo para ilustrar el uso de la cinemática in versa en [*script_48_bonesIK.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S10/code/script_48_bonesIK.js). -->
 
-Sin embargo, threejs no es un marco pensado para facilitar la creación de los clips de animación de estructuras articuladas, es más frecuente para tal fin utilizar herramientas como Blender y exportar a glTF. Posteriormente, desde *three.js* realziar la carga y animar el clip con [AnimationMixer](https://threejs.org/docs/#api/en/animation/AnimationMixer), como por ejemplo en [webgl_animation_multiple](https://threejs.org/examples/webgl_animation_multiple.html).
-
-En la galería de ejemplos buscando el término *skinning*, accedes a una descriptiva colección incluyendo ejemplos con [cinemática inversa](https://threejs.org/examples/?q=skinning#webgl_animation_skinning_ik). Threejs cuenta con [CCDIKSolver](https://threejs.org/docs/#examples/en/animations/CCDIKSolver) para resolver la cinemática inversa de una estructura articulada. Acepta objetos *SkinnedMesh*, así como obtenidos con [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader), como el ejemplo anterior, o [MMDLoader](https://threejs.org/docs/#examples/en/loaders/MMDLoader), echa un vistazo a este [ejemplo MMD](https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_mmd.html).
-
+<!-- https://3dpk.co.uk/tenticles/ -->
 
 ## Galería
 
@@ -297,7 +302,7 @@ https://r105.threejsfundamentals.org/threejs/lessons/threejs-scenegraph.html-->
 
 ## Tarea
 
-La tarea consiste en proponer un prototipo three.js de temática libre que integre la biblioteca *tween.js* y/o el motor de física *ammo.js*. La entrega se llevará a cabo a través del campus virtual, debiendo incluir enlaces tanto al prototipo como a un vídeo de no más de un minuto de duración con un extracto seleccionado de la animación desarrollada.
+La tarea consiste en proponer un prototipo three.js de temática libre que integre la biblioteca *tween.js* y/o el motor de física *ammo.js*. La entrega se llevará a cabo a través del campus virtual, debiendo incluir enlaces tanto al prototipo como a un vídeo, preferentemente de no más de un minuto de duración, con un extracto seleccionado de la animación desarrollada y que identifique la autoría.
 
 
 

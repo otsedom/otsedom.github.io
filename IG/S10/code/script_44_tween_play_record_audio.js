@@ -7,6 +7,7 @@ let camera;
 let objetos = [];
 let recorder, stream, chunks = [];
 let recording = false;
+let listener,sound;
 
 init();
 animationLoop();
@@ -21,6 +22,20 @@ function init() {
     1000
   );
   camera.position.set(0, 0, 10);
+  
+  //Audio
+  const listener = new THREE.AudioListener();
+  camera.add( listener );
+  sound = new THREE.Audio( listener );
+  // load a sound and set it as the Audio object's buffer
+  const audioLoader = new THREE.AudioLoader();
+  //audioLoader.load( 'https://cdn.glitch.global/341720a6-447a-46ce-b3c9-8002f2955b61/cortinilla-de-transicion-1-9753.mp3?v=1732096901534', function( buffer ) {  //pixabay.com/users/vsanroses-8661822/
+  audioLoader.load( 'https://cdn.glitch.global/341720a6-447a-46ce-b3c9-8002f2955b61/click-beat-1-105472.mp3?v=1732098382552', function( buffer ) {  //https://pixabay.com/users/freesound_community-46691455/
+    sound.setBuffer( buffer );
+    sound.setLoop( false );
+    sound.setVolume( 0.5 );    
+  });
+  
 
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -32,15 +47,15 @@ function init() {
   let py = 3;
   let pz = 3
   let ite;
-  let tstep = 1000;
+  let tstep = 1500,tdelay=45;
   Cubo(px, py, 0, sz, sz, 1.5*sz, 0x00ff00);
   Cubo(px, py, py, sz, sz, 1.5*sz, 0x00ff00);
   Cubo(-px, -py, 0, sz, sz, 1.5*sz, 0x00ff00);
   Cubo(-px, -py, py, sz, sz, 1.5*sz, 0x00ff00);
   
   // Encadena tweens 
-  const tween1 = new TWEEN.Tween({ x: 0, xRotation: 0, col: 0xffff00 })
-    .to({ x: 2*Math.abs(px), xRotation: Math.PI / 2, col: 0xffffff }, tstep)
+  const tween1 = new TWEEN.Tween({ x: 0 })
+    .to({ x: 2*Math.abs(px)}, tstep)
     .onUpdate((coords) => {
       let id = 0;
       for (let object of objetos) {
@@ -60,12 +75,13 @@ function init() {
       ite += 1;
     })
     .onStart(() => {
+      sound.play();
       ite = 0;
     })
     .easing(TWEEN.Easing.Exponential.InOut)
-    .delay(100)
+    .delay(tdelay)
     
-  const tween2 = new TWEEN.Tween({ y: 0})
+  const tween2 = new TWEEN.Tween({ y: 0 })
     .to({ y: 2*Math.abs(py) }, tstep)
     .onUpdate((coords) => {
       let id = 0;
@@ -89,10 +105,10 @@ function init() {
       ite = 0;
     })
     .easing(TWEEN.Easing.Exponential.InOut)
-    .delay(100)
+    .delay(tdelay);
   
   const tween3 = new TWEEN.Tween({ x: 0 })
-    .to({ x: 2*Math.abs(px) }, tstep)
+    .to({ x: 2*Math.abs(px)}, tstep)
     .onUpdate((coords) => {
       let id = 0;
       for (let object of objetos) {
@@ -115,9 +131,10 @@ function init() {
       ite = 0;
     })
     .easing(TWEEN.Easing.Exponential.InOut)
-    .delay(100)
+    .delay(tdelay)
   
-  const tween4 = new TWEEN.Tween({ y: 0})
+  
+  const tween4 = new TWEEN.Tween({ y: 0 })
     .to({ y: 2*Math.abs(py)}, tstep)
     .onUpdate((coords) => {
       let id = 0;
@@ -141,7 +158,7 @@ function init() {
       ite = 0;
     })
     .easing(TWEEN.Easing.Exponential.InOut)
-    .delay(100)
+    .delay(tdelay)
   
   tween1.chain(tween2);
   tween2.chain(tween3);
