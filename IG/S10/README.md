@@ -160,6 +160,7 @@ Desde estas líneas, recomendar ver la [documentación de *tween.js*](https://gi
 
 Como cierre del bloque, comentar brevemente el uso de audio en three.js, el ejemplo [*script_44_tween_play_record_audio.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S10/code/script_44_tween_play_record_audio.js), para añadir la reproducción
 de una pista de audio durante la animación. Se lleva a cabo haciendo uso de las [utilidades para audio de three.js](https://threejs.org/docs/?q=audio#api/en/audio/Audio). Dos son los ejemplos disponibles en la documentación, uno similar de [reproducción de un archivo de audio](https://threejs.org/examples/#webaudio_visualizer) y otro de [síntesis de audio](https://threejs.org/examples/#webaudio_sandbox).
+No intentes reproducir antes de terminar la carga, o es probable que se quede sin efecto.
 
 <!-- ejemplo con animation track https://threejs.org/examples/misc_animation_keys -->
 
