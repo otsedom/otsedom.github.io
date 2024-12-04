@@ -83,16 +83,98 @@ python Demo_yolo_VQAOPT_2425.py
 
 Ahora sí que se notará la ausencia de GPU presente o habilitada. Pese a ello, se obtienen *al golpito* descripciones de las personas que se acerquen a la cámara.
 
+<!--
+
+
+Instalar Ollama
+conda create -n ollama python=3.11.5
+conda activate ollama
+pip install opencv-python
+pip install ollama
+
+ollama pull llama3.2-vision
+ 
+python demo.py
+-->
+
+## Tipos de Segmentación
+
+Generalmente se habla de segmentación de imagen a las técncas que consisten en asignar una clase a cada píxel de una imagen. Generalmente se distinguen tres tipos de segmentación:
+- **Segmentación semántica**: Se trata de una segmentación que asigna una clase a cada píxel de la imagen, donde todos los píxeles de un objeto pertenecen a la misma clase.
+- **Segmentación por instancias**: Una segmentación donde se distingue entre las diferentes apareciones de entidades de una misma clase.
+- **Segmentación panóptica**: Una combinación de las dos anteriores.
+
+
+![Tipos de segmentacion](images/Segmen_Types.jpg)  
+*Imagen extraída de [Kirilov2019]*
+
+### SAM
+
+[Segment Anything Model](https://segment-anything.com) (SAM) es un modelo creado por Meta que produce máscaras a partir de unos puntos o *bounding boxes* dados. Divide la imagen en objetos sin asignar una clase concreta a las máscaras generadas. Esta pensado para ser un modelo *zero-shot*, es decir, que no necesite entrenamiento extra para su aplicación.
+
+Hemos preparado una demo *demo_SAM*, para ejecutarla habrá que realizar algunas instalaciones. Como en otras prácticas, se recomienda usar CUDA para utilizar la gráfica (si se tiene). En caso de querer, instalar torch desde aqui: [Link](https://pytorch.org/get-started/locally/)
+
+```
+conda create --name VC_P7
+conda activate VC_P7
+pip install opencv-python
+pip install matplotlib
+pip3 install torch torchvision torchaudio
+pip install git+https://github.com/facebookresearch/segment-anything.git
+pip install jupyter_bbox_widget
+```
+
+Comentar que si tienes ultralytics instalado en un *environment*, dicha instalación incluye modelos de SAM (puede ser necesario actualizar *pip install -U ultralytics*), hemos probado con éxito el siguiente código sin instalación adicional:
+
+```
+from ultralytics import SAM
+
+# Modelo SAM (De momento los modelos 2.1 dan error)
+model = SAM("sam2_s.pt")
+
+# Información del modelo
+# print(model.info())
+
+# Segmenta proporcionando punto  en points (Pueden proporcionarse varios puntos, en labels se indica si es muestra positiva (1) o negativa (0))
+results = model("imagen.png", points=[369, 169], labels=[1], device="cpu", show=True)
+```
+
+### U-Net y otros modelos
+
+En cuanto a modelos más clásicos de segmentación, el más usado es U-Net. Un modelo que, aunque está próximo a cumplir 10 años tras ser creado para el campo de la medicina, sigue dando buenos y robustos resultados en muchas aplicaciones. Hemos preparado *Demo_UNET* para descargar un modelo y probarlo en torch. 
+
+Algunos repositorios con modelos de segmentación ya implementados pueden ser: 
+- [MMsegmentacion](https://github.com/open-mmlab/mmsegmentation?tab=readme-ov-file)
+- [Segmentation Models Torch](https://segmentation-modelspytorch.readthedocs.io/en/latest/)
 
 
 <!--
 ## Segmentación
 
-Unet
-
-SAM
+MMSegmentation tensorflow
 
 DINO+SAM
+
+SAM2
+Instalo sam2 https://github.com/facebookresearch/sam2?tab=readme-ov-file
+* git clone https://github.com/facebookresearch/sam2.git && cd sam2
+* conda create -n SAMURAI python=3.11.5
+* conda activate SAMURAI
+* pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+* pip install -e .
+
+Descargar checkpoints, probé 
+notebooks/video_predictor_example.ipynb 
+y me funciona
+
+SAMURAI
+Descargar
+ https://github.com/yangchris11/samurai?tab=readme-ov-file
+* pip install matplotlib==3.7 tikzplotlib jpeg4py opencv-python lmdb pandas scipy
+
+Y antes de ejecutar, sobreescribir la subcarpeta sam2, con la usada para instalar SAM2 antes
+
+pip install decord
 
 
 Background removal https://github.com/chenxwh/cog-RMBG
@@ -103,6 +185,9 @@ https://github.com/naver-ai/ZIM
 ## Homografías
 
 Tomando ejemplo escenario deporte
+
+
+
 
 
 ## YOLO-World
@@ -153,6 +238,14 @@ Arrancar
 App, calibración
 -->
 
+## Referencias
+
+[Kirillov2019] Kirillov, A., He, K., Girshick, R., Rother, C., Dollar, P., 2019. Panoptic segmentation, in: Proceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition (CVPR).
+
+[Ronneberger2015] O. Ronneberger, P. Fischer, and T. Brox. U-net: Convolutional networks for biomedical
+image segmentation, 2015.
 
 ***
 Bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
+
