@@ -4,6 +4,7 @@
 
 [Mediapipe](#mediapipe)  
 [VLM](#modelos-de-visión-y-lenguaje)  
+[Segmentación](#tipos-de-segmentación)  
 
 <!--[360](#imagen-y-v-ideo-360)   -->
 
@@ -148,6 +149,37 @@ Algunos repositorios con modelos de segmentación ya implementados pueden ser:
 - [Segmentation Models Torch](https://segmentation-modelspytorch.readthedocs.io/en/latest/)
 
 
+### SAMURAI
+
+Tras la aparición de [SAMURAI](https://github.com/yangchris11/samurai?tab=readme-ov-file) reclamando tener mejores resultados para segmentación en vídeo, hemos tenido una primera toma de contacto, siguiendo los siguientes pasos:
+
+- Decargar desde el [repositorio](https://github.com/yangchris11/samurai?tab=readme-ov-file), descromprimir y situarse en la subcarpeta *sam2*
+- Crear el un *environment* específico, con lo necesario para usar CUDA según la instalación existente
+
+```
+conda create -n SAMURAI python=3.11.5
+conda activate SAMURAI
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+- Preparar lo necesario para usar Sam 2, desde la subcarpeta correspondiente
+```
+pip install -e .
+```
+- Añadir algunos paquetes para SAMURAI
+```
+pip install matplotlib==3.7 tikzplotlib jpeg4py opencv-python lmdb pandas scipy
+pip install decord
+```
+
+- Llegados a este punto desde la carpeta donde se ha descomprimido SAMURAI
+
+```
+python scripts/demo.py --video_path TGC23_PdH_C0056cut.mp4 --txt_path TGC23_PdH_C0056cut.txt
+```
+El vídeo es el utilizado en la P4, el txt correspondiente contiene el contenedor que indica en el primer fotograma el objeto a seguir, en formato esquina superior, ancho y alto separado por comas. En el ejemplo usado fue:
+```
+412,240,15,48
+```
 <!--
 ## Segmentación
 
