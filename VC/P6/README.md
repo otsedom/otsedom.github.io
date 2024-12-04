@@ -170,8 +170,9 @@ pip install -e .
 pip install matplotlib==3.7 tikzplotlib jpeg4py opencv-python lmdb pandas scipy
 pip install decord
 ```
-
-- Llegados a este punto desde la carpeta donde se ha descomprimido SAMURAI
+- Descargar los modelos de SAM 2, instrucciones en el repositorio
+- Desde la carpeta donde se ha descomprimido SAMURAI, modifica la ruta del modelo en *scripts/demo.py*
+- Ya deberías poder lanzar
 
 ```
 python scripts/demo.py --video_path TGC23_PdH_C0056cut.mp4 --txt_path TGC23_PdH_C0056cut.txt
