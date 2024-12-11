@@ -187,6 +187,8 @@ Tomando como escenario ilustrativo un contexto deportivo, las dos últimas celda
 
 La última celda, da los primeros pasos para ilustrar una posible automatización de la localización de los puntos de interés sobre una imagen arbitraria de un campo de fútbol, asumiendo un cesèd verde y la presencia clara de las líneas de campo. Esta celda requiere un *environment* con ultralytics instalado.
 
+¿Te animas a participar en la competición [SoccerNet 2025](https://www.soccer-net.org/challenges/2025). El premio en la edición de 2024 fue de 1000 USD.
+
 <!--
 ## Segmentación
 
