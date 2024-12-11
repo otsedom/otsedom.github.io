@@ -4,7 +4,6 @@
 
 [Mediapipe](#mediapipe)  
 [VLM](#modelos-de-visión-y-lenguaje)  
-[Segmentación](#tipos-de-segmentación)  
 
 <!--[360](#imagen-y-v-ideo-360)   -->
 
@@ -181,6 +180,13 @@ El vídeo es el utilizado en la P4, el txt correspondiente contiene el contenedo
 ```
 412,240,15,48
 ```
+
+## Homografías
+
+Tomando como escenario ilustrativo un contexto deportivo, las dos últimas celdas del cuaderno *VC_P6.ipynb* muestran en primer término la aplicación de homografías dadas dos imágenes de un estadio, una la teral y otra cenital, para tras anotar en cada uno cuatro puntos de correspondencia, obtener la matriz de homografía con [*scikit-image*](https://scikit-image.org), y mostrar tanto la imagen lateral transformada, como la transformación corre4spondiente para cualquier punto sobre ella.
+
+La última celda, da los primeros pasos para ilustrar una posible automatización de la localización de los puntos de interés sobre una imagen arbitraria de un campo de fútbol, asumiendo un cesèd verde y la presencia clara de las líneas de campo. Esta celda requiere un *environment* con ultralytics instalado.
+
 <!--
 ## Segmentación
 
@@ -215,9 +221,7 @@ https://github.com/naver-ai/ZIM
 
 
 
-## Homografías
 
-Tomando ejemplo escenario deporte
 
 
 
