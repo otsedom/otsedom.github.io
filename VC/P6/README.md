@@ -4,7 +4,9 @@
 
 [Mediapipe](#mediapipe)  
 [VLM](#modelos-de-visión-y-lenguaje)  
-
+[Segmentación](#tipos-de-segmentación)  
+[Homografía](#homografías)  
+[Pytorch](#pytorch)
 <!--[360](#imagen-y-v-ideo-360)   -->
 
 <!--Ver algunos ejemplos cvzone https://github.com/cvzone/cvzone https://www.computervision.zone
@@ -189,6 +191,18 @@ La última celda, da los primeros pasos para ilustrar una posible automatizació
 
 ¿Te animas a participar en la competición [SoccerNet 2025](https://www.soccer-net.org/challenges/2025). El premio en la edición de 2024 fue de 1000 USD.
 
+
+
+## Pytorch
+
+Pytorch es una biblioteca destinada al aprendizaje automático (similar a TensorFlow) desarrollada y mantenida por Meta. En tiempos recientes se está convirtiendo en el estándar de la industria.
+
+![Trends Frameworks](images/trends.png)  
+*Gráfica extraída de [Paper With Code](https://paperswithcode.com/trends)*
+
+Su uso es algo más complejo que el de TensorFlow, aunque a cambio permite más libertad a la hora de diseñar y depurar. Para una introducción suave, hemos preparado una demo en *Demo_torch.ipynb*. Para instalar torch, como en otras ocasiones, seguir los pasos indicados en [Link](https://pytorch.org/get-started/locally/).
+
+Si quieren aprender más sobre torch, se pueden leer el libro *Deep learning with pytorch*, que está disponible gratis en internet [Link](https://isip.piconepress.com/courses/temple/ece_4822/resources/books/Deep-Learning-with-PyTorch.pdf).
 <!--
 ## Segmentación
 
