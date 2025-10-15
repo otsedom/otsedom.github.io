@@ -1,6 +1,6 @@
 ## Guion de prácticas de la asignatura Visión por Computador (VC)
 
-Modesto Castrillón Santana  
+Modesto Castrillón Santana y José Salas Cáceres
 Universidad de Las Palmas de Gran Canaria  
 Escuela de Ingeniería en Informática  
 Grado de Ingeniería Informática  

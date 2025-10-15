@@ -300,7 +300,7 @@ Se considerarán extras:
 - Participar en
 - Evaluar dos alternativas para la detección de matrículas: basada en YOLO, y basada en contornos.
 - Anonimizar a las personas y vehículos presentes en un vídeo.
-- En el caso de haberse apuntado al [Autumn Campus Makeathon InnovAction Canarias](https://www.ulpgc.es/agenda/2024/10/24/autumn-campus-makeathon2), se valorará la aplicación de habilidades adquiridas en esta práctica.
+<!-- - En el caso de haberse apuntado al [Autumn Campus Makeathon InnovAction Canarias](https://www.ulpgc.es/agenda/2024/10/24/autumn-campus-makeathon2), se valorará la aplicación de habilidades adquiridas en esta práctica. -->
 
 
 
