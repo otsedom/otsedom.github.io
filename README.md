@@ -10,8 +10,7 @@ Profesor y actual Director de la <strong>[Escuela de Ingeniería Informática](h
 
 Miembro investigador del <strong>Instituto Universitario SIANI</strong>  
 
-Apasionado por la **visión por computador**, el **análisis de emociones** y la creación de experiencias interactivas que combinan tecnología y creatividad.  
-Siempre buscando inspirar a los estudiantes a mirar la informática como un espacio para explorar ideas, arte y ciencia.
+Apasionado por la **visión por computador**, el **análisis de emociones** y la creación de **experiencias interactivas** que combinan tecnología y creatividad. Inspirando a estudiantes que quieran mirar la informática como un espacio para explorar ideas, arte y ciencia.
 
 </td>
 <td width="30%" align="center" valign="middle">
