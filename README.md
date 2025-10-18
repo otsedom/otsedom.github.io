@@ -4,8 +4,6 @@
 <tr style="border: none;">
 <td width="70%" valign="top" style="border: none; vertical-align: top;">
 
-<h1>👋 Hola, soy Modesto Castrillón Santana</h1>
-
 Catedrático de Universidad en la <a href="https://www.ulpgc.es" target="_blank">Universidad de Las Palmas de Gran Canaria (ULPGC)</a>  
 <br>
 Profesor y actual Director de la <strong><a href="https://www.eii.ulpgc.es/es" target="_blank">Escuela de Ingeniería Informática</a></strong> (ULPGC)  
