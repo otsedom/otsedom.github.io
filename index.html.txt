@@ -159,7 +159,7 @@
 </section>
 
 <footer>
-  © 2025 Octavio Hernández Domínguez — Universidad de Las Palmas de Gran Canaria · 
+  © 2025 Modesto Castrillón Santana — Universidad de Las Palmas de Gran Canaria · 
   <a href="https://github.com/otsedom">GitHub</a>
 </footer>
 
