@@ -5,7 +5,8 @@ let scene, renderer;
 let camera;
 let info;
 let grid;
-let estrella, Planetas = [];
+let estrella,
+  Planetas = [];
 let t0 = 0;
 let accglobal = 0.001;
 let timestamp;
@@ -46,17 +47,17 @@ function init() {
   //Rejilla de referencia indicando tamaño y divisiones
   grid = new THREE.GridHelper(20, 40);
   //Mostrarla en vertical
-  grid.geometry.rotateX(Math.PI / 2);
+  //grid.geometry.rotateX(Math.PI / 2);
   grid.position.set(0, 0, 0.05);
   scene.add(grid);
 
   //Objetos
   Estrella(1.8, 0xffff00);
-  Planeta(0.5, 4.0, 1.0, 0x00ff00,1.0,2.5);
-  Planeta(0.8, 5.8, -1.2, 0x0000ff,1.0,1.0);
+  Planeta(0.5, 4.0, 1.0, 0x00ff00, 1.0, 2.0);
+  Planeta(0.8, 5.8, -0.2, 0x0000ff, 1.0, 1.0);
 
   //Inicio tiempo
-  t0 = Date.now();  
+  t0 = Date.now();
 }
 
 function Estrella(rad, col) {
@@ -66,10 +67,9 @@ function Estrella(rad, col) {
   scene.add(estrella);
 }
 
-
-function Planeta(radio, dist, vel, col,f1,f2) {
+function Planeta(radio, dist, vel, col, f1, f2) {
   let geom = new THREE.SphereGeometry(radio, 10, 10);
-  let mat = new THREE.MeshBasicMaterial({ color: col });
+  let mat = new THREE.MeshBasicMaterial({ color: col, wireframe: true });
   let planeta = new THREE.Mesh(geom, mat);
   planeta.userData.dist = dist;
   planeta.userData.speed = vel;
@@ -86,14 +86,19 @@ function animationLoop() {
 
   requestAnimationFrame(animationLoop);
 
-  //Modifica rotación de todos los objetos en Planetas    
+  //Modifica rotación de todos los objetos en Planetas
   Planetas.forEach(function (planeta) {
     planeta.position.x =
-      Math.cos(timestamp * planeta.userData.speed) * planeta.userData.dist*planeta.userData.f1;
-    planeta.position.y =
-      Math.sin(timestamp * planeta.userData.speed) * planeta.userData.dist*planeta.userData.f2;
+      Math.cos(timestamp * planeta.userData.speed) *
+      planeta.userData.dist *
+      planeta.userData.f1;
+    planeta.position.z =
+      Math.sin(timestamp * planeta.userData.speed) *
+      planeta.userData.dist *
+      planeta.userData.f2;
+
+    planeta.rotation.y += 0.01;
   });
-  
 
   renderer.render(scene, camera);
 }

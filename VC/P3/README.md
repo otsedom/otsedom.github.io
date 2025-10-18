@@ -7,9 +7,9 @@
 
 ### 3.1. Aspectos cubiertos
 
-En esta práctica el objetivo es adquirir nociones para extraer información geométrica de objetos presentes en una imagen, con el fin de caracterizarlos y posteriormente ser capaz de identificarlos de forma automática en categorías. El cuaderno de la práctica, *VC_P3.ipynb*, contiene diversos ejemplos que permiten la detección de objetos presentes en la imagen, como paso previo a su caracterización geométrica. En este sentido, se plantea el uso del umbralizado y la detección de contornos. Para el caso concreto de monedas, se considera también la utilización de la transformada de Hough para la localización de formas circulares.
+En esta práctica el objetivo es adquirir nociones para extraer información geométrica de objetos presentes en una imagen, con el fin de caracterizarlos y posteriormente ser capaz de identificarlos de forma automática en categorías. El cuaderno de la práctica, *VC_P3.ipynb*, contiene diversos ejemplos mostrando variantes para la detección de objetos presentes en la imagen, como paso previo a su caracterización geométrica. En este sentido, se plantea el uso del umbralizado y la detección de contornos. Para el caso concreto de monedas, se considera también la utilización de la transformada de Hough para la localización de formas circulares.
 
-Si bien no es necesario instalar paquetes adicionales para las primeras celdas del cuaderno, de cara a poder obtener la matriz de confusión, es requisito instalar en el *environment* el paquete *scikit-learn*. Con *pip* sería algo como:
+Si bien no es necesario instalar paquetes adicionales para las primeras celdas del cuaderno, de cara a poder obtener la matriz de confusión, es requisito instalar en el *environment* los paquetes *scikit-learn* y *seaborn* para disponer de utilidades para el cálculo de [métricas](https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall?hl=es-419). Con *pip* sería algo como:
 
 ```
 pip install scikit-learn seaborn
@@ -18,9 +18,9 @@ pip install scikit-learn seaborn
 
 ### 3.2. Entrega
 
-Para la entrega de esta  práctica, son dos las tareas planteadas. En la primera tarea, se asume que todos los objetos de interés en la imagen son circulares, en concreto monedas de la UE. Tras mostrar diversas aproximaciones para obtener sus contornos, el reto o tarea consiste en determinar la cantidad de dinero y monedas presentes en la imagen.  
+Para la entrega de esta práctica, son dos las tareas planteadas. En la primera tarea, el reto o tarea consiste en determinar la cantidad de dinero y monedas presentes en la imagen. Una extensión válida sería la presencia de objetos que no sean monedas en la imagen anañizada. 
 
-Para la segunda tarea, se proporcionan tres imágenes de tres clases de objetos recogidos en playas canarias: fragmentos plásticos, *pellets* y alquitrán. Las dos primeras categorías se consideran microplásticos cuando miden menos de 5mm, mientras que la tercera es muy habitual encontrarlas en playas canarias. Observar que dado que cada imagen contiene muestras de una única categoría, disponen de un conjunto de datos anotado. La tarea propuesta consiste en tomar como muestras de partida las imágenes proporcionadas, extraer de forma automatizada las partículas e identificar patrones en sus características geométricas y de apariencia que puedan permitir la clasificación de las partículas en dichas imágenes. El resultado obtenido debe mostrarse por medio las métricas mostradas en el cuaderno, incluyendo la matriz de confusión, donde se comparan las anotaciones con las predicciones.
+Para la segunda tarea, se proporcionan imágenes de tres clases de objetos recogidos en playas canarias: fragmentos plásticos, *pellets* y alquitrán. Para cada categoría se proporciona una imagen completa y una subimagen de la misma. Las dos primeras categorías se consideran microplásticos cuando miden menos de 5mm, mientras que la tercera es muy habitual encontrarlas en playas canarias. Observar que dado que cada imagen contiene muestras de una única categoría, disponen de un conjunto de datos anotado. La tarea propuesta consiste en primer término, hacer uso de las imágenes proporcionadas, extraer de forma automatizada las partículas e identificar patrones en sus características geométricas y de apariencia que puedan permitir la clasificación de las partículas en dichas imágenes. Las características que determinen se usarán para analizar la imagen de test proporcionada, con presencia de muestras de las tres clases. El resultado obtenido debe mostrarse por medio las métricas mostradas en el cuaderno, incluyendo la matriz de confusión, donde se comparan las anotaciones con las predicciones.
 
 ![Confusión](MatrizConfu.png)  
 *Ejemplo de matriz de confusión*
@@ -36,6 +36,7 @@ A la hora de considerar posibles características geométricas, como punto de pa
 - Definido el centroide, relación entre las distancias menor y mayor al contorno
 
 En relación a la segmentación de las partículas, una probable primera observación es que la aplicación del umbralizado para separarlas del fondo, es delicada. Preprocesamiento como suavizar la imagen de entrada o reducir su tamaño, o aplicar heurísticas basadas en el tamaño mínimo y máximo de los contornos localizados, y la distancia mínima entre ellos, pueden ayudar a filtrar falsas detecciones, pero a pesar de ello, será un desafío obtener una separación perfecta para todas las imágenes con la misma estrategia. Añadir, que la imagen de fragmentos contiene unas 80 partículas, la de *pellets* unas 55 y la de alquitrán unas 54.
+
 
 ![Contornos](Output.jpg)  
 *Ejemplo ilustrativo contornos detectados en la imagen de fragmentos*

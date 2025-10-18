@@ -5,7 +5,8 @@ let scene, renderer;
 let camera;
 let info;
 let grid;
-let estrella, Planetas = [];
+let estrella,
+  Planetas = [];
 
 init();
 animationLoop();
@@ -49,12 +50,12 @@ function init() {
 
   //Objetos
   Estrella(1.8, 0xffff00);
-  Planeta(-4,0,0,0.8,10,10, 0xff0ff0);
-  Planeta(3,0,0,0.4,10,10, 0x00ffff);
-  
+  //Planeta(-4,0,0,0.8,10,10, 0xff0ff0);
+  //Planeta(3,0,0,0.4,10,10, 0x00ffff);
+
   //PlanetaChild
-  //PlanetaChild(estrella,-4,0,0,0.8,10,10, 0xff0ff0);
-  //PlanetaChild(estrella,3,0,0,0.4,10,10, 0x00ffff);
+  PlanetaChild(estrella, -4, 0, 0, 0.8, 10, 10, 0xff0ff0);
+  PlanetaChild(estrella, 3, 0, 0, 0.4, 10, 10, 0x00ffff);
 }
 
 function Estrella(rad, col) {
@@ -64,35 +65,33 @@ function Estrella(rad, col) {
   scene.add(estrella);
 }
 
-
 function Planeta(px, py, pz, radio, nx, ny, col) {
-  let geometry = new THREE.SphereBufferGeometry(radio, nx, ny)
+  let geometry = new THREE.SphereBufferGeometry(radio, nx, ny);
   //Material con o sin relleno
   let material = new THREE.MeshBasicMaterial({
-        color: col,
-        wireframe: true, //Descomenta para activar modelo de alambres
-      });
- 
-  let mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(px,py,pz);
-  scene.add(mesh)
-  Planetas.push(mesh)
+    color: col,
+    wireframe: true, //Descomenta para activar modelo de alambres
+  });
+
+  let mesh = new THREE.Mesh(geometry, material);
+  mesh.position.set(px, py, pz);
+  scene.add(mesh);
+  Planetas.push(mesh);
 }
 
 //Defino la nueva función que recibe al padre como argumento de entrada
-function PlanetaChild(padre,px,py,pz, radio, nx, ny, col) {
-	let geometry = new THREE.SphereBufferGeometry(radio, nx, ny)
-	let material = new THREE.MeshBasicMaterial({
-					color: col,
-					//wireframe: true, //Descomenta para activar modelo de alambres
-				  });
+function PlanetaChild(padre, px, py, pz, radio, nx, ny, col) {
+  let geometry = new THREE.SphereBufferGeometry(radio, nx, ny);
+  let material = new THREE.MeshBasicMaterial({
+    color: col,
+    wireframe: true, //Descomenta para activar modelo de alambres
+  });
 
-	let mesh = new THREE.Mesh(geometry, material)
-	mesh.position.set(px,py,pz);
-	padre.add(mesh)// Se define el padre
-	Planetas.push(mesh)
+  let mesh = new THREE.Mesh(geometry, material);
+  mesh.position.set(px, py, pz);
+  padre.add(mesh); // Se define el padre
+  Planetas.push(mesh);
 }
-
 
 //Bucle de animación
 function animationLoop() {
@@ -102,8 +101,8 @@ function animationLoop() {
   Planetas.forEach(function (planeta) {
     planeta.rotation.y += 0.01;
   });
- 
-  //estrella.rotation.y += 0.01;
-    
+
+  estrella.rotation.y += 0.01;
+
   renderer.render(scene, camera);
 }

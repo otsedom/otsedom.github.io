@@ -7,13 +7,17 @@
 
 ### 2.1. Aspectos cubiertos
 
-La práctica precedente abordaba el modo de acceder al valor asociado a un píxel, así como su modificación. Dicha capacidad abre muchísimas posibilidades, existiendo un nutrido grupo de operaciones básicas, estando habitualmente presentes en bibliotecas como la que utilizaremos a lo largo del curso: [OpenCV](https://opencv.org).
+La práctica precedente aborda el modo de acceder al valor asociado a un píxel, así como su modificación. Dicha capacidad abre muchísimas posibilidades, existiendo un nutrido grupo de operaciones básicas, habitualmente presentes en bibliotecas como la que utilizaremos a lo largo del curso: [OpenCV](https://opencv.org).
 
-El cuaderno proporcionado para esta práctica (*VC_P2.ipynb*), recuerda en primer término la conversión de formato del espacio de color, tanto la conversión a grises, como a otros espacios de representación, que facilitan determinadas operaciones. Tras repasar el manejo de dichas utilidades, el cuaderno cubre un conjunto de funciones básicas de procesamiento de imágenes disponibles en OpenCV, como son las utilidades ya mencionadas de conversión de espacio de color, añadiendo las de cálculo de bordes o contornos, umbralizado, histogramas, diferencias de fotogramas o sustracción de fondo, etc.
+El cuaderno proporcionado para esta práctica (*VC_P2.ipynb*), recuerda en primer término la conversión de formato del espacio de color, tanto la conversión a grises, como a otros espacios de representación, que facilitan determinadas operaciones. Tras repasar el manejo de dichas utilidades, el cuaderno cubre un conjunto de funciones básicas de procesamiento de imágenes disponibles en OpenCV, como son las utilidades ya mencionadas de conversión de espacio de color, añadiendo las de cálculo de bordes o contornos, umbralizado, histogramas, diferencias de fotogramas o sustracción de fondo, etc., además de moestrar alternativas para escribir texto sobre la imagen. Para los ejemplos usando *PILimage* puede ser necesario instalar un nuevo paquete.
+
+```
+pip install Pillow
+```
 
 ### 2.2. Entrega
 
-A lo largo del cuaderno se propone resolver algunas variaciones sobre el código proporcionado. Además de dichas tareas concretas, en la parte final se proponen dos tareas con un objetivo más abierto otorgando mayor libertad en cuanto al resultado a producir:
+A lo largo del cuaderno se propone resolver algunas variaciones sobre el código proporcionado. Además de dichas tareas concretas, en la parte final se proponen tareas con un objetivo más abierto otorgando mayor libertad en cuanto al resultado a producir:
 
 - Desarrollar un demostrador que capture las imágenes de la cámara, y les permita *exhibir* lo aprendido en estas dos primeras prácticas ante quienes no cursen la asignatura de Visión por Computador :) . Es por ello que además de poder mostrar la imagen original de la webcam, sea posible de forma interactiva cambiar de modo, incluyendo al menos dos modos diferentes que muestren el resultado de aplicar funciones de OpenCV trabajadas hasta ahora.
 

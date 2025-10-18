@@ -57,8 +57,8 @@ function init() {
   Planeta(0.5, 4.0, 1.0, 0x00ff00, 1.0, 1.5);
   Planeta(0.8, 5.8, -1.2, 0xffff0f, 1.0, 1.0);
 
-  Luna(Planetas[0], 0.05, 0.5, -3.5, 0xffff00, 0.0);
-  Luna(Planetas[0], 0.04, 0.7, 1.5, 0xff0f00, Math.PI / 4);
+  Luna(Planetas[0], 0.15, 0.75, -3.5, 0xffff00, 0.0);
+  Luna(Planetas[0], 0.04, 0.7, 1.5, 0xff0f00, Math.PI / 2);
 
   //Inicio tiempo
   t0 = Date.now();

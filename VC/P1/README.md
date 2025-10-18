@@ -17,7 +17,7 @@ Los equipos del laboratorio ya cuentan con Anaconda y VS Code instalados, si bie
 
 - Lanzar *Anaconda Prompt*
 
-- Crear el *environment* con la configuración que nos interese. Para crear uno que ejecute el cuaderno de esta práctica, sin darle muchas vueltas con una versión reciente de Python, se les propone lo siguiente:
+- Crear el *environment* con la configuración que nos interese. Para crear uno que ejecute el cuaderno de esta primera práctica, sin darle muchas vueltas con una versión reciente de Python, se les propone lo siguiente:
 
 ```
 conda create --name VC_P1 python=3.11.5

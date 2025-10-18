@@ -15,67 +15,58 @@
 ## Introducción
 
 [Three.js](https://threejs.org/) es una biblioteca de JavaScript, basada en WebGL, que ofrece numerosas posibilidades para gráficos 3D en el navegador. Cuenta con nutrida documentación y una comunidad activa, por lo que la hemos escogido para las prácticas de las próximas semanas en la asignatura.
-Si bien se relacionan al final del documento, recomendar recursos disponibles añadidos a la [documentación oficial de three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene), como son [Discover three.js](https://discoverthreejs.com) que cuenta con su editor integrado, y el material del libro [Learning Three.js](https://github.com/josdirksen/learning-threejs) de [Jos Dirksen](https://github.com/josdirksen).
+Si bien se relacionan también al final del documento, recomendar recursos disponibles añadidos a la [documentación oficial de three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene), como son [Discover three.js](https://discoverthreejs.com) que cuenta con su editor integrado, y el material del libro [Learning Three.js](https://github.com/josdirksen/learning-threejs) de [Jos Dirksen](https://github.com/josdirksen).
 
-Aunque no forme parte del proyecto docente de la asignatura, si tuvieras interés en una alternativa para la creación de experiencias gráficas (2D y 3D) e interactivas, en un sentido amplio, podría interesarte conocer  [p5.js](https://p5js.org/es/) (inspirado en el marco creativo [Processing](https://processing.org)), para la que cuentas con material de la asignatura del plan de estudios anterior [Creando interfaces de Usuario](https://github.com/otsedom/otsedom.github.io/blob/main/CIU/README.md).
+Aunque no forme parte del proyecto docente de la asignatura, si tuvieras interés en una alternativa para la creación de experiencias gráficas (2D y 3D) e interactivas, en un sentido amplio, podría interesarte conocer [p5.js](https://p5js.org/es/) (inspirado en el marco creativo [Processing](https://processing.org)), para la que cuentas con material de la asignatura del plan de estudios anterior [Creando interfaces de Usuario](https://github.com/otsedom/otsedom.github.io/blob/main/CIU/README.md) y una notable comunidad.
 
 ## Ejemplo mínimo
 
-Para un primer ejemplo, esta guía adopta el primer tutorial de la documentación oficial disponible en la web de three.js, [Creación de una escena](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene). De inicio describe el HTML básico para incrustar el código JavaScript. En los ejemplos que se presentan a través del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2425) se hace uso del archivo *index_SX.html*, que para esta semana el correspondiente *index_S6.html* luce una estructura similar a:
+Para un primer ejemplo, esta guía adopta el primer tutorial de la documentación oficial disponible en la web de three.js, [Creación de una escena](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene). De inicio describe el HTML básico para incrustar el código JavaScript. En los ejemplos que se presentan a través del [repositorio CodeSandBox](https://codesandbox.io/p/sandbox/ig2526-s6-master-forked-xtdjrm) se hace uso del archivo *index_SX.html*, que para esta semana el correspondiente *index_S6.html* luce una estructura similar a:
 
 ```
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Mi ThreeJS</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-
-    <!--Carga de módulos, indicando release de threejs-->
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.152.1/build/three.module.js",  
-          "three/": "https://cdn.skypack.dev/three@0.152.1/"
-        }
+    <title>Mi título</title>
+    <meta charset="UTF-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
       }
-    </script>
-    <script src="/miscript.js" type="module" ></script>
+    </style>
+  </head>
+
+  <body>
+    <script src="miscript.js"></script>    
   </body>
 </html>
 ```
 
-En lugar de colocar el código JavaScript directamente en el archivo *index_S6.html*, tras relacionar la dependencia de una *release* concreta de *three.js*, referencia al archivo *miscript.js* que contendrá el correspondiente código JavaScript.
-Sustituyendo *miscript.js* por el nombre concreto del archivo JavaScript que nos interese, tendremos la ejecución del archivo JavaScript de turno, sin tener que realizar más cambios en *index_S6.html*. Para la estructura de archivos, he adaptado el [código ejemplo de Gomix](https://glitch.com/~threejs-template-apcs236). Observa que el archivo *index_SX.html* a lanzar cada semana, se especifica en *server.js*. Para esta semana concreta:
+En lugar de colocar el código JavaScript directamente en el archivo *index_S6.html*, referencia al archivo *miscript.js* que contendrá el correspondiente código JavaScript.
+Sustituyendo *miscript.js* por el nombre concreto del archivo JavaScript que nos interese, tendremos la ejecución del archivo JavaScript de turno, sin tener que realizar más cambios en *index_S6.html*. Las posibles dependencias, como por ejemplo la versión adoptada de three.js se indican en *package.json*. Para esta semana concreta:
 
 ```
-// server.js
-// where your node app starts
-
-// init project
-var express = require('express');
-var app = express();
-
-// we've started you off with Express,
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
-
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index_S6.html');
-});
-
-// listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+{
+  "name": "threejs-ig-eii",
+  "version": "1.0.0",
+  "description": "IG-EII",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "three": "0.152.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": ["threejs", "example"]
+}
 ```
 
-Tras la breve descripción de los archivos presentes, de forma análoga al tutorial se presenta en primer término un ejemplo básico que dibuja un cubo verde, el archivo [*script_01_cubo_minimo.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_01_cubomin.js) del [repositorio Glitch](https://glitch.com/edit/#!/eii-ig-threejs2425) proporcionado:
+Tras la breve descripción de los archivos presentes, de forma análoga al tutorial de three.js se presenta en primer término un ejemplo básico que dibuja un cubo, el archivo [*script_01_cubo_minimo.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_01_cubomin.js) proporcionado:
 
 ```
 import * as THREE from "three";
@@ -125,7 +116,7 @@ Ejemplos básicos como este, sin elementos extras, es posible ejecutarlos localm
 
 De cara a la depuración del código JavaScript, recordar que durante su ejecución es posible con la opción *Inspeccionar elemento* (o similar en tu navegador concreto), analizar la ejecución del programa, y por tanto localizar errores.
 
-El código del ejemplo crea y configura una escena [Scene](https://threejs.org/docs/#api/en/scenes/Scene), una cámara con perspectiva ([CameraPerspective](https://threejs.org/docs/?q=PerspectiveCamera#api/en/cameras/PerspectiveCamera)) y un reproductor ([WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer)); todo ello antes de crear el objeto (un cubo con la geometría *box*) a partir de una geometría y un material. Tras su creación, el objeto creado (el cubo), se añade a la escena previamente creada. La escena es el lugar en que se definen los objetos, luces y cámaras. Three.js trabaja con un grafo de escena que establece las jerarquías y dependencias de los objetos presentes en ella. Por otro lado, la cámara permite definir el modo en que se verán los objetos de la escena. El reproductor muestra la escena en un *HTMLCanvasElement*, por defecto hace uso de WebGL.
+El código del ejemplo crea y configura una escena [Scene](https://threejs.org/docs/#api/en/scenes/Scene), una cámara con perspectiva ([CameraPerspective](https://threejs.org/docs/?q=PerspectiveCamera#api/en/cameras/PerspectiveCamera)) y un reproductor ([WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer)); todo ello antes de crear el objeto (un cubo con la geometría *box*) a partir de una geometría y un material. Tras su creación, el objeto creado (el cubo), se añade a la escena previamente creada. La escena es el lugar donde se definen los objetos, luces y cámaras. Three.js trabaja con un grafo de escena que establece las jerarquías y dependencias de los objetos presentes en ella. Por otro lado, la cámara permite definir el modo en que se verán los objetos de la escena. El reproductor muestra la escena en un *HTMLCanvasElement*, por defecto hace uso de WebGL.
 
 La parte final del código, contiene el bucle de visualización que incluye la llamada a [*requestAnimationFrame*](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), que usualmente  proporcionará 60 fotogramas por segundo. En el bucle se pueden modificar el o los objetos presentes en la escena, si fuera el caso, para finalmente mostrar la escena con la cámara previamente definida. En este caso, a la escena anteriormente se le había asignado un objeto, conformando el mencionado grafo de escena (*scene graph*).
 
@@ -150,7 +141,6 @@ En este caso en el bucle de visualización se modifica la rotación en *x* de la
 **Añade una segunda esfera a la escena, prueba con el mismo y distinto material, que toque (o no) parcialmente a la ya existente. Ejecuta visualizando en modo alambre y relleno (propiedad *wireframe*). ¿Qué observas?**
 
 Mencionar entre las formas geométricas disponibles las de caja ([*Box*](https://threejs.org/docs/#api/en/geometries/BoxGeometry)), plano ([*Plane*](https://threejs.org/docs/#api/en/geometries/PlaneGeometry)), cono ([*Cone*](https://threejs.org/docs/#api/en/geometries/ConeGeometry)), objeto de revolución ([LatheGeometry](https://threejs.org/docs/#api/en/geometries/LatheGeometry), ojo que los puntos proporcionados deben tener la componente *x* mayor que 0) o paramétrica ([*ParametricGeometry*](https://threejs.org/docs/#examples/en/geometries/ParametricGeometry)).
-
 Son todos ellos objetos tipo malla [*Mesh*](https://threejs.org/docs/#api/en/objects/Mesh), que básicamente significa que se describen como una colección de caras triangulares.
 Para objetos que no sean una malla, como por ejemplo una línea, se hace uso de la geometría estándar como ilustra el [ejemplo básico de dibujo de línea](https://threejs.org/docs/#manual/en/introduction/Drawing-lines)
 
@@ -259,20 +249,6 @@ Los cambios introducidos los tienes integrados en el ejemplo  [*script_04_esfera
 ## Control orbital
 
 El asistente *GridHelper* favorece la interpretación del espacio tridimensional, pero se agradecería poder mirar la escena a nuestro antojo de forma interactiva. Para controlar la órbita de la cámara alrededor del punto de atención, se ofrece la utilidad ([OrbitControls](https://threejs.org/docs/#examples/en/controls/OrbitControls)).
-Para su integración, además del *import* en el archivo Javascript, ha sido necesario incluir la segunda línea en el bloque *importmap* del
- *index.html*:
-
-```
-<script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.152.1/build/three.module.js",  
-          "three/": "https://cdn.skypack.dev/three@0.152.1/"
-        }
-      }
-    </script>
-```
-
 En el código basta con añadir al inicio
 
 ```
@@ -286,7 +262,7 @@ y en la función *init* algo como:
 var controls = new OrbitControls(camera, renderer.domElement);
 ```
 
-Tras su definición teóricamente es posible activarlo o desactivarlo con la propiedad *.enabled*. Sin embargo, hasta este momento no he conseguido apreciar el efecto.
+Tras su definición teóricamente es posible activarlo o desactivarlo con la propiedad *.enabled*. <!--Sin embargo, hasta este momento no he conseguido apreciar el efecto.-->
 
 
 ## Rotaciones
@@ -330,11 +306,11 @@ for(let object of Planetas) {
 }
 ```
 
-¿Hay rotación delos planetas? ¿Sobre qué punto?
+¿Hay rotación de los planetas? ¿Sobre qué punto?
 
 **¿Cómo conseguir que las nuevas esferas roten alrededor de la primera, como si fueran una estrella y el planeta en su órbita?**
 
-Una primera propuesta consiste en crear una nueva función *PlanetaChild* donde la nueva malla no se asocia directamente a la escena sino a la malla suministrada como parámetro (en mi caso, la *estrella*). Con esta acción hago uso del grafo de escena, y ocurre que todas las transformaciones aplicadas sobre el ancestro, el padre, se aplican también a la matriz de transformación de sus herederos.
+Una primera propuesta consiste en crear una nueva función *PlanetaChild*, presente en el ejemplo, donde la nueva malla no se asocia directamente a la escena sino a la malla suministrada como parámetro (en mi caso, la *estrella*). Con esta acción hago uso del grafo de escena, y ocurre que todas las transformaciones aplicadas sobre el ancestro, el padre, se aplican también a la matriz de transformación de sus herederos.
 
 La información sobre el padre de un objeto se conoce a través de la propiedad *.parent*. Tener presente que un objeto únicamente puede tener un padre. En el contexto del [grafo de escena](https://r105.threejsfundamentals.org/threejs/lessons/threejs-scenegraph.html) se establecen dependencias en una estructura jerárquica entre objetos.
 
@@ -414,9 +390,9 @@ function animationLoop() {
 }
 ```
 
-Si coinciden con el valor 1.0, tenemos la misma situación anterior, si presentan valores diferentes, tendremos una órbita elíptica.
+Si *f1* y *f2* coinciden con el valor 1.0, tenemos la misma situación anterior, si presentan valores diferentes, tendremos una órbita elíptica.
 
-Como sería interesante mostrar la órbita, para dibujar la trayectoria del planeta propongo hacer uso de la curva elíptica (*EllipseCurve*) en la propia función de creación del planeta. De tal forma que simplemente se define con los parámetros asociados al planeta en la función *Planeta* y se añade el objeto a la escena.
+Como sería interesante mostrar la órbita, para dibujar la trayectoria del planeta les propongo hacer uso de la curva elíptica (*EllipseCurve*) en la propia función de creación del planeta. De tal forma que simplemente se define con los parámetros asociados al planeta en la función *Planeta* y se añade el objeto a la escena.
 En este ejemplo se asume que la trayectoria elíptica es alrededor del origen, viniendo los radios de la elipse definidos por la distancia y peso de cada uno.
 
 ```
@@ -529,7 +505,7 @@ function Luna(planeta, radio, dist, vel, col, angle) {
 
 En un apartado previo se menciona el uso de un botón HTML para modificar la visualización del *GridHelper*. Además de poder hacer clic en un botón, para distintas acciones puwede ser interesante hacer uso de la posición del puntero sobre la escena 3D. En esta línea, en este apartado se ilustra la forma en que se puede hacer uso de la información del puntero del ratón para dibujar una polilínea sobre el plano *z=0*.
 
-Al necesitar crear una polilínea cuyo número de puntos se va modificando, no existe (o no la conozco) la posibilidad de ir aumentando el tamaño de la *BufferGeometry* según nos interese. Es por ello que se adopta prealojar un número de puntos, siguiendo las indicaciones de la documentación sobre cómo hacerlo en [*How to update things*](https://threejs.org/docs/#manual/en/introduction/How-to-update-things).
+Al necesitar crear una polilínea cuyo número de puntos se va modificando, no existe (o no la conozco) la posibilidad de ir aumentando el tamaño de la *BufferGeometry* según nos interese. Es por ello, que adopto prealojar un número de puntos, siguiendo las indicaciones de la documentación sobre cómo hacerlo en [*How to update things*](https://threejs.org/docs/#manual/en/introduction/How-to-update-things).
 
 Para definir con el puntero las coordenadas sobre el plano *z=0*, en el código a continuación se define como referencia un *GridHelper* sobre el plano *xy*, haciendo uso de la clase [Raycaster](https://threejs.org/docs/#api/en/core/Raycaster) para determinar la intersección del puntero con la escena. En mi caso no he tenido buena respuesta al hacer intersectar con el asistente *GridHelper*, es por ello que hago uso de un plano, no visible, para realizar la intersección con el rayo.
 Incluyo completo el código ejemplo del archivo [*script_08_polilinea*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/code/script_08_polilinea.js):
