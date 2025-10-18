@@ -90,65 +90,64 @@
 <body>
 
 <header>
-  <img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Octavio Hernández Domínguez">
-  <h1>Octavio Hernández Domínguez</h1>
+  <img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Modesto Castrillón Santana">
+  <h1>Modesto Castrillón Santana</h1>
+  <p>Catedrático de Universidad de la ULPGC</p>
   <p>Profesor e Investigador en la Escuela de Ingeniería Informática (ULPGC)</p>
-  <p>Miembro del Instituto Universitario SIANI</p>
+  <p>Miembro Investigador del Instituto Universitario SIANI</p>
 </header>
 
 <section>
-  <h2>📘 Docencia</h2>
-  <div class="cards">
+  <h2>Docencia</h2>
+  <div class="cards">    
     <div class="card">
-      <h3>🎨 Creando Interfaces de Usuario (CIU)</h3>
+      <h3>Visión por Computador (VC)</h3>
+      <p><a href="VC/README.md">Proyectos y prácticas</a></p>
+    </div>
+    <div class="card">
+      <h3>Informática Gráfica (IG)</h3>
+      <p><a href="IG/README.md">Recursos docentes</a></p>
+    </div>    
+        <div class="card">
+      <h3>Creando Interfaces de Usuario (CIU)</h3>
       <p><a href="CIU/README.md">Materiales y ejemplos</a></p>
     </div>
     <div class="card">
-      <h3>🧩 Informática Gráfica (IG)</h3>
-      <p><a href="IG/README.md">Recursos docentes</a></p>
-    </div>
-    <div class="card">
-      <h3>💻 Informática y Programación (IyP)</h3>
+      <h3>Informática y Programación (IyP)</h3>
       <p>Introducción a la programación y pensamiento computacional.</p>
     </div>
-    <div class="card">
-      <h3>👁️ Visión por Computador (VC)</h3>
-      <p><a href="VC/README.md">Proyectos y prácticas</a></p>
-    </div>
   </div>
 </section>
 
 <section>
-  <h2>💡 Divulgación</h2>
-  <div class="cards">
+  <h2>Investigación</h2>
+  <div class="cards">   
     <div class="card">
-      <h3>✨ Demo Macaronight 2020</h3>
-      <p>Explora la demostración interactiva desarrollada para la Noche Europea de los Investigadores.</p>
-      <p><a href="https://macaronight-test.glitch.me">Ver demo</a> · <a href="https://glitch.com/edit/#!/macaronight-test">Código</a></p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>🔬 Investigación</h2>
-  <div class="cards">
-   
-    <div class="card">
-      <h3>📚 Perfiles académicos</h3>
+      <h3>Perfiles académicos</h3>
       <p>Consulta mis publicaciones y producción científica:</p>
-      <p>🧠 <a href="https://scholar.google.com/citations?hl=es&user=awve1bIAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
-         🔗 <a href="https://accedacris.ulpgc.es/cris/rp/rp00493">Accedacris ULPGC</a></p>
+      <p><a href="https://scholar.google.com/citations?hl=es&user=awve1bIAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
+         <a href="https://accedacris.ulpgc.es/cris/rp/rp00493">Accedacris ULPGC</a></p>
     </div>
 	<div class="card">
-      <h3>🚀 Viola Jones Cascades</h3>
-      <p><a href="https://github.com/otsedom/ViolaJonesCascades">Repositorio en GitHub</a></p>
-    </div>
-    <div class="card">
-      <h3>🤖 ENCARA2</h3>
+      <h3>Proyectos previos y modelos</h3>
+      <p><a href="https://github.com/otsedom/ViolaJonesCascades">Repositorio Viola Jones Cascades en GitHub</a></p>
       <p><a href="https://github.com/otsedom/ENCARA2">Reconocimiento facial y análisis emocional</a></p>
+    </div>    
+  </div>
+</section>
+
+<section>
+  <h2>Divulgación</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>IA para verte mejor</h3>
+      <p>Explora la demostración interactiva desarrollada para la Noche Europea de los Investigadores.</p>
+      <p><a href="https://iaparavertemejor-git-glitch-otsedoms-projects.vercel.app">Ver demo</a> · <a href="https://iaparavertemejor-git-glitch-otsedoms-projects.vercel.app">Código</a></p>
     </div>
   </div>
 </section>
+
+
 
 <section>
   <h2>🌱 Sobre mí</h2>
