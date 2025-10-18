@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Octavio Hernández Domínguez | ULPGC</title>
+  <style>
+    :root {
+      --primary: #005fa3;
+      --secondary: #00bcd4;
+      --bg: #f4f7fb;
+      --text: #333;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+    }
+    header img {
+      width: 160px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0.5rem 0 0;
+    }
+    header p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--secondary);
+      display: inline-block;
+      margin: 2rem 0 1.5rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Octavio Hernández Domínguez">
+  <h1>Octavio Hernández Domínguez</h1>
+  <p>Profesor e Investigador en la Escuela de Ingeniería Informática (ULPGC)</p>
+  <p>Miembro del Instituto Universitario SIANI</p>
+</header>
+
+<section>
+  <h2>📘 Docencia</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🎨 Creando Interfaces de Usuario (CIU)</h3>
+      <p><a href="CIU/README.md">Materiales y ejemplos</a></p>
+    </div>
+    <div class="card">
+      <h3>🧩 Informática Gráfica (IG)</h3>
+      <p><a href="IG/README.md">Recursos docentes</a></p>
+    </div>
+    <div class="card">
+      <h3>💻 Informática y Programación (IyP)</h3>
+      <p>Introducción a la programación y pensamiento computacional.</p>
+    </div>
+    <div class="card">
+      <h3>👁️ Visión por Computador (VC)</h3>
+      <p><a href="VC/README.md">Proyectos y prácticas</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>💡 Divulgación</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>✨ Demo Macaronight 2020</h3>
+      <p>Explora la demostración interactiva desarrollada para la Noche Europea de los Investigadores.</p>
+      <p><a href="https://macaronight-test.glitch.me">Ver demo</a> · <a href="https://glitch.com/edit/#!/macaronight-test">Código</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🔬 Investigación</h2>
+  <div class="cards">
+   
+    <div class="card">
+      <h3>📚 Perfiles académicos</h3>
+      <p>Consulta mis publicaciones y producción científica:</p>
+      <p>🧠 <a href="https://scholar.google.com/citations?hl=es&user=awve1bIAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
+         🔗 <a href="https://accedacris.ulpgc.es/cris/rp/rp00493">Accedacris ULPGC</a></p>
+    </div>
+	<div class="card">
+      <h3>🚀 Viola Jones Cascades</h3>
+      <p><a href="https://github.com/otsedom/ViolaJonesCascades">Repositorio en GitHub</a></p>
+    </div>
+    <div class="card">
+      <h3>🤖 ENCARA2</h3>
+      <p><a href="https://github.com/otsedom/ENCARA2">Reconocimiento facial y análisis emocional</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🌱 Sobre mí</h2>
+  <p style="max-width:700px;margin:auto;text-align:center;">
+    Interesado en la <strong>computación visual</strong>, la <strong>interacción humano-computador</strong> y la <strong>creación de experiencias interactivas</strong> que combinan tecnología y creatividad.  
+    Busco inspirar a los estudiantes a mirar la informática como un espacio para explorar ideas, arte y ciencia.
+  </p>
+</section>
+
+<footer>
+  © 2025 Octavio Hernández Domínguez — Universidad de Las Palmas de Gran Canaria · 
+  <a href="https://github.com/otsedom">GitHub</a>
+</footer>
+
+</body>
+</html>
