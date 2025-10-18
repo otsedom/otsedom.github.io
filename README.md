@@ -26,12 +26,13 @@ Siempre buscando inspirar a los estudiantes a mirar la informática como un espa
 [Divulgación](#divulgación) 
 
 
-### Materiales docentes
+### Docencia
 
 - [Visión por Computador (VC)](VC/README.md)
 - [Informática Gráfica (IG)](IG/README.md)
 - [Creando Interfaces de Usuario (CIU)](CIU/README.md)
 - [Informática y Programación (IyP)](https://www.youtube.com/user/IyPULPGC)
+- Sí, habitualmente dirijo TFTs. Puedes ver títulos recientes de [TFG](https://accedacris.ulpgc.es/global-search?query=modesto+castrillon&location=global&filtername=itemtype&filterquery=trabajo+final+de+grado&filtertype=authority) y [TFM](https://accedacris.ulpgc.es/global-search?query=modesto+castrillon&location=global&filtername=itemtype&filterquery=trabajo+final+de+máster&filtertype=authority)
 
 
 ### Investigación
