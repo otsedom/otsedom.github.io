@@ -5,7 +5,9 @@
 <td width="70%" valign="top">
 
 Catedrático de Universidad en la [ULPGC](https://www.ulpgc.es)
+
 Profesor y actual Director de la <strong>[Escuela de Ingeniería Informática](https://www.eii.ulpgc.es/es)</strong> (ULPGC)  
+
 Miembro investigador del <strong>Instituto Universitario SIANI</strong>  
 
 Apasionado por la **visión por computador**, el **análisis de emociones** y la creación de experiencias interactivas que combinan tecnología y creatividad.  
