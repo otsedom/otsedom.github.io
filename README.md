@@ -10,8 +10,8 @@ Interesado en la **visión por computador**, la **interacción humano-computador
 
 ### Contenidos
 [Materiales docentes](#materiales-docentes)  
-[Divulgación](#divulgación)  
 [Investigación](#investigación)  
+[Divulgación](#divulgación) 
 
 
 ### Materiales docentes
@@ -36,8 +36,6 @@ Interesado en la **visión por computador**, la **interacción humano-computador
 ### Divulgación
 
 - [IA para verte mejor](https://iaparavertemejor-git-glitch-otsedoms-projects.vercel.app)
-
-
 
 
 [Inicio](#top)
