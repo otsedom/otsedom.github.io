@@ -1,7 +1,7 @@
 ## Página personal de proyectos de Modesto Castrillón Santana
 
 <table>
-<tr>
+<tr style="border: none;">
 <td width="70%" valign="top">
 
 Catedrático de Universidad en la [ULPGC](https://www.ulpgc.es)
