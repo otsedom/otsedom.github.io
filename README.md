@@ -1,22 +1,26 @@
 ## Página personal de proyectos
 
-<p align="center">
-  <img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Modesto Castrillón Santana" width="220" style="border-radius:50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);" />
-</p>
+<table>
+<tr>
+<td width="70%" valign="top">
 
-<p align="center">
-  Profesor en la <strong>Escuela de Ingeniería Informática</strong> (ULPGC)  
-  <br/>
-  Miembro del <strong>Instituto Universitario SIANI</strong>  
-</p>
+<h1>👋 Hola, soy Modesto Castrillón Santana</h1>
 
 Catedrático de Universidad en la [ULPGC](https://www.ulpgc.es)
+Profesor y actual Director de la <strong>[Escuela de Ingeniería Informática](https://www.eii.ulpgc.es/es)</strong> (ULPGC)  
+Miembro investigador del <strong>Instituto Universitario SIANI</strong>  
 
-Actual Director de la [Escuela de Ingeniería Informática](https://www.eii.ulpgc.es/es) de la ULPGC
+Apasionado por la **visión por computador**, el **análisis de emociones** y la creación de experiencias interactivas que combinan tecnología y creatividad.  
+Siempre buscando inspirar a los estudiantes a mirar la informática como un espacio para explorar ideas, arte y ciencia.
 
-Miembro investigador del [SIANI](https://siani.ulpgc.es)
+</td>
+<td width="30%" align="center" valign="middle">
 
-Interesado en la **visión por computador**, la **interacción humano-computador** y la **creación de experiencias interactivas** que combinan tecnología y creatividad. Busco inspirar a estudiantes a mirar la informática como un espacio para explorar ideas, arte y ciencia.
+<img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Modesto Castrillón Santana" width="220" style="border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.3);" />
+
+</td>
+</tr>
+</table>
 
 ### Contenidos
 [Materiales docentes](#materiales-docentes)  
