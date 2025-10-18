@@ -1,10 +1,8 @@
-## Página personal de proyectos
+## Página personal de proyectos de Modesto Castrillón Santana
 
 <table>
 <tr>
 <td width="70%" valign="top">
-
-<h1>👋 Hola, soy Modesto Castrillón Santana</h1>
 
 Catedrático de Universidad en la [ULPGC](https://www.ulpgc.es)
 Profesor y actual Director de la <strong>[Escuela de Ingeniería Informática](https://www.eii.ulpgc.es/es)</strong> (ULPGC)  
