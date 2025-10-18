@@ -1,5 +1,15 @@
 ## Página personal de proyectos
 
+<p align="center">
+  <img src="Instituto Universitario SIANI_MG_9967s.jpg" alt="Modesto Castrillón Santana" width="220" style="border-radius:50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);" />
+</p>
+
+<p align="center">
+  Profesor en la <strong>Escuela de Ingeniería Informática</strong> (ULPGC)  
+  <br/>
+  Miembro del <strong>Instituto Universitario SIANI</strong>  
+</p>
+
 Catedrático de Universidad en la [ULPGC](https://www.ulpgc.es)
 
 Actual Director de la [Escuela de Ingeniería Informática](https://www.eii.ulpgc.es/es) de la ULPGC
