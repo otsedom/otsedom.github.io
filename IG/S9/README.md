@@ -6,14 +6,10 @@
 [Aleatoriedad](#aleatoriedad)  
 [Texturas](#texturas-en-el-shader)  
 [Galería](#galería)  
-[Shaders de vértices](#shaders-de-vértices)
+[Shaders de vértices](#shaders-de-vértices)  
 [Tarea](#tarea)  
 [Referencias](#referencias)
 <!--[Imágenes](#imágenes)  -->
-
-
-
-
 
 
 
@@ -45,7 +41,7 @@ En un primer momento, los *shaders* fueron concebidos para desarrollar modelos d
 
 Entre los diversos lenguajes  utilizados para el desarrollo de *shaders* (HLSL, GLSL, Cg) este guion se limita a GLSL por su vinculación con OpenGL.
 Three.js cuenta con el material
-[ShaderMaterial](https://threejs.org/docs/#api/en/materials/ShaderMaterial), cuya documentación incluye una batería de ejemplos. También existe el  [RawShaderMaterial](https://threejs.org/docs/#api/en/materials/RawShaderMaterial). Se diferencian en que el primer material automáticamente adjunta *uniforms* y atributos.
+[ShaderMaterial](https://threejs.org/docs/#api/en/materials/ShaderMaterial), cuya documentación incluye una batería de ejemplos. También existe el  [RawShaderMaterial](https://threejs.org/docs/#api/en/materials/RawShaderMaterial). Se diferencian en que el primero de ellos, automáticamente adjunta *uniforms* y atributos.
 
 <!--
 https://medium.com/@leannewerner/shadermaterial-vs-rawshadermaterial-f1f0def5722
@@ -955,7 +951,7 @@ void main(){
 ![Values](images/p9_editorDibuja19.png)  
 *Jugando con radios*
 
-### Generativos
+### Generativos y patrones
 
 Al ejecutarse en paralelo para cada píxel en una GPU, el número de repeticiones no influye en el coste, siendo una potente herramienta para crear patrones. Tras la breve muestra de dibujo de formas gráficas con técnicas procedimentales del apartado anterior, el *shader* mostrado a continuación, basado en [este ejemplo](https://thebookofshaders.com/09/?lan=es) de The Book of Shaders], aprovecha el escalado para replicar nueve veces un círculo (número de repeticiones configurable modificando el valor de *scale*). La función [*fract*](https://thebookofshaders.com/glossary/?search=fract) se queda con la parte fraccionaria, permitiendo *moverse* entre celdas de la rejilla resultante. La función utilizada para dibujar el círculo, se basa en la propuesta en [The Book of Shaders](https://thebookofshaders.com) que evita el uso de la costosa *sqrt* en el cálculo de distancias, utilizando *dot*, y una transición suave con *smoothstep*.
 
@@ -1263,10 +1259,10 @@ void main() {
 ![Values](images/p9_editorDibuja26.png)  
 *Captura del resultado*
 
-### Aleatoriedad
+#### Aleatoriedad
 
 
-Una interesante posibilidad es el uso de aleatoriedad a distintos niveles en la creación del contenido gráfico. En el *shader* a continuación, basado en [este ejemplo](https://thebookofshaders.com/10/?lan=es), se replica la propuesta de [The Book of Shaders](https://thebookofshaders.com) para el uso de valores aleatorios en 2D, dada la ausencia de funciones en GLSL.
+Una interesante posibilidad es el uso de aleatoriedad a distintos niveles en la creación del contenido gráfico. En el *shader* a continuación, basado en [este ejemplo](https://thebookofshaders.com/10/?lan=es), se replica la propuesta para el uso de valores aleatorios en 2D, dada la ausencia de funciones en GLSL.
 
   **GLSL**
   ```
@@ -1717,13 +1713,12 @@ https://youtu.be/dRo7SnOJlEM
 
 Como entrega, se plantean dos posibles alternativas:
 
-- Integración de shaders para su integración en alguna de las tareas anteriores: Sistema planetario o/y Visualización de datos
+- Integración de shaders para su integración en alguna de las tareas anteriores: *S6-7 Sistema planetario* o/y *S8 Visualización de datos*.
 - Desarrollo de un *shader* de fragmentos con patrones generativo, asegurando que sea ejecutable de [editor de The Book of Shaders](http://editor.thebookofshaders.com). Se hará entrega de una versión *tiny code* aceptando propuestas de hasta 512 bytes. Todas aquellas que cumplan ambas condiciones, se utilizarán para componer un *reel* conjunto a mostrar en RRSS.
 
 En ambos casos, la documentación explicativa del *shader* debe incluir la motivación, y una detallada descripción de su desarrollo, con especial énfasis en el desarrollo y citando a las fuentes utilizadas.
 
 
-Realizar una propuesta de prototipo que haga uso al menos de un *shader* de fragmentos, sugiriendo como posibilidades la creación de texturas y/o diseños generativos, recomendando su **integración en al menos una de las dos prácticas precedentes**.
 
 
 ### Referencias
@@ -1731,7 +1726,6 @@ Realizar una propuesta de prototipo que haga uso al menos de un *shader* de frag
 - [Gon21] Patricio Gonzalez Vivo and Jen Lowe. [The Book of Shaders](https://thebookofshaders.com)
 
 - [Documentación](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)  
-- [Three.js Fundamentals](Three.js Fundamentals)
 - [Discover three.js](https://discoverthreejs.com)
 - [Learning Three.js](https://github.com/josdirksen/learning-threejs) por [Jos Dirksen](https://github.com/josdirksen)
 - [Three.js Cookbook](https://github.com/josdirksen/threejs-cookbook) por [Jos Dirksen](https://github.com/josdirksen) de 2015
