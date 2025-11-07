@@ -1773,18 +1773,27 @@ void main() {
 ![Values](images/p9_editorDibuja62.png)  
 *Captura del resultado*
 
-Variaciones en la especificación del color definido teniendo en cuenta el tiempo transcurrido. 
+Variaciones en la especificación del color definido teniendo en cuenta el tiempo transcurrido, la posición en la rejilla, etc. 
 
 ```
 ...
 uniform float u_time;
 ...
+float random (vec2 st) {
+    return fract(sin(dot(st.xy,
+                         vec2(12.9898,78.233)))*
+        43758.5453123);
+}
+...
 
+void main(){}
+  ...
   vec3 color;
   color = vec3( (c - abs(sin (u_time * 2.))));   //Escoge una
   color = vec3( (c - abs(sin (u_time * (fil+col))))); 
   color = vec3( (c - abs(sin (u_time * (fil+col)))*random(vec2(fil,col))));
-  ... 
+  ...
+} 
 
 ```
 
