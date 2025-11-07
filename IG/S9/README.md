@@ -2,16 +2,22 @@
 
 [Introducción](#introducción)  
 [Shaders de fragmentos](#shaders-de-fragmentos)  
-[Generativos](#generativos)  
-[Aleatoriedad](#aleatoriedad)  
+[- Hola mundo](#hola-mundo)  
+[- Dibujando con algoritmos](#dibujando-con-algoritmos)  
+[- Transformaciones](#transformaciones)  
+[- Laboratorio de formas](#laboratorio-de-formas)  
+[Patrones y Generativos](#generativos)  
+[- Aleatoriedad](#aleatoriedad)  
 [Texturas](#texturas-en-el-shader)  
-[Galería](#galería)  
+[Experimentando](#experimentando)  
+[- Efecto túnel](#efecto-túnel)  
+[- Patrones y aleatoriedad](#patrones-y-aleatoriedad)  
+[- Vasarely](#vasarely)  
 [Shaders de vértices](#shaders-de-vértices)  
+[Galería](#galería)  
 [Tarea](#tarea)  
 [Referencias](#referencias)
 <!--[Imágenes](#imágenes)  -->
-
-
 
 
 ### Introducción
@@ -67,7 +73,7 @@ Se incluyen en este guion un recorrido por los *shaders* de fragmentos, quedando
 
 Un *shader* se ejecuta como una función que recibe una localización, y devuelve un color. Para ejecutarse en paralelo, cada hilo o *thread* es independiente de todos los demás, va *ciego* sin saber lo que hace el resto, no habiendo comunicación posible entre ellos, evitando de esta forma poner en riesgo la integridad de los datos.
 
-#### Hola mundo y formas básicas
+#### Hola mundo
 
 A partir de la [batería de ejemplos de esta sesión](https://codesandbox.io/p/sandbox/ig2526-s9-master-forked-j9q2h4), presento como ejemplo mínimo de *shader* el código [*script_31_shadermin.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_31_shadermin.js),
 que crea dos esferas, una con material amarillo, y el material de la segunda de ellas es de tipo *ShaderMaterial* y el color resultante se establece en el *shader* de fragmentos asociado.
@@ -710,9 +716,9 @@ void main() {
 }
 ```
 
-#### Otras formas geométricas
+#### Laboratorio de formas
 
-Para dibujar otras formas se requiere concebir su generación procedimental, en el *shader* a continuación se propone la creación de una cruz, combinando dos recuadros, de forma análoga al ejemplo previo de dibujado de un recuadro con la función *step*, ver figura.
+Para dibujar otras formas se requiere concebir su generación procedimental, en el *shader* a continuación se propone la **creación de una cruz**, combinando dos recuadros, de forma análoga al ejemplo previo de dibujado de un recuadro con la función *step*, ver figura.
 
 
   **GLSL**
@@ -951,7 +957,7 @@ void main(){
 ![Values](images/p9_editorDibuja19.png)  
 *Jugando con radios*
 
-### Generativos y patrones
+### Patrones y generativos
 
 Al ejecutarse en paralelo para cada píxel en una GPU, el número de repeticiones no influye en el coste, siendo una potente herramienta para crear patrones. Tras la breve muestra de dibujo de formas gráficas con técnicas procedimentales del apartado anterior, el *shader* mostrado a continuación, basado en [este ejemplo](https://thebookofshaders.com/09/?lan=es) de The Book of Shaders], aprovecha el escalado para replicar nueve veces un círculo (número de repeticiones configurable modificando el valor de *scale*). La función [*fract*](https://thebookofshaders.com/glossary/?search=fract) se queda con la parte fraccionaria, permitiendo *moverse* entre celdas de la rejilla resultante. La función utilizada para dibujar el círculo, se basa en la propuesta en [The Book of Shaders](https://thebookofshaders.com) que evita el uso de la costosa *sqrt* en el cálculo de distancias, utilizando *dot*, y una transición suave con *smoothstep*.
 
@@ -1163,101 +1169,7 @@ void main() {
 ![Values](images/p9_editorDibuja24.png)  
 *Captura del resultado*
 
-Con estos mimbres, es posible crear múltiples variaciones. Un par de humildes ejemplos inspirados en el arte visual de [Victor Vasarely](https://es.wikipedia.org/wiki/Victor_Vasarely)
 
-```
-uniform vec2 u_resolution;
-uniform float u_time;
-
-float scale = 15.0;
-float coloff = 1./(scale*2.);// + abs(sin(u_time*20.))*0.01;
-float eloff = 0.04;
-
-float ellipse(in vec2 _st, in vec2 _radius){
-  vec2 l = (_st-vec2(0.5))/_radius;
-  return 1.-step(length(l),dot(l,l)*3.);
-}
-
-void main() {
-  vec2 st = gl_FragCoord.xy/u_resolution;
-  vec3 color = vec3(0.0);
-  float colbase = 0.5;
-  //ejes elipse
-  vec2 ejes = vec2(0.75,0.75);
-    
-  //rejilla
-  st = st * scale;  
-    
-  //fila y columna en la rejilla, centrando en 0
-  float col = floor(st.x) - floor(scale/2.);
-  float fil = floor(st.y) - floor(scale/2.);
-    //Modifica ejes elipse según celda
-  ejes = ejes + vec2(col * eloff, fil * eloff);
-  
-  // Variaciones en cada "celda" del color
-  st = fract(st);
-  color = vec3(colbase + ellipse(st,ejes) - (fil+col)*coloff,colbase + ellipse(st,ejes) - fil*coloff,colbase + ellipse(st,ejes) - col*coloff);
-  
-  gl_FragColor = vec4(color,1.0);
-}
-```
-
-![Values](images/p9_editorDibuja25.png)  
-*Captura del resultado*
-
-```
-uniform vec2 u_resolution;
-uniform float u_time;
-# define PI 3.141592
-
-float scale = 15.;
-
-float cuadro(vec2 _st,float th){
-  float left = step(th,_st.x);   
-  float bottom = step(th,_st.y);
-  float right = step(th,1.0-_st.x);  
-  float top = step(th,1.0-_st.y);
-
-  return left*bottom*right*top;
-}
-
-mat2 rotate2d(float _angle){
-    return mat2(cos(_angle),-sin(_angle),
-                sin(_angle),cos(_angle));
-}
-
-void main() {
-  vec2 st = gl_FragCoord.xy/u_resolution;
-  vec3 color = vec3(0.0);
-    
-  //rejilla
-  st = st * scale;  
-  //fila y columna en rejilla
-  float col = floor(st.x) - floor(scale/2.);
-  float fil = floor(st.y) - floor(scale/2.);   
-  //cordenadas en cada celda  
-  st = fract(st);
-    
-  //mayor valor de fil o col  
-  float pct = max(fil,col)+0.1;  
-  
-  //Rotación sobre centro
-  // Mueve espacio al vec2(0.0)
-  st -= vec2(0.5);
-  // Rota el espacio, variando el ángulo en función del tiempo y coordenadas de la celda
-  st = rotate2d( u_time*(pct*0.15)) * st;
-  // Recoloca el espacio
-  st += vec2(0.5);
-
-  // Recuadro
-  color = vec3( cuadro(st,0.2) );
-
-  gl_FragColor = vec4(color,1.0);
-}
-```
-
-![Values](images/p9_editorDibuja26.png)  
-*Captura del resultado*
 
 #### Aleatoriedad
 
@@ -1457,9 +1369,12 @@ void main() {
 Propuestas de funciones de ruido más recientes son el ruido celular (Steven Worley) y el simplex (Ken Perlin), ver para más detalles [The Book of Shaders](https://thebookofshaders.com). Para fractales sugerir este [enlace](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/14) de la misma fuente.
 
 
-### Texturas en el *shader*
 
-Como muestra final de esta sesión, el código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js)   incluye un muestrario de *shader* de fragmentos que contemplan el paso de textura como variable de tipo *uniform*, para ser tenidas en cuenta en el cálculo del color del fragmento.
+
+### Texturas
+
+Las texturas pueden tenerse en cuenta en el *shader*
+Como muestra final de esta sesión, el código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js) incluye un muestrario de *shader* de fragmentos que contemplan el paso de textura como variable de tipo *uniform*, para ser tenidas en cuenta en el cálculo del color del fragmento.
 
 La primera variante simplemente mapea la textura proporcionada.
 
@@ -1677,10 +1592,309 @@ Usar como textura la captura de la webcam, requiere algunos ajustes adicionales,
 ```
 <video id="video" style="display:none" autoplay playsinline></video>
 ```
+
+
+### Experimentando
+
+#### Efecto túnel
+
+Recuperando un ejemplo mínimo, centrando la forma circular en la ventana, y asociando el color del fragmento con la inversa de la distancia al centro.
+
+```
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = st *2.-1.;
+    
+    float r = length(st);
+    
+    vec3 color = vec3(1. - r);
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja50.png)  
+*Captura del resultado*
+
+Ponderando por una sinusioidal asociada a la distancia obtenemos anillos concéntricos en progresiva atenuación.
+
+```
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = st *2.-1.;
+    
+    float r = length(st);
+    
+    float bandas = abs(sin(r*50.));
+    
+    vec3 color = vec3(1. - r) * bandas;
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja51.png)  
+*Captura del resultado*
+
+Adoptando la inversa de la distancia al centro, y ajustando valores.
+
+```
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = st *2.-1.;
+    
+    float r = length(st);
+    
+    float v = 8. / (r + 0.1);
+	  float bandas = abs(sin(v));
+    
+    vec3 color = vec3(1. - r) * bandas;
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja52.png)  
+*Captura del resultado*
+
+Afectando el valor de *v* por el tiempo, *u_time*, tendremos un efecto de movimiento de los anillos.
+
+```
+uniform vec2 u_resolution;
+uniform float u_time;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = st *2.-1.;
+    
+    float r = length(st);
+    
+    float v = u_time * 12.0 + 8. / (r + 0.1);
+	  float bandas = abs(sin(v));
+    
+    vec3 color = vec3(1. - r) * bandas;
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja53.gif)  
+*Captura del resultado*
+
+
+#### Patrones y aleatoriedad
+
+En esta ocasión, se parte de un ejemplo base de degradado en función de *st.x*.
+
+```
+uniform vec2 u_resolution;
+
+float lth = 0.4, hth = 0.6;
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+
+    float c;
+	  c = smoothstep(lth,hth,st.x);
+
+    vec3 color = vec3(c);    
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja60.png)  
+*Captura del resultado*
+
+Replicando para componer un patrón.
+
+```
+uniform vec2 u_resolution;
+
+float lth = 0.4, hth = 0.6;
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    
+    st = st * scale;
+    st = fract (st);
+
+    float c;
+	  c = smoothstep(lth,hth,st.x);
+
+    vec3 color = vec3(c);    
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja61.png)  
+*Captura del resultado*
+
+Variando la afección de *smoothstep* según si la la paridad de fila y columna.
+
+```
+uniform vec2 u_resolution;
+
+float lth = 0.4, hth = 0.6;
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    float col, fil;
+    
+    st = st * scale;
+    
+    col = floor(st.x);
+    fil = floor(st.y);   
+    
+    st = fract(st);
+    float c;
+    if (mod(col,2.)==1.)
+		if (mod(fil,2.)==1.)
+            c = smoothstep(lth,hth,st.y);
+        else
+            c = smoothstep(lth,hth,st.x);
+    else
+        if (mod(fil,2.)==1.)
+            c = smoothstep(lth,hth,st.x);
+        else
+            c = smoothstep(lth,hth,st.y);
+        
+
+    vec3 color = vec3(c);    
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja62.png)  
+*Captura del resultado*
+
+Variaciones en la especificación del color definido teniendo en cuenta el tiempo transcurrido. 
+
+```
+...
+uniform float u_time;
+...
+
+  vec3 color;
+  color = vec3( (c - abs(sin (u_time * 2.))));   //Escoge una
+  color = vec3( (c - abs(sin (u_time * (fil+col))))); 
+  color = vec3( (c - abs(sin (u_time * (fil+col)))*random(vec2(fil,col))));
+  ... 
+
+```
+
+![Values](images/p9_editorDibuja63.gif)  
+*Captura del resultado*
+
+#### Vasarely
+
+En este apartado, un par de humildes propuestas inspirados en el arte visual de [Victor Vasarely](https://es.wikipedia.org/wiki/Victor_Vasarely)
+
+```
+uniform vec2 u_resolution;
+uniform float u_time;
+
+float scale = 15.0;
+float coloff = 1./(scale*2.);// + abs(sin(u_time*20.))*0.01;
+float eloff = 0.04;
+
+float ellipse(in vec2 _st, in vec2 _radius){
+  vec2 l = (_st-vec2(0.5))/_radius;
+  return 1.-step(length(l),dot(l,l)*3.);
+}
+
+void main() {
+  vec2 st = gl_FragCoord.xy/u_resolution;
+  vec3 color = vec3(0.0);
+  float colbase = 0.5;
+  //ejes elipse
+  vec2 ejes = vec2(0.75,0.75);
+    
+  //rejilla
+  st = st * scale;  
+    
+  //fila y columna en la rejilla, centrando en 0
+  float col = floor(st.x) - floor(scale/2.);
+  float fil = floor(st.y) - floor(scale/2.);
+    //Modifica ejes elipse según celda
+  ejes = ejes + vec2(col * eloff, fil * eloff);
+  
+  // Variaciones en cada "celda" del color
+  st = fract(st);
+  color = vec3(colbase + ellipse(st,ejes) - (fil+col)*coloff,colbase + ellipse(st,ejes) - fil*coloff,colbase + ellipse(st,ejes) - col*coloff);
+  
+  gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja25.png)  
+*Captura del resultado*
+
+```
+uniform vec2 u_resolution;
+uniform float u_time;
+# define PI 3.141592
+
+float scale = 15.;
+
+float cuadro(vec2 _st,float th){
+  float left = step(th,_st.x);   
+  float bottom = step(th,_st.y);
+  float right = step(th,1.0-_st.x);  
+  float top = step(th,1.0-_st.y);
+
+  return left*bottom*right*top;
+}
+
+mat2 rotate2d(float _angle){
+    return mat2(cos(_angle),-sin(_angle),
+                sin(_angle),cos(_angle));
+}
+
+void main() {
+  vec2 st = gl_FragCoord.xy/u_resolution;
+  vec3 color = vec3(0.0);
+    
+  //rejilla
+  st = st * scale;  
+  //fila y columna en rejilla
+  float col = floor(st.x) - floor(scale/2.);
+  float fil = floor(st.y) - floor(scale/2.);   
+  //cordenadas en cada celda  
+  st = fract(st);
+    
+  //mayor valor de fil o col  
+  float pct = max(fil,col)+0.1;  
+  
+  //Rotación sobre centro
+  // Mueve espacio al vec2(0.0)
+  st -= vec2(0.5);
+  // Rota el espacio, variando el ángulo en función del tiempo y coordenadas de la celda
+  st = rotate2d( u_time*(pct*0.15)) * st;
+  // Recoloca el espacio
+  st += vec2(0.5);
+
+  // Recuadro
+  color = vec3( cuadro(st,0.2) );
+
+  gl_FragColor = vec4(color,1.0);
+}
+```
+
+![Values](images/p9_editorDibuja26.png)  
+*Captura del resultado*
+
 <!-- ### *Shaders* de vértices
 Men at work, ejemplo 39 y mirar si puse algo en animación
 - [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 ver ejemplos vertex shader MAPA DE DESPLAZAMIENTO Y TEXTURA https://www.youtube.com/watch?v=KK2uonCBVoA -->
+
+
 
 ### Galería
 
