@@ -31,7 +31,7 @@ function init() {
   uniforms = {
     u_time: {
       type: "f",
-      value: 1.0,
+      value: 0.0,
     },
     u_resolution: {
       type: "v2",
@@ -45,8 +45,7 @@ function init() {
 
   //Con color sólido
   //Plane(5,2,0x0000ff)
-  //Con shader
-  PlaneShader(5, 2, fragmentShader_01());
+  PlaneShader(5, 2, fragmentShader_03());
 
   camcontrols = new OrbitControls(camera, renderer.domElement);
 
@@ -72,7 +71,7 @@ function PlaneShader(sx, sy, fragsh) {
   let geometry = new THREE.PlaneBufferGeometry(sx, sy);
   let material = new THREE.ShaderMaterial({
     uniforms: uniforms,
-    //Color sólido
+    //Shaders
     fragmentShader: fragsh,
     vertexShader: vertexShader(),
   });

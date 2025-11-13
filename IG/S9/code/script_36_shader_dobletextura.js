@@ -74,7 +74,6 @@ function EsferaShader(px, py, pz, radio, nx, ny) {
   objetos.push(mesh);
 }
 
-//De Agustín Vizcaíno
 function fragmentShader() {
   return `
         uniform sampler2D texture1;
@@ -84,12 +83,14 @@ function fragmentShader() {
         varying vec3 v_Normal;
 
         void main() {
+            //Producto escalar normal y vector hacia la luz
             float LdotN = dot(v_Luz, v_Normal);
-            //Utiliza distinta textura en función de si mira hacia la luz (LdotN>0) o no hacia la luz
+            float Id = min(1.0, abs(LdotN));  //Lambert
+            //Textura en función de si mira hacia la luz (LdotN>0) o no 
             if (LdotN > 0.0) {
-              gl_FragColor = vec4( texture2D(texture1, vUv).rgb * LdotN, 1.0);//Pondera color por LdotN, Lambert
+              gl_FragColor = vec4( texture2D(texture1, vUv).rgb * Id, 1.0);
             } else {
-              gl_FragColor = vec4( texture2D(texture2, vUv).rgb, 1.0);
+              gl_FragColor = vec4( texture2D(texture2, vUv).rgb * Id, 1.0);
             }
           }
 			  `;
@@ -104,12 +105,14 @@ function vertexShader() {
 				void main() {
 				  vUv = uv;
 				  vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
-          //Posición del sol
+
+          //Posición del sol (luz)
           vec4 viewSunPos = viewMatrix * vec4(0.0, 0.0, 0.0, 1.0);
-          //Normal
+          //Normal del vértice
           v_Normal = normalize( normalMatrix * normal );
-          //Vector hacia el sol, la fuente de luz
+          //Vector hacia fuente de luz
           v_Luz = normalize(viewSunPos.xyz - modelViewPosition.xyz);
+
 				  gl_Position = projectionMatrix * modelViewPosition; 
 				}
 			  `;

@@ -3,7 +3,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 let scene, renderer;
 let camera;
-let info;
 let grid;
 let camcontrols1;
 let objetos = [];
@@ -50,6 +49,19 @@ function Esfera(px, py, pz, radio, nx, ny, col) {
   objetos.push(mesh);
 }
 
+function EsferaShader(px, py, pz, radio, nx, ny) {
+  let geometry = new THREE.SphereGeometry(radio, nx, ny);
+  let material = new THREE.ShaderMaterial({
+    fragmentShader: fragmentShader(),
+    vertexShader: vertexShader(),
+  });
+
+  let mesh = new THREE.Mesh(geometry, material);
+  mesh.position.set(px, py, pz);
+  scene.add(mesh);
+  objetos.push(mesh);
+}
+
 function vertexShader() {
   return `
 				varying vec3 vUv; 
@@ -69,19 +81,6 @@ function fragmentShader() {
 					  gl_FragColor = vec4(0.331,0.067,0.300,1.0);
 				  }
 			  `;
-}
-
-function EsferaShader(px, py, pz, radio, nx, ny) {
-  let geometry = new THREE.SphereGeometry(radio, nx, ny);
-  let material = new THREE.ShaderMaterial({
-    fragmentShader: fragmentShader(),
-    vertexShader: vertexShader(),
-  });
-
-  let mesh = new THREE.Mesh(geometry, material);
-  mesh.position.set(px, py, pz);
-  scene.add(mesh);
-  objetos.push(mesh);
 }
 
 //Bucle de animación

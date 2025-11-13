@@ -19,6 +19,8 @@
 [Referencias](#referencias)
 <!--[Imágenes](#imágenes)  -->
 
+<!-- más fuenets https://web.engr.oregonstate.edu/~mjb/cs557 -->
+
 
 ### Introducción
 
@@ -1127,7 +1129,7 @@ void main() {
 }
 ```
 
-Finaliza esta serie con el siguiente *shader*, que modifica el tamaño del círculo en función de la columna, además de mantener la modificación de su tamaño en función del tiempo.
+La siguiente propuesta, modifica el tamaño del círculo en función de la columna, además de mantener la modificación de su tamaño en función del tiempo.
 
 
   **GLSL**
@@ -1169,7 +1171,79 @@ void main() {
 ![Values](images/p9_editorDibuja24.png)  
 *Captura del resultado*
 
+Para finalizar la seria, el ejemplo a continuación alterna colores del círculo y fondo según la paridad de la suma de coordenadas en la rejilla. Añade una variación de uno de los colores del fondo en función del tiempo.
 
+
+  **GLSL**
+  ```
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform vec2 u_resolution;
+uniform float u_time;
+
+// Tamaño rejilla
+float dim = 13.0;
+// Radio del círculo
+float radio = 0.4;
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution;
+  	vec3 color = vec3(0.0);
+    
+    vec2 stsc = st *dim;
+    
+    //Escala en función de la escala adoptada
+    st = fract(stsc);
+    //Traslada centrando 0,0 en celda
+    st = st *2.-1.;
+    
+    //Coordenada celda y posición 
+    vec2 celda = floor(stsc);
+    
+    // Módulo de las coordenadas de la celta para alternar colores
+    float paridad = mod(celda.x + celda.y, 2.0);
+    
+    // Distancia de la celda al centro de la rejilla 
+    float celdadist = distance(celda, vec2(dim/2.) - 0.5);
+    
+    //Colores forma
+    vec3 color1 = vec3(0.4, 0.7, 0.3); // Verde
+    vec3 color2 = vec3(0.3, 0.35, 0.6); // Azul/morado
+    //Colores fondo
+    vec3 bgColor1 = vec3(0.08, 0.08, 0.12); // Azul oscuro
+    vec3 bgColor2 = vec3(0.145,0.290,0.232); // Verde oscuro
+    
+    // Alternancia colores según celda
+    vec3 bgColor = mix(bgColor1, bgColor2 * abs(sin(celdadist*u_time/9.)), paridad);    
+    vec3 formaColor = mix(color1, color2, paridad);
+
+    // Círculo sin aliasing
+    float val = (1. - smoothstep(radio-0.01,radio+0.01, length(st)));
+    
+    vec3 col = mix(bgColor, formaColor, val);
+
+	gl_FragColor = vec4(col,1.0);
+}
+
+  ```
+
+![Values](images/p9_editorDibuja24b.png)  
+*Captura del resultado*
+
+Un toque final introduciendo una deformación del radio del círculo en función de la distancia al centro de la rejilla, con algo como.
+
+ ```
+  ...
+  radio = radio + celdadist/(dim*0.75);
+  // Círculo sin aliasing
+    float val = (1. - smoothstep(radio-0.01,radio+0.01, length(st)));
+  ...
+ ```
+
+ ![Values](images/p9_editorDibuja24c.png)  
+*Captura del resultado*
 
 #### Aleatoriedad
 
@@ -1373,12 +1447,27 @@ Propuestas de funciones de ruido más recientes son el ruido celular (Steven Wor
 
 ### Texturas
 
-Las texturas pueden tenerse en cuenta en el *shader*
-Como muestra final de esta sesión, el código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js) incluye un muestrario de *shader* de fragmentos que contemplan el paso de textura como variable de tipo *uniform*, para ser tenidas en cuenta en el cálculo del color del fragmento.
+Desde el *shader* es posible procesar la textura asociada al objeto. El código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js) incluye un muestrario de *shader* de fragmentos que contemplan el paso de textura como variable de tipo *uniform*, para ser tenidas en cuenta en el cálculo del color del fragmento. Los distintos efectos se aplican sobre una serie de planos, cada uno con un *ShaderMaterial* diferente.
 
-La primera variante simplemente mapea la textura proporcionada.
+![Values](images/p9_editorDibuja40.png)  
+*Resultado de efectos sobre la textura*
+
+La primera variante, arriba a la izquierda, simplemente mapea la primera textura proporcionada como variable *uniform*, una vez obtenida la coordenada de la textura desde el *shader* de vértices, a través de la variable *vUv* que copia el atributo *uv* del vértice.
 
 ```
+//shader de vértices
+varying vec2 vUv; 
+
+void main() {
+    vUv = uv; 
+
+    vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+    gl_Position = projectionMatrix * modelViewPosition; 
+}
+```
+
+```
+//shader de fragmentos
 uniform sampler2D texture1;
 varying vec2 vUv;
 
@@ -1387,7 +1476,7 @@ void main() {
 }
 ```
 
-Las segunda y tercera replican el juego realizado con los patrones creados procedimentalmente en secciones previas, para duplicar la textura, y hacerle alguna *travesura*.
+Las segunda y tercera reutilizan efectos de los patrones creados procedimentalmente en secciones previas, para hacerle alguna *travesura* a la textura, como replicarla (segundo plano), y además desplazarla en función del tiempo (tercero).
 
 ```
 uniform sampler2D texture1;
@@ -1397,6 +1486,7 @@ varying vec2 vUv;
 float scale = 5.0;
 
 void main() {
+  //repeticiones según el valor de scale
   vec2 st = fract(vUv.st*scale);
   gl_FragColor = texture2D(texture1, st);
 }  
@@ -1415,15 +1505,16 @@ void main() {
   vec2 st = fract(vUv.st*scale);
 
   float off = sin(u_time);
+  //El signo del seno provoca desplazamiento en x o y 
   if (sign(off)>0.)
   {
       if ( floor(mod(stc.y*scale,2.0)) == 1.)
-      st.x += off;
+        st.x += off;
     }
     else
     {
       if ( floor(mod(stc.x*scale,2.0)) == 1.)
-      st.y += off;
+        st.y += off;
     }
 
     gl_FragColor = texture2D(texture1, st);
@@ -1431,7 +1522,7 @@ void main() {
 }
 ```
 
-En las tres últimas, aplicamos en primer término una inversión sobre el valor de cada píxel de la textura.
+Sobre las tres inferiores, en primer término aplica una trivial inversión sobre el valor de cada píxel de la segunda textura pasada como uniform. Esta textura es un mapa binario.
 
 ```
 uniform sampler2D texture2;
@@ -1442,7 +1533,7 @@ void main() {
 }
 ```
 
-Alternamos la textura original con su inversión.
+La segunda variante, alterna bloques de la textura original con su inversa.
 
 ```
 uniform sampler2D texture2;
@@ -1471,25 +1562,28 @@ void main() {
 }
 ```
 
-Y en la última aplica un filtro sobre la textura, como aperitivo del ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js).
+La última aplica un filtro sobre la textura, es un aperitivo del posterior ejemplo que aplica una batería de [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js).
 
-Añadimos un ejemplo que juega con dos texturas sobre la superficie de una esfera, en concreto los shaders de [*script_36_shader_dobletextura.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_36_shader_dobletextura.js) adoptan una textura diferente si el *planeta* mira hacia la estrella. Ha sido necesario modificar el *shader* de vértices para proporcionar al de fragmentos información de la posición de la fuente de luz, y las normales.
+Un nuevo ejemplo juega con dos texturas del planeta tierra (nocturna y diurna) sobre la superficie de una esfera. En [*script_36_shader_dobletextura.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_36_shader_dobletextura.js) el shader de fragmentos modifica la textura concreta a aplicar en función de la información proporcionada desde *shader* de vértices sobre la posición de la luz y la normal.
+
 
 ```
 varying vec2 vUv;
 varying vec3 v_Normal;
-varying vec3 v_vert2Sun;
-        
+varying vec3 v_Luz;
+
 void main() {
-	vUv = uv;
-	vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
-  //Posición del sol
+  vUv = uv;
+  vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+
+  //Posición del sol (luz)
   vec4 viewSunPos = viewMatrix * vec4(0.0, 0.0, 0.0, 1.0);
-  //Normal
+  //Normal del vértice
   v_Normal = normalize( normalMatrix * normal );
-  //Vector hacia el sol, la fuente de luz
-  v_vert2Sun = normalize(viewSunPos.xyz - modelViewPosition.xyz);
-	gl_Position = projectionMatrix * modelViewPosition; 
+  //Vector hacia fuente de luz
+  v_Luz = normalize(viewSunPos.xyz - modelViewPosition.xyz);
+
+  gl_Position = projectionMatrix * modelViewPosition; 
 }
 ```
 
@@ -1497,25 +1591,26 @@ void main() {
 uniform sampler2D texture1;
 uniform sampler2D texture2;
 varying vec2 vUv;
-varying vec3 v_vert2Sun;
+varying vec3 v_Luz;
 varying vec3 v_Normal;
 
 void main() {
-  float color = 1.0; 
-  
-  float light = dot(v_vert2Sun, v_Normal);
-  float Id = min(1.0, abs(light));
-  //Utiliza distinta textura en función de si mira o no hacia la luz
-  if (light > 0.0) {
-    gl_FragColor = vec4( texture2D(texture1, vUv).rgb * Id * color, 1.0);
-  } else {
-    gl_FragColor = vec4( texture2D(texture2, vUv).rgb * Id * color, 1.0);
+    //Producto escalar normal y vector hacia la luz
+    float LdotN = dot(v_Luz, v_Normal);
+    float Id = min(1.0, abs(LdotN));  //Lambert
+    //Textura en función de si mira hacia la luz (LdotN>0) o no 
+    if (LdotN > 0.0) {
+      gl_FragColor = vec4( texture2D(texture1, vUv).rgb * Id, 1.0);
+    } else {
+      gl_FragColor = vec4( texture2D(texture2, vUv).rgb * Id, 1.0);
+    }
   }
-}
 ```
 
+![Values](images/p9_editorDibuja41.png)  
+*Captura con doble textura*
 
-Si bien en  con un ejemplo de aplicación de filtros, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js) asplica un filtro gaussiano, de detección de bordes o de relieve sobre la etextura en función de las coordenadas del ratón.
+En un breve recorrido con filtros, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js) muestra la textura a la izquierda, y un filtro gaussiano, de detección de bordes o de relieve sobre la textura en función de las coordenadas del ratón. La coordenada *x* del puntero habilita una definición diferente del *kernel* o máscara que se aplica spbre la vecindad 3x3 del mapa de textura.
 
 
 ```
@@ -1587,7 +1682,7 @@ void main(){
 }
 ```
 
-Usar como textura la captura de la webcam, requiere algunos ajustes adicionales, adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js). Observe que es necesario incluir en el html, la línea
+Se incluye un ejemplo que usa como textura la captura de la webcam, requiere algunos ajustes adicionales, adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js). Observar que es necesario incluir en el html, la línea.
 
 ```
 <video id="video" style="display:none" autoplay playsinline></video>
@@ -1802,7 +1897,7 @@ void main(){}
 
 #### Vasarely
 
-En este apartado, un par de humildes propuestas inspirados en el arte visual de [Victor Vasarely](https://es.wikipedia.org/wiki/Victor_Vasarely)
+En este apartado, un par de humildes propuestas inspirados en el arte visual de [Victor Vasarely](https://es.wikipedia.org/wiki/Victor_Vasarely).
 
 ```
 uniform vec2 u_resolution;
@@ -1898,9 +1993,14 @@ void main() {
 ![Values](images/p9_editorDibuja26.png)  
 *Captura del resultado*
 
-<!-- ### *Shaders* de vértices
-Men at work, ejemplo 39 y mirar si puse algo en animación
-- [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
+### *Shaders* de vértices
+
+Finalizamos el recorrido con el ejemplo [*script_39_shaderv.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_39_shaderv.js), en el que se hace un pequeño recorrido ilustrando modificaciones básicas de la posición del vértice a través el *shader* de vértices. Los tres resultados de la parte superior, modifican en primer término del valor de la componente *z* de forma estática, posteriormente de forma dinámica dependiento del tiempo, y el tercero afecta las posiciones de *x* e *y*, produciendo un efecto de latido. Los dos resultados de la siguiente línea, hacen uso de coordenadas angulares, aplicando una sinusoidal afectada por el tiempo. Finalmente, el ejemplo de la parte inferior, adopta el mapa de texturas proporcionado como variable *uniform* para producir un desplazamiento del vértice y afectar al color de reproducción en función del valor de la componente *z*. Hemos escogido un mapa de alturas del archipiélago canario.
+
+![Values](images/p9_editorDibuja70.png)  
+*Captura del resultado conm variantes de shader de vértices*
+
+<!-- - [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 ver ejemplos vertex shader MAPA DE DESPLAZAMIENTO Y TEXTURA https://www.youtube.com/watch?v=KK2uonCBVoA -->
 
 
@@ -1909,15 +2009,14 @@ ver ejemplos vertex shader MAPA DE DESPLAZAMIENTO Y TEXTURA https://www.youtube.
 
 Esta práctica pretende mostrar una visión superficial sobre los *shaders*, no habiendo cubierto otras posibilidades. Se incluyen en este apartado referencias a ejemplos, información y lugares de encuentro de la comunidad:
 
+
 - [Shadertoy](https://www.shadertoy.com) y [Three.js and Shadertoy](https://r105.threejsfundamentals.org/threejs/lessons/threejs-shadertoy.html)
 - [GLSL Sandbox](http://glslsandbox.com)
 - Galería CIU:   
   - [Marcelo Fernando](https://github.com/Refesh/Shaders)
   - [Gabriel García SP5rals](https://github.com/CaptainChameleon/SP5rals)
 - [Shaderific App](https://shaderific.com)
-- [OpenGL ES Shading Language Reference](http://shaderific.com/glsl/)
-- [TyphoonLabs' OpenGL Shading Language tutorials](https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/)
-- [Introducción a la codificación de arte de sombreado](https://www.youtube.com/watch?v=f4s1h2YETNY)
+
 
 
 <!--
@@ -1950,8 +2049,13 @@ En ambos casos, la documentación explicativa del *shader* debe incluir la motiv
 
 - [Documentación](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)  
 - [Discover three.js](https://discoverthreejs.com)
+- [Introduction to the OpenGL Shading Language (GLSL)](https://web.engr.oregonstate.edu/~mjb/cs519/Handouts/Shaders.1pp.pdf)
+- [Introducción a la codificación de arte de sombreado](https://www.youtube.com/watch?v=f4s1h2YETNY)
 - [Learning Three.js](https://github.com/josdirksen/learning-threejs) por [Jos Dirksen](https://github.com/josdirksen)
+- [OpenGL ES Shading Language Reference](http://shaderific.com/glsl/)
 - [Three.js Cookbook](https://github.com/josdirksen/threejs-cookbook) por [Jos Dirksen](https://github.com/josdirksen) de 2015
+- [TyphoonLabs' OpenGL Shading Language tutorials](https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/)
+
 
 
 ***

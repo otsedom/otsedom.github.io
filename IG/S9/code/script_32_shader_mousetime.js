@@ -31,7 +31,7 @@ function init() {
   uniforms = {
     u_time: {
       type: "f",
-      value: 1.0,
+      value: 0.0,
     },
     u_resolution: {
       type: "v2",
@@ -75,6 +75,7 @@ function onWindowResize(e) {
 
 //Evento de ratón
 document.onmousemove = function (e) {
+  //Normaliza las coordenadas del puntero
   uniforms.u_mouse.value.x = e.pageX / window.innerWidth;
   uniforms.u_mouse.value.y = e.pageY / window.innerHeight;
 };
@@ -125,7 +126,7 @@ function vertexShader() {
 function fragmentShader_01() {
   return `
 				  void main() {
-					  gl_FragColor = vec4(0.831,0.567,1.000,1.000);
+					gl_FragColor = vec4(0.831,0.567,1.000,1.000);
 				  }
 			  `;
 }
@@ -136,7 +137,7 @@ function fragmentShader_02() {
 				
 				void main() {
 					vec2 st = gl_FragCoord.xy/u_resolution;
-					gl_FragColor = vec4(st.x,st.y,0.0,1.0);
+					gl_FragColor = 		vec4(st.x,st.y,0.0,1.0);
           }
 			  `;
 }
@@ -147,7 +148,6 @@ function fragmentShader_03() {
 				uniform vec2 u_mouse;
 				
 				void main() {
-					vec2 mouse = u_mouse/u_resolution;
 					gl_FragColor = vec4(u_mouse.x,u_mouse.y,0.0,1.000);
 				}
 			  `;
@@ -160,7 +160,6 @@ function fragmentShader_04() {
 				uniform float u_time;
 
 				void main() {
-					vec2 mouse = u_mouse/u_resolution;
 					gl_FragColor = vec4(u_mouse.x,u_mouse.y,abs(sin(u_time)),1.000);
 				}
 			  `;

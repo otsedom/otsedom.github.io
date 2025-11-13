@@ -185,6 +185,7 @@ function init() {
 
   //Plano con shader y textura
   const loader = new THREE.TextureLoader();
+  //Fuente texturas https://gis.humboldt.edu/Archive/GISData/2019/WGS84_Geographic/3DTextures
   const tx = loader.load("src/earthmap1k.jpg");
   const tx2 = loader.load("src/earthspec1k.jpg");
 
