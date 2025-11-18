@@ -15,7 +15,7 @@ Curso 2025/2026
 - [Práctica 5](P5/README.md)
 <!-- - [Práctica 6](P6/README.md) -->
 <!-- - [Práctica 7](P7/README.md) -->
-<!-- - [Trabajo](Trabajo/README.md) -->
+- [Trabajo](Trabajo/README.md)
 <!-- hola -->
 ***
 Obra bajo licencia de Creative Commons Reconocimiento - No Comercial 4.0 Internacional
