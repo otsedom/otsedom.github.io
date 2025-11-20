@@ -64,7 +64,7 @@ Con posterioridad a la fecha límite de entrega, preferiblemente coincidente con
 - Enlaces a material no cinluido en la memoria: código fuente, material audiovisual, etc.
 - Imágenes de entrenamiento (en su caso)
 - Imagen "carátula" del trabajo
-- Vídeo de *venta* del trabajo de un máximo de 2'. No debe considerarse como un vídeo presentación del trabajo, sino que el enfoque debe ser de atracción a potenciales inversores/clientes
+- Vídeo de *venta* del trabajo de un máximo de 2'. No debe considerarse como un vídeo presentación del trabajo, sino que el enfoque debe ser de atracción a potenciales inversores/clientes. Resolución recomendada: 1920 × 1080 (Full HD, 16:9)
 - Todo aquel material adicional que consideren de interés
 
 
