@@ -47,8 +47,8 @@ Si bien se fijará una fecha de entrega final de cara cada convocatoria, durante
 Señalar que de cara a la evaluación del trabajo final se tendrán en cuenta los siguientes aspectos y sus correspondientes ponderaciones:
 - Alcance, dificultad y originalidad de la propuesta (50%). Valorando la no mera reutilización de materiales y modelos aplicados durante las prácticas.
 - Calidad de la memoria (15%), en cuanto a contenido y la rigurosidad del formato adoptado (uso de herramientas profesionales, estilo científico, ...).
-- Exposición y defensa (25%). Organización, claridad, gestión de las preguntas, calidad estética, impactdo, uso de herramientas, etc..
-- Material audiovisual (20%). Calidad, impacto, presencia de autoría y créditos, etc.
+- Exposición y defensa (20%). Organización, claridad, gestión de las preguntas, calidad estética, impactdo, uso de herramientas, etc..
+- Material audiovisual (15%). Calidad, impacto, presencia de autoría y créditos, etc.
 
 Con posterioridad a la fecha límite de entrega, preferiblemente coincidente con la fecha del examen de convocatoria, se llevará a cabo una presentación del trabajo (10'). En coherencia con los aspectos valorados, de cara a la entrega final por medio de un enlace a un repositorio, el material entregado debe ser completo, permitiendo la reproducibilidad del desarrollo. Se sugiere que contenga al menos los siguientes elementos:
 
