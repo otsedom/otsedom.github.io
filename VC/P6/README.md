@@ -66,13 +66,24 @@ Como demostradores, les proponemos hacer uso de un modelo de *visual question an
 el paquete necesario para usar [LAVIS](https://github.com/salesforce/LAVIS) (A Library for Language-Vision Intelligence) en el *environment* de trabajo:
 
 ```
+conda create -n lavis python=3.11.5
+conda activate lavis
 pip install salesforce-lavis
 ```
 
 Tras la instalación, puedes lanzar un primer demostrador que nos permite preguntar a la imagen, en concreto  *Demo_image_VQAOPT_interactive.py*
 
+
+
 ```
+pip install ultralytics
 python Demo_image_VQAOPT_interactive.py
+```
+
+Si diera error, puede deberse a incompatibilidad entre *numpy* y *opencv*
+
+```
+pip install --upgrade numpy opencv-python
 ```
 
 Ten presente que se ejecuta en CPU, dado que no hemos instalado pytorch para GPU en el laboratorio. Se carga una imagen por defecto, 
