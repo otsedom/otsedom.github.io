@@ -10,7 +10,7 @@ if os.path.isdir(modeldir) == False:
     login(token="dummy")
     snapshot_download(repo_id="Idiap/FaceLLM-1B", local_dir=modeldir)
 
-# Carga de l modelo
+# Carga del modelo
 model_name = modeldir + "/model"
 # Load processor and model directly from Hugging Face
 processor = AutoProcessor.from_pretrained(model_name)
