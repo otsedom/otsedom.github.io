@@ -7,7 +7,7 @@ import os
 modeldir = "./FaceLLM-1B"
 if os.path.isdir(modeldir) == False:
     #descarga a pelo del modelo (l aprimera vez)
-    login(token="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")
+    login(token="dummy")
     snapshot_download(repo_id="Idiap/FaceLLM-1B", local_dir=modeldir)
 
 # Carga de l modelo
