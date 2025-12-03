@@ -3,9 +3,9 @@
 ### Contenidos
 
 [Mediapipe](#mediapipe)  
-[Homografía](#homografías) 
-<!-- [VLM](#modelos-de-visión-y-lenguaje)  
-[Segmentación](#tipos-de-segmentación)  
+[Homografía](#homografías)  
+[VLMs](#modelos-de-visión-y-lenguaje)  
+<!--[Segmentación](#tipos-de-segmentación)  
  
 [Pytorch](#pytorch)   -->
 <!--[360](#imagen-y-v-ideo-360)   -->
@@ -43,8 +43,22 @@ Mejor con cvzone
 ```
 pip install cvzone
 ```
-<!--
+
+## Homografías
+
+Tomando como escenario ilustrativo un contexto deportivo, las dos últimas celdas del cuaderno *VC_P6.ipynb* muestran en primer término la aplicación de homografías dadas dos imágenes de un estadio, una lateral y otra cenital, para tras anotar en cada uno cuatro puntos de correspondencia, obtener la matriz de homografía con [*scikit-image*](https://scikit-image.org), y mostrar tanto la imagen lateral transformada, como la transformación correspondiente para cualquier punto sobre ella.
+
+La última celda, da los primeros pasos para ilustrar una posible automatización de la localización de los puntos de interés sobre una imagen arbitraria de un campo de fútbol, asumiendo un cespèd verde y la presencia clara de las líneas de campo. Esta celda requiere un *environment* con ultralytics instalado.
+
+¿Te animas a participar en la competición [SoccerNet 2025](https://www.soccer-net.org/challenges/2026). El premio en la edición de 2024 fue de 1000 USD.
+
+
+
 ## Modelos de visión y lenguaje
+
+Las siguientes subsecciones exploran un par de modelso de visión y lenguaje, que podremos ejecutar tanto en CPU (con paciencia) como en GPU.
+
+### BLIP-2
 
 [BLIP-2](https://github.com/salesforce/LAVIS/tree/main/projects/blip2) (Bootstrapped Language-Image Pretraining 2) es un modelo de visión y lenguaje desarrollado por [Salesforce](https://github.com/salesforce), concebido para tareas como generar descripciones de imágenes, responder a preguntas visuales y buscar información en imágenes a través de lenguaje natural.
 
@@ -72,7 +86,7 @@ Where is the person from?
 What is the person's name?
 ```
 
-Se incluye también el desmostrador utilizado usamos en la Jornadas de Puertas Abiertas, que requiere instalar YOLO, y contar con una webcam.
+El repositorio también incluye el demostrador utilizado usamos en la Jornadas de Puertas Abiertas, que requiere instalar YOLO, y contar con una webcam.
 
 ```
 pip install ultralytics
@@ -85,9 +99,30 @@ python Demo_yolo_VQAOPT_2425.py
 ```
 
 Ahora sí que se notará la ausencia de GPU presente o habilitada. Pese a ello, se obtienen *al golpito* descripciones de las personas que se acerquen a la cámara.
--->
-<!--
 
+### FaceLLM
+
+[FaceLLM](https://github.com/idiap/facellm) es un modelo reciente adaptado el contexto de análisis facial. Sus autores argumentan obtener mejores resultados en tareas relacionadas con el rostro humano. Para su instalación en local, desde la carpeta que te interese los pasos serían:
+
+```
+conda create --name facellm  python=3.11
+conda activate facellm
+
+conda install conda-forge::git   #No necesario si ya tienes git instalado
+git clone https://github.com/hiyouga/LLaMA-Factory
+
+cd LLaMA-Factory
+pip install -r requirements.txt
+pip install -e ".[torch,metrics]"
+```
+
+Ya deberías poder lanzar la demo: 
+
+```
+python Demo_image_VQAFaceLLM_interactive.py
+```
+
+<!--
 
 Instalar Ollama
 conda create -n ollama python=3.11.5
@@ -184,14 +219,6 @@ El vídeo es el utilizado en la P4, el txt correspondiente contiene el contenedo
 412,240,15,48
 ```
 -->
-## Homografías
-
-Tomando como escenario ilustrativo un contexto deportivo, las dos últimas celdas del cuaderno *VC_P6.ipynb* muestran en primer término la aplicación de homografías dadas dos imágenes de un estadio, una lateral y otra cenital, para tras anotar en cada uno cuatro puntos de correspondencia, obtener la matriz de homografía con [*scikit-image*](https://scikit-image.org), y mostrar tanto la imagen lateral transformada, como la transformación correspondiente para cualquier punto sobre ella.
-
-La última celda, da los primeros pasos para ilustrar una posible automatización de la localización de los puntos de interés sobre una imagen arbitraria de un campo de fútbol, asumiendo un cespèd verde y la presencia clara de las líneas de campo. Esta celda requiere un *environment* con ultralytics instalado.
-
-¿Te animas a participar en la competición [SoccerNet 2025](https://www.soccer-net.org/challenges/2026). El premio en la edición de 2024 fue de 1000 USD.
-
 
 <!--
 ## Pytorch
