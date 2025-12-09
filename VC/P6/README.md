@@ -5,9 +5,8 @@
 [Mediapipe](#mediapipe)  
 [Homografía](#homografías)  
 [VLMs](#modelos-de-visión-y-lenguaje)  
-<!--[Segmentación](#tipos-de-segmentación)  
- 
-[Pytorch](#pytorch)   -->
+[Segmentación](#tipos-de-segmentación)   
+[Pytorch](#pytorch) 
 <!--[360](#imagen-y-v-ideo-360)   -->
 
 <!--Ver algunos ejemplos cvzone https://github.com/cvzone/cvzone https://www.computervision.zone
@@ -127,11 +126,16 @@ pip install -r requirements.txt
 pip install -e ".[torch,metrics]"
 ```
 
-Ya deberías poder lanzar la demo: 
+Ya deberías poder lanzar la demo. Recuerda que para poder descargar el modelo la primera vez, necesitarás introducir tu *token* de [Huggingface](https://huggingface.co/) en el código: 
 
 ```
 python Demo_image_VQAFaceLLM_interactive.py
 ```
+
+Hemos observado sesgo en función del lenguaje de la pregunta.
+
+![Respuestas](images/FaceLLM_bias.png)  
+*Jugando con FaceLLM*
 
 <!--
 
@@ -145,10 +149,10 @@ ollama pull llama3.2-vision
  
 python demo.py
 -->
-<!--
+
 ## Tipos de Segmentación
 
-Generalmente se habla de segmentación de imagen a las técncas que consisten en asignar una clase a cada píxel de una imagen. Generalmente se distinguen tres tipos de segmentación:
+Generalmente se habla de segmentación de imagen a las técnicas que consisten en asignar una clase a cada píxel de una imagen. Generalmente se distinguen tres tipos de segmentación:
 - **Segmentación semántica**: Se trata de una segmentación que asigna una clase a cada píxel de la imagen, donde todos los píxeles de un objeto pertenecen a la misma clase.
 - **Segmentación por instancias**: Una segmentación donde se distingue entre las diferentes apareciones de entidades de una misma clase.
 - **Segmentación panóptica**: Una combinación de las dos anteriores.
@@ -229,9 +233,8 @@ El vídeo es el utilizado en la P4, el txt correspondiente contiene el contenedo
 ```
 412,240,15,48
 ```
--->
 
-<!--
+
 ## Pytorch
 
 Pytorch es una biblioteca destinada al aprendizaje automático (similar a TensorFlow) desarrollada y mantenida por Meta. En tiempos recientes se está convirtiendo en el estándar de la industria.
@@ -242,7 +245,7 @@ Pytorch es una biblioteca destinada al aprendizaje automático (similar a Tensor
 Su uso es algo más complejo que el de TensorFlow, aunque a cambio permite más libertad a la hora de diseñar y depurar. Para una introducción suave, hemos preparado una demo en *Demo_torch.ipynb*. Para instalar torch, como en otras ocasiones, seguir los pasos indicados en [Link](https://pytorch.org/get-started/locally/).
 
 Si quieren aprender más sobre torch, se pueden leer el libro *Deep learning with pytorch*, que está disponible gratis en internet [Link](https://isip.piconepress.com/courses/temple/ece_4822/resources/books/Deep-Learning-with-PyTorch.pdf).
--->
+
 <!--
 ## Segmentación
 
