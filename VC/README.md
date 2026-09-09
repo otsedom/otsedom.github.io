@@ -4,7 +4,7 @@ Modesto Castrillón Santana y José Salas Cáceres
 Universidad de Las Palmas de Gran Canaria  
 Escuela de Ingeniería en Informática  
 Grado de Ingeniería Informática  
-Curso 2025/2026 
+Curso 2026/2027 
 
 
 <!-- - [Práctica 1](P1/README.md) -->
