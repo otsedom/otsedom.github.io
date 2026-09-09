@@ -125,7 +125,11 @@ acceder a los valores asociados a un determinado píxel, modificar dichos valore
 
 La **entrega del cuaderno o cuadernos** con la resolución de tareas propuestas e imágenes resultantes se realizará por grupos a través del campus virtual por medio de un **enlace github**, teniendo como límite el comienzo de la siguiente sesión práctica de cada grupo. Dichos cuadernos **no deben contener celdas que no sean de interés para la resolución de las tareas**. Durante la siguiente sesión práctica cada grupo, en orden aleatorio, presentará y defenderá el resultado al profesor responsable de la práctica. De forma genérica, para todas las prácticas, el repositorio github debe incluir un **archivo README** describiendo el trabajo realizado, identificando la **autoría**, además de incluir **referencia a todas las fuentes que hayan sido utilizadas** de alguna forma en el desarrollo de la práctica, e indicar si la ejecución del cuaderno requiere alguna instalación adicional. Será adecuado que el o los cuadernos estén también comentados indicando el propósito de las distintas celdas presentadas como resolución de la tarea o tareas solicitadas.
 
-
+De cara a todas las entregas, cada práctica se valora de 0 a 5:
+- No entregado (0) 
+- deficiente (1-2)
+- cumple estrictamente lo solicitado (3)
+- calidad documentación, código y ampliaciones sobre las tareas solicitadas (4-5)
 
 
 ***
