@@ -7,7 +7,7 @@ Grado de Ingeniería Informática
 Curso 2026/2027 
 
 
-- [Práctica 1](P1/README.md) 5% prácticas
+- [Práctica 1](P1/README.md) (5%)
 <!-- - [Práctica 2](P2/README.md) -->
 <!-- - [Práctica 3](P3/README.md) -->
 <!-- - [Práctica 4](P4/README.md) -->
