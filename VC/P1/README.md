@@ -3,7 +3,7 @@
 ### Contenidos
 
 [Instalación](#11-instalando-el-entorno-de-desarrollo)  
-[Anaconda](#111-comandos-basicos-de-anaconda) 
+[Anaconda](#111-comandos-basicos-de-anaconda)  
 [Mi carpeta](#112-el-environment-en-otra-carpeta)  
 [Spec-list](#113-un-environment-para-varias-practicas)  
 [Aspectos cubiertos](#12-aspectos-cubiertos)  
