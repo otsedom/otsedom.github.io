@@ -39,7 +39,7 @@ Una vez que ya está el *environment* creado:
 
 - Colocarse en la carpeta *P1*, correspondiente a la práctica 1
 
-- Lanzar VS Code (en el PC del laboratorio disponible en el escritorio)
+- Lanzar VS Code
 
 - Instalar la extensión de Python en VS Code. Desde el [enlace](https://code.visualstudio.com/docs/languages/python) con VS Code abierto debería llevar al [enlace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) en el *Marketplace*
 
