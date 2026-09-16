@@ -8,10 +8,10 @@ Curso 2026/2027
 
 
 - [Práctica 1](P1/README.md) (5%)
-<!-- - [Práctica 2](P2/README.md) -->
-<!-- - [Práctica 3](P3/README.md) -->
-<!-- - [Práctica 4](P4/README.md) -->
-<!-- - [Práctica 5](P5/README.md) -->
+- [Práctica 2](P2/README.md) (10%)
+<!-- - [Práctica 3](P3/README.md) (20%)-->
+<!-- - [Práctica 4](P4/README.md) (30%)-->
+<!-- - [Práctica 5](P5/README.md) (30%)-->
 <!-- - [Práctica 6](P6/README.md) -->
 <!-- - [Práctica 7](P7/README.md) -->
 <!-- - [Trabajo](Trabajo/README.md) -->
