@@ -45,7 +45,7 @@ En relación a la segmentación de las partículas, una probable primera observa
 
 Si quieren ir más allá, sugerir explorar técnicas de segmentación recientes y potentes como [Segment anything o SAM](https://segment-anything.com) o [OneFormer](https://github.com/SHI-Labs/OneFormer), y extensiones como , [SAM 2](https://github.com/facebookresearch/segment-anything-2), [FastSAM](https://github.com/CASIA-IVA-Lab/FastSAM) o [Count anything](https://github.com/ylqi/Count-Anything). No duden en compartir otras alternativas que descubran.-->
 
-Como en las prácticas previas, la entrega se realizará a través del campus virtual, remitiendo un enlace al repositorio **github**, donde se alojará el **cuaderno o cuadernos** de resolución de las tareas, además de su correspondiente **README** describiendo el proceso adoptado para resolver cada tarea, integrando de imágenes ilustrativas, además de las métricas obtenidas y matriz de confusión de la segunda tarea.
+Como en las prácticas previas, la entrega se realizará a través del campus virtual, remitiendo un enlace al repositorio **github**, donde se alojará el **cuaderno o cuadernos** de resolución de las tareas, además de su correspondiente **README** describiendo el proceso adoptado para resolver cada tarea, la detallar la asistencia recibida por herramientas de IA, integrando de imágenes ilustrativas, además de las métricas obtenidas y matriz de confusión de la segunda tarea.
 
 <!---Momentos en trabajo de Nayar sobre Binary images https://cave.cs.columbia.edu/Statics/monographs/Binary%20Images%20FPCV-1-3.pdf -->
 
