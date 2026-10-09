@@ -1,4 +1,4 @@
-C## Práctica 3. Detección y reconocimiento de formas
+## Práctica 3. Detección y reconocimiento de formas
 
 ### Contenidos
 
