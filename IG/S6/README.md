@@ -518,7 +518,7 @@ La documentación de three.js de [Raycaster](https://threejs.org/docs/#api/en/co
 
 ## Tarea sistema planetario
 
-De cara a la tarea a entregar en la semana del 30 de octubre, sobre la creación de un sistema planetario, en esta primera semana la sugerencia es que desarrollen una primera versión, en la que tras definir una estrella, añadan de forma interactiva con clics de ratón, planetas que orbitan alrededor de la estrella.
+De cara a la tarea a entregar en la semana del 30 de octubre, sobre la creación de un sistema planetario, en esta primera semana la sugerencia es que desarrollen una primera versión, en la que tras definir una estrella, añadan de forma interactiva con clics de ratón, planetas que orbitan alrededor de la estrella. La seman próxima haremos uso de texturas, luces y generación de sombras en Three.js, por si tuvieran curiosidad e ir adelantando.
 
 Como ejemplos de compañeros de cursos previos, que pueden mostrarles objetivos a alcanzar:
 
