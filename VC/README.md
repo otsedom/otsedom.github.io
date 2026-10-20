@@ -21,7 +21,7 @@ Grado de Ingeniería Informática
 | [**Práctica 1**](P1/README.md) | Guion de la práctica 1 | 5 % |
 | [**Práctica 2**](P2/README.md) | Guion de la práctica 2 | 10 % |
 | [**Práctica 3**](P3/README.md) | Guion de la práctica 3 | 20 % |
-| [**Práctica 4**](P4/README.md) | Guion de la práctica 4 | 35 % |
+| [**Práctica 4**](P4/README.md) [y **4b**](P4b/README.md) | Guiones de la práctica 4 | 35 % |
 <!-- - [Práctica 5](P5/README.md) (30%)-->
 <!-- - [Práctica 6](P6/README.md) -->
 <!-- - [Práctica 7](P7/README.md) -->
