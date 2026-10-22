@@ -18,10 +18,10 @@ Grado de Ingeniería Informática
 
 | Práctica | Descripción | 
 |:--------:|-------------|
-| [**Semana 6**](S6/README.md) | Guion de la sesión de prácticas de lqa semana 6 |
+| [**Semana 6**](S6/README.md) | Guion de la sesión de prácticas de la semana 6 |
+| [**Semana 7**](S7/README.md) | Guion de la sesión de prácticas de la semana 7 |
 
 
-<!-- - [Semana 7](S7/README.md)  -->
 <!-- - [Semana 8](S8/README.md)  -->
 <!-- - [Semana 9](S9/README.md)  -->
 <!-- - [Semana 10](S10/README.md)  -->
