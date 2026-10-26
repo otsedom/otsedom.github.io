@@ -683,10 +683,11 @@ Entre posibles extras para subir nota:
 - Poder hacer uso del control de transformación sobre la localización de los planetas creados [TransformControls](https://threejs.org/docs/#examples/en/controls/TransformControls)
 
 
-Ejemplos de compañeros de cursos previos, que pueden mostrarles objetivos a alcanzar:
+Ejemplos de compañeros de la EII, que pueden mostrarles objetivos a alcanzar:
 
 - Una propuesta de sistema solar, no realizado con three.js sino con [Processing](https://processing.org), es el [prototipo de Gabriel García Buey](https://github.com/CaptainChameleon/PocketPlanetarium)
 - Un extracto del trabajo realizado por [Agustín Vizcaíno González](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/mcastrillon_iusiani_ulpgc_es/EdQU5_NpmjhEoHO9I_fOc54BADWzRxdLTeohHFeaLA8sVA?e=k5g3Dw)
+- El ambicioso proyecto personal [*Celestial Body Engine*](https://github.com/SkinnyDevi/celestial-engine) de [Félix Miguel Velasquez](https://github.com/SkinnyDevi)
 
 
 ## Referencias
