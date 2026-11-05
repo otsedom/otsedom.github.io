@@ -2021,7 +2021,7 @@ Esta práctica pretende mostrar una visión introductoria los *shaders*, no habi
   - [Marcelo Fernando](https://github.com/Refesh/Shaders)
   - [Gabriel García SP5rals](https://github.com/CaptainChameleon/SP5rals)
 - Galería IG:   
-  - [Shaders de fragmentos 2526](https://fkxv78.csb.app/)
+  - [Shaders de fragmentos 2526](https://fkxv78.csb.app/), y la versiçón [con música de fondo en youtube](https://youtu.be/jLzj9hlJbRc?si=4MG_AV6UX8yCx5kC)
 <!-- - [Shaderific App](https://shaderific.com) -->
 
 
@@ -2040,7 +2040,7 @@ https://youtu.be/dRo7SnOJlEM
 
 ### Tarea
 
-Como entrega, se plantea el desarrollo de **al menos un** *shader*  de fragmentos con **patrones generativos** y comportamiento **dinámico**, asegurando que sea ejecutable de [editor de The Book of Shaders](http://editor.thebookofshaders.com). Se valorará que se haga uso de la restricción *tiny code* aceptando propuestas de **hasta 512 bytes**. Todas aquellas que dichas condiciones, se utilizarán para componer un *reel* conjunto a mostrar en RRSS. El tamaño se mide sobre el código del *shader* tal cual se entrega, incluidos los uniforms, sin contar comentarios. Por legibilidad, se agradecerça que hagan entrega también de una versión legible (comentada) además de la minificada.  
+Como entrega, se plantea el desarrollo de **al menos un** *shader*  de fragmentos con **patrones generativos** y comportamiento **dinámico**, asegurando que sea ejecutable de [editor de The Book of Shaders](http://editor.thebookofshaders.com). Se valorará que se haga uso de la restricción *tiny code* aceptando propuestas de **hasta 512 bytes**. Las prepuestas que cujmplan dichas condiciones, se utilizarán para componer un *reel* conjunto a mostrar en RRSS. El tamaño se mide sobre el código del *shader* tal cual se entrega, incluidos los uniforms, sin contar comentarios. Por legibilidad, se agradecerça que hagan entrega también de una versión legible (comentada) además de la minificada.  
 Por otro lado, se consderarán **como extra** la integración de *shaders* en alguna de las tareas anteriores: *S6-7 Sistema planetario* y/o *S8 Visualización de datos*.
 
 En ambos casos, la documentación explicativa del o los *shader*(s) debe incluir la motivación, y una detallada descripción de su desarrollo, con especial énfasis en el desarrollo y citando a las fuentes utilizadas.
