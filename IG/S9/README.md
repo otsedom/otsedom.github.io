@@ -2009,7 +2009,7 @@ Finalizamos el recorrido con el ejemplo [*script_39_shaderv.js*](https://github.
 <!-- - [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 ver ejemplos vertex shader MAPA DE DESPLAZAMIENTO Y TEXTURA https://www.youtube.com/watch?v=KK2uonCBVoA -->
 
-AÑADIDO EJEMPLO MODIFICADO DEL 21, CON TERRENO, QUE PODEMOS ALTERAR EN EL SHADER DE VÉRTICES
+<!--AÑADIDO EJEMPLO MODIFICADO DEL 21, CON TERRENO, QUE PODEMOS ALTERAR EN EL SHADER DE VÉRTICES-->
 
 ### Galería
 
