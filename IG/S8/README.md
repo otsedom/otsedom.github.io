@@ -5,6 +5,8 @@
 [Tarea](#tarea)  
 [Referencias](#referencias)
 
+<!-- blog aguita https://www.aguitaconsulting.es/blog/editor-3d-tejados-crm-fotovoltaico-google-solar -->
+
 
 ## Terrenos
 
@@ -159,6 +161,7 @@ Por si pudiera servir de ilustración, como añadido a lo incluido en las dispos
 
 - El perfil de [Pedro Suárez 🔗 x-y.es](https://x.com/x_y_es) en el que junto a su [canal youtube](https://www.youtube.com/xyesz) utiliza como  escaparate para mostrar visualizaciones en 2, 3 y 4D con three.js. Muchas de ellas centradas en nuestro archipiélago. De hecho, durante la erupción de La Palma, su perfil tuvo gran repercusión.
 - La ola de este mes de octubre de 2026 [construyendo ciudades](https://lnkd.in/p/eY3XqTgS) que creo iniciada por [Alexander Bogachev](https://lnkd.in/p/evcdy6MT)
+- Un paso más allá, el uso de *3D tiles*, dispones de [este ejemplo](https://threejs.org/examples/webgl_loader_3dtiles.html) que hace uso de [Cesium ion](ion.cesium.com/)
 <!-- Pedro Suárez https://x.com/x_y_es/status/1438589144901603329?s=20  #https://x.com/CiudadCanaria/status/1780708905267667341 -->
 
 - Las propuestas más votadas del curso 2526:  
@@ -190,6 +193,8 @@ Referencias que han servido para la confección de los diversos ejemplos:
 - [Openglobus](https://www.openglobus.org): Permite visualizar datos en el globo terráqueo de cualquier planeta de diversas maneras con pocas líneas de código.
 - [Three.js Cookbook](https://github.com/josdirksen/threejs-cookbook) por [Jos Dirksen](https://github.com/josdirksen) de 2015
 - [TomTom API](https://developer.tomtom.com): Ofrece un mapa de la Tierra con la posibilidad de explorar sitios y edificios. Aunque el objetivo principal era integrar un mapa con edificios en 3D como el de Google, debido a restricciones de costo que tiene google, integre un prototipo con la API gratuita de TomTom.
+
+
 
 
 ***
