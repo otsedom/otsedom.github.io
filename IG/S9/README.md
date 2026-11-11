@@ -1453,12 +1453,12 @@ Propuestas de funciones de ruido más recientes son el ruido celular (Steven Wor
 
 ### Texturas
 
-Desde el *shader* es posible procesar la textura asociada al objeto. El código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js) incluye un muestrario de *shader* de fragmentos que contemplan el paso de textura como variable de tipo *uniform*, para ser tenidas en cuenta en el cálculo del color del fragmento. Los distintos efectos se aplican sobre una serie de planos, cada uno con un *ShaderMaterial* diferente.
+Desde el *shader* es posible procesar la textura asociada al objeto. El código ejemplo [*script_35_shader_texturas.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_35_shader_texturas.js) incluye un muestrario de *shader* de fragmentos que contemplan el paso de dos texturas como variables de tipo *uniform*, teniendo en cuenta la textura en el cálculo del color del fragmento. Los distintos efectos se aplican sobre una serie de planos, cada uno con su propio *ShaderMaterial*.
 
 ![Values](images/p9_editorDibuja40.png)  
 *Resultado de efectos sobre la textura*
 
-La primera variante, arriba a la izquierda, simplemente mapea la primera textura proporcionada como variable *uniform*, una vez obtenida la coordenada de la textura desde el *shader* de vértices, a través de la variable *vUv* que copia el atributo *uv* del vértice.
+La primera variante, arriba a la izquierda en la imagen, mapea la primera textura proporcionada como variable *uniform*, una vez obtenida la coordenada del mapa de textura desde el *shader* de vértices, a través de la variable *vUv* que copia el atributo *uv* del vértice.
 
 ```
 //shader de vértices
@@ -1482,7 +1482,7 @@ void main() {
 }
 ```
 
-Las segunda y tercera reutilizan efectos de los patrones creados procedimentalmente en secciones previas, para hacerle alguna *travesura* a la textura, como replicarla (segundo plano), y además desplazarla en función del tiempo (tercero).
+Las segunda y tercera reutilizan efectos de los patrones creados procedimentalmente en secciones previas, para hacerle alguna *travesura* a la textura, como replicarla (plano central de la primera fila) haciendo uso de *fract* y una escala.
 
 ```
 uniform sampler2D texture1;
@@ -1497,6 +1497,8 @@ void main() {
   gl_FragColor = texture2D(texture1, st);
 }  
 ```
+
+O desplazarla en función del tiempo (plano a la derecha).
 
 ```
 uniform sampler2D texture1;
@@ -1528,7 +1530,7 @@ void main() {
 }
 ```
 
-Sobre las tres inferiores, en primer término aplica una trivial inversión sobre el valor de cada píxel de la segunda textura pasada como uniform. Esta textura es un mapa binario.
+En la fila inferior, en primer término aplica una trivial inversión sobre el valor de cada píxel de la segunda textura pasada como *uniform*. Siendo un mapa binario, las zonas blancas pasan a ser negras, y viceversa.
 
 ```
 uniform sampler2D texture2;
@@ -1539,7 +1541,7 @@ void main() {
 }
 ```
 
-La segunda variante, alterna bloques de la textura original con su inversa.
+La segunda variante de la fila inferior, alterna bloques de la textura original con su inversa.
 
 ```
 uniform sampler2D texture2;
@@ -1568,9 +1570,9 @@ void main() {
 }
 ```
 
-La última aplica un filtro sobre la textura, es un aperitivo del posterior ejemplo que aplica una batería de [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js).
+La última de la fila inferior, aplica un filtro sobre la textura, es un aperitivo del posterior ejemplo que aplica una batería de filtros sobre una imagen [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js).
 
-Un nuevo ejemplo juega con dos texturas del planeta tierra (nocturna y diurna) sobre la superficie de una esfera. En [*script_36_shader_dobletextura.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_36_shader_dobletextura.js) el shader de fragmentos modifica la textura concreta a aplicar en función de la información proporcionada desde *shader* de vértices sobre la posición de la luz y la normal.
+En un nuevo ejemplo, ver [*script_36_shader_dobletextura.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_36_shader_dobletextura.js), se juega con dos texturas sobre una esfera que representa al planeta Tierra, variando la textura a aplicar, diurna o nocturna, dependiendo de si mira directamente o no al sol. Se consigue en el *shader* de fragmentos modificando la textura concreta a aplicar en función de la información proporcionada desde *shader* de vértices sobre los vesctores hacia la luz y la normal.
 
 
 ```
@@ -1616,7 +1618,7 @@ void main() {
 ![Values](images/p9_editorDibuja41.png)  
 *Captura con doble textura*
 
-En un breve recorrido con filtros, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js) muestra la textura a la izquierda, y un filtro gaussiano, de detección de bordes o de relieve sobre la textura en función de las coordenadas del ratón. La coordenada *x* del puntero habilita una definición diferente del *kernel* o máscara que se aplica spbre la vecindad 3x3 del mapa de textura.
+En un muy breve recorrido con filtros de imagen, el ejemplo [*script_37_shader_filtros.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_37_shader_filtros.js) muestra la textura a la izquierda, y a la derecha, la misma textura tras aplicar un filtro gaussiano, de detección de bordes o de relieve sobre la textura, en función de la coordenada *x* del puntero. De hecho, la componente *x* en el cóigo del *shader* habilita una definición diferente del *kernel* o máscara que se aplica spbre la vecindad 3x3 del mapa de textura.
 
 
 ```
@@ -1688,7 +1690,7 @@ void main(){
 }
 ```
 
-Se incluye un ejemplo que usa como textura la captura de la webcam, requiere algunos ajustes adicionales, adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js). Observar que es necesario incluir en el html, la línea.
+Se incluye también un ejemplo que usa como textura la captura de la webcam. Requiere algunos ajustes adicionales. Adaptando el ejemplo de threejs.org [*webgl_materials_video_webcam*](https://threejs.org/examples/#webgl_materials_video_webcam) les propongo [*script_38_shader_webcam.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_38_shader_webcam.js). Observar que es necesario incluir en el html, la línea.
 
 ```
 <video id="video" style="display:none" autoplay playsinline></video>
@@ -1791,12 +1793,12 @@ void main() {
 
 #### Patrones y aleatoriedad
 
-En esta ocasión, se parte de un ejemplo base de degradado en función de *st.x*.
+Para el siguiente bloque, se parte de un ejemplo básico de degradado en función de *st.x*.
 
 ```
 uniform vec2 u_resolution;
 
-float lth = 0.4, hth = 0.6;
+float lth = 0.4, hth = 0.6, scale = 4.;
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
@@ -2001,10 +2003,17 @@ void main() {
 
 ### *Shaders* de vértices
 
-Finalizamos el recorrido con el ejemplo [*script_39_shaderv.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_39_shaderv.js), en el que se hace un pequeño recorrido ilustrando modificaciones básicas de la posición del vértice a través el *shader* de vértices. Los tres resultados de la parte superior, modifican en primer término del valor de la componente *z* de forma estática, posteriormente de forma dinámica dependiento del tiempo, y el tercero afecta las posiciones de *x* e *y*, produciendo un efecto de latido. Los dos resultados de la siguiente línea, hacen uso de coordenadas angulares, aplicando una sinusoidal afectada por el tiempo. Finalmente, el ejemplo de la parte inferior, adopta el mapa de texturas proporcionado como variable *uniform* para producir un desplazamiento del vértice y afectar al color de reproducción en función del valor de la componente *z*. Hemos escogido un mapa de alturas del archipiélago canario.
+Finalizamos el recorrido ejemplos básicos modificando la posición de los vértices a través del *shader* de vértices. En [*script_39_shadervertices.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_39_shadervertices.js), se hace un pequeño recorrido ilustrando modificaciones básicas de la posición del vértice tras crear un plano. 
+
+Los tres resultados de la parte superior, modifican en primer término del valor de la componente *z* respectivamente de forma estática, de forma dinámica dependiendo del tiempo, y finalmente afectando a las posiciones de *x* e *y*, produciendo un efecto de latido. Los dos resultados de la siguiente fila, hacen uso de coordenadas angulares, aplicando una sinusoidal afectada por el tiempo. Finalmente, el ejemplo de la parte inferior, adopta el mapa de texturas proporcionado como variable *uniform* para producir un desplazamiento del vértice y afectar al color de reproducción en función del valor de la componente *z*. Hemos escogido un mapa de alturas del archipiélago canario.
 
 ![Values](images/p9_editorDibuja70.png)  
-*Captura del resultado conm variantes de shader de vértices*
+*Captura del resultado con variantes de shader de vértices*
+
+Finalmente, el código [*script_40_shadervertices_color.js*](https://github.com/otsedom/otsedom.github.io/blob/main/IG/S9/code/script_40_shadervertices_color.js), modifica el mapa de as islas introduciendo alearotiedad en la deformación de la malla, además de colores dependientes de la altura, aplicando ruido al valor de la altura para conseguir fronteras menso artificiales.
+
+![Values](images/p9_editorDibuja71.png)  
+*Captura del resultado con el mapa coloreado*
 
 <!-- - [Codeanticode shader experiments](https://github.com/codeanticode/pshader-experiments)
 ver ejemplos vertex shader MAPA DE DESPLAZAMIENTO Y TEXTURA https://www.youtube.com/watch?v=KK2uonCBVoA -->

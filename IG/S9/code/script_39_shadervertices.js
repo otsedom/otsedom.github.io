@@ -30,7 +30,7 @@ function init() {
     },
   };
 
-  //De vértices
+  //Planos con variaciones de shaders de vértices
   PlanoShader(
     -2,
     2,
@@ -92,7 +92,7 @@ function init() {
     uniforms
   );
 
-  //Mapa de dfesplazamianeot
+  //Mapa de desplazamiento zona Canarias
   let mapsx, mapsy;
   const loader = new THREE.TextureLoader();
   //Mapa de elevación fuente https://visibleearth.nasa.gov/images/73934/topography
@@ -183,7 +183,7 @@ function vertexShader3() {
                     `;
 }
 
-//latido
+//Latido
 function vertexShader4() {
   return `
                         varying vec3 vUv; 

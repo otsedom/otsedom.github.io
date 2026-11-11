@@ -19,7 +19,7 @@ function init() {
     0.1,
     1000
   );
-  camera.position.set(0, 0, 15);
+  camera.position.set(0, 0, 10);
 
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -41,8 +41,8 @@ function init() {
   };
 
   //Objetos
-  Esfera(0, 0, 0, 1.0, 10, 10, 0xffff00);
-  EsferaShader(4, 0, 0, 0.5, 10, 10);
+  Esfera(0, 0, 0, 1.0, 20, 20, 0xffff00);
+  EsferaShader(3, 0, 0, 0.5, 20, 20);
 
   //Orbit controls
   camcontrols = new OrbitControls(camera, renderer.domElement);
