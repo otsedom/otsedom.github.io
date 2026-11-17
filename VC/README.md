@@ -23,9 +23,10 @@ Grado de Ingeniería Informática
 | [**Práctica 3**](P3/README.md) | Guion de la práctica 3 | 20 % |
 | [**Práctica 4**](P4/README.md) [y **4b**](P4b/README.md) | Guiones de la práctica 4 | 35 % |
 | [**Práctica 5**](P5/README.md) | Guion de la práctica 5 | 30 % |
+| [**Trabajo**](Trabajo/README.md) | Guion del trabajo de curso | 45 % de la nota final|
 <!-- - [Práctica 6](P6/README.md) -->
 <!-- - [Práctica 7](P7/README.md) -->
-<!-- - [Trabajo](Trabajo/README.md) -->
+
 <!-- hola -->
 
 ---

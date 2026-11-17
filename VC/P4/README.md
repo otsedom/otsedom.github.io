@@ -43,6 +43,8 @@ Evaluar ambas opciones se considerará un extra en la evaluación de la tarea. O
 
 Tras la presentación en 2023 de yolov8, Ultralytics puso a disposición yolo11 en septiembre de 2024, yolov12 en marzo de 2025 y yolo26 en 2026 (actualmente comentan el próximo anuncio de yolo27...) A lo largo del texto, al mencionar YOLO, hacemos referencia a un modelo genérico de ultralytics, pudiendo ser cualquier modelo. Para su instalación en un nuevo  *environment*, *VC_P4*, seguir los pasos del [tutorial de instalación de Ultralytics](https://docs.ultralytics.com/quickstart/#install-ultralytics). Por incompatibilidades con uno de los OCR vistos posteriormente, hemos hecho uso de la versión de python 3.9.5 y creado un nuevo *environment*.
 
+<!--Para el futuro, quitar versión 3.9.5 de python y el lap. Ir directamente a lapx que tienes menos problemas de compatibilidades e ir a la versión de Python 3.12.3, donde he conseguido que todo funcione correctamente. 
+Algunos chicos han tenido problemas con el python 3.9.5 y las nuevas versiones de ultralytics-->
 ```
 conda create --name VC_P4 python=3.9.5
 conda activate VC_P4
